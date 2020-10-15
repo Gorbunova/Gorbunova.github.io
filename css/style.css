@@ -1,0 +1,186 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    position: relative;
+    height: 50px;
+}
+
+nav{
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background-color:#212121;
+    z-index: 2;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 70px;
+    margin: 0;
+    list-style-type: none;
+}
+
+.menu .menu_link{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.menu .menu_item{
+    border-right: 2px dotted black;
+    padding-right: 28px;
+}
+
+.subheader{
+    position: absolute;
+    margin-top: 50px;
+    width: 100%;
+    height: 85px;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.subheader .subheader_logo{
+    display: block;
+    margin-top: 15px;
+    max-width: 100%;
+}
+
+.subheader .logo_text{
+    color:#FFFFFF;
+    font-size:13px;
+    font-weight: 400;
+    opacity: 0.5;
+    margin-top: 6px;
+}
+
+.subheader .call_us_text{
+    color:#FFFFFF;
+    font-weight: 300;
+    font-size:12px;
+    text-align:right;
+    margin-top: 19px;
+}
+
+.subheader .subheader_number{
+    display: block;
+    color:#FFFFFF;
+    font-weight: 400;
+    font-size:22px;
+    text-align: right;
+}
+
+.subheader .call_us, .promo .apl_btn{
+    margin-top: 18px;
+    width: 172px;
+    height: 46px;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    border-radius: 4px;
+    background-image: linear-gradient(to top, #1eacc7 0% , #4ce2ff 100%);
+    color:#FFFFFF;
+    font-weight: 400;
+    font-size:14px;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+.promo{
+    min-height: 800px;
+    background: url(../img/main_bg.jpg) center center/cover no-repeat;
+    padding: 150px 0 135px 0;
+}
+
+.promo .promo_header{
+    margin: 0;
+    color:white;
+    font-weight: 700;
+    font-size:58px;
+    text-align:center;
+    line-height: 60px;
+}
+.promo .promo_subheader{
+    margin: 0;
+    margin-top: 22px;
+    color:white;
+    font-weight: 700;
+    font-size:36px;
+    text-align:center;
+    line-height: 36px;
+}
+
+.promo .promo_text{
+    margin-top: 23px;
+    color:#FFFFFF;
+    font-weight: 400;
+    font-size:18px;
+    text-align:center;
+    line-height: 24px;
+}
+
+.promo .apl_btn{
+    display: block;
+    margin: 118px auto 0 auto;
+    margin-top: 118px;
+}
+
+.reasons{
+    padding: 70px 0 67px 0;
+}
+
+.label_btn{
+    display: block;
+    margin: 0 auto;
+    width: 113px;
+    height: 25px;
+    border: none;
+    padding: 5px 12px;
+    background: black;
+    color:#FFFFFF;
+    font-weight: 300;
+    font-size:11px;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+.title{
+    margin-bottom: 0;
+    margin-top: 38px;
+    color:#222222;
+    font-weight: 700;
+    font-size:38px;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+.reasons .reason_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.reasons .reason_card .ellipce{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 26px;
+    width: 114px;
+    height: 114px;
+    border-radius: 100%;
+    background-color:#1EACC7;
+}
+.reasons .reason_card .reason_text{
+    width: 341px;
+    color:black;
+    font-weight: 300;
+    font-size: 15px;
+    text-align:justify;
+}
+
+.reasons .reason_card .reason_text span{
+    color:#1EACC7;
+    font-size: 17px;
+}
