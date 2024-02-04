@@ -1,0 +1,255 @@
+.login {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+.login-form {
+    width: 500px;
+    padding: 38px;
+    background-color: var(--light-color);
+    border-radius: 11px;
+    border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.login__title {
+    color: var(--text-color);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 132%;
+}
+
+.login__title span {
+    color: var(--brand-color);
+}
+
+.login__inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.login__inputs-inner {
+    position: relative;
+}
+
+.login__input-block {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__input-block .login__input-label {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.login__input-inner {
+    background-color: var(--light-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 13px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.login__input-inner .login__input {
+    border: none;
+    width: 100%;
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 110%;
+}
+
+.login__input-inner .login__input:focus-visible {
+    outline: none;
+}
+
+.login__input-inner span {
+    color: var(--text-color-dark);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 110%;
+    margin-right: 16px;
+}
+
+.login__btns-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+}
+
+.login__btn {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.login__link {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.login__link-send {
+    cursor: not-allowed;
+}
+
+.login__link-send_active {
+    cursor: pointer;
+}
+
+.login__send-again {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.login__send-again span {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login__back-link {
+    position: absolute;
+    top: -49px;
+    left: 11px;
+}
+
+.login__code-info {
+    margin: 9px 0 0 0;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login__input-code-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.login__input-code {
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    background: var(--light-color);
+    padding: 20px 16px;
+}
+
+.login__input-code_active {
+    border: 1px solid var(--brand-color);
+}
+
+.login__input-code input {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 110%;
+    max-width: 16px;
+    border: none;
+    text-align: center;
+}
+
+.login__input-code input:focus-visible {
+    outline: none;
+}
+
+.login__checkbox {
+    display: block;
+    position: relative;
+    padding-left: 32px;
+    margin-top: 36px;
+    cursor: pointer;
+    color: var(--text-color-light);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.login__checkbox input {
+    opacity: 0;
+}
+
+/* Create a custom checkbox */
+.login__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: var(--border-color);
+}
+
+.login__checkbox input:checked ~ .login__checkmark {
+    background-color: var(--brand-color);
+}
+
+.login__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.login__checkbox input:checked ~ .login__checkmark:after {
+    display: block;
+}
+
+.login__checkbox .login__checkmark:after {
+    left: 8px;
+    top: 2px;
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.login__checkbox-link, .login__checkbox-link:hover {
+    color: var(--brand-color);
+}
+
+.login__checkbox-link:hover {
+    text-decoration: underline !important;
+}
+
+.login__password-confirm-error {
+    border-color: var(--error-color);
+    position: relative;
+}
+
+.login__password-confirm-error:after {
+    content: 'Пароли не совпадают';
+    color: var(--error-color);
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 530px) {
+    .login-form {
+        background-color: unset;
+        border: none;
+        height: 100%;
+    }
+    .login__inputs {
+        margin-top: 134px;
+    }
+    .login__btns-block {
+        padding-bottom: 38px;
+    }
+}

@@ -1,0 +1,365 @@
+.questionnaire {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+.questionnaire__inner {
+    height: 100%;
+    width: 100%;
+    padding: 66px 24px 36px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    overflow-y: scroll;
+}
+
+.questionnaire__label {
+    border-radius: 46px;
+    display: inline-block;
+    padding: 8px 16px;
+    color: var(--light-color);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.label__black {
+    background-color: #353E50;
+}
+
+.label__blue {
+    background-color: #4267EC;
+}
+
+.label__yellow {
+    background-color: #FFC107;
+}
+
+.label__green {
+    background-color: #0BA4A4;
+}
+
+.label_red {
+    background-color: #FC6238;
+}
+
+.questionnaire__title {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.questionnaire__block {
+    padding: 24px 16px;
+    border-radius: 16px;
+    background: var(--light-color);
+    box-shadow: 12px 12px 20px 0px rgba(166, 171, 189, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questionnaire-block__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questionnaire__block h2 {
+    margin: 0;
+    color: var(--text-color-dark);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.questionnaire__block p {
+    margin: 23px 0;
+    color: var(--text-color-dark);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.questionnaire__block button {
+    width: 100%;
+}
+
+.questionnaire-chapter__menu-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--text-color-dark);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 24px 0;
+    cursor: pointer;
+}
+
+.questionnaire-chapter__menu-item:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.questionnaire-chapter__menu-item:first-child {
+    padding-top: 0;
+}
+
+.questionnaire-chapter__menu-item:last-child {
+    padding-bottom: 0;
+}
+
+#questionnaire-send {
+    bottom: 36px;
+    width: calc(100vw - 2 * 24px)
+}
+
+.questionnaire__form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.questionnaire-form__header, .questionnaire-form__footer {
+    background-color: var(--light-color);
+    z-index: 1;
+}
+
+.questionnaire-form__header {
+    box-shadow: 12px 12px 20px 0px rgba(166, 171, 189, 0.12);
+}
+
+.questionnaire-form__footer {
+    box-shadow: 12px -12px 20px 0px rgba(166, 171, 189, 0.12);
+}
+
+.questionnaire-form__header {
+    padding: 64px 26px 20px 26px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 26px;
+    position: sticky;
+    top: 0;
+}
+
+.questionnaire-form__footer {
+    padding: 22px 26px;
+    position: sticky;
+    bottom: 0;
+}
+
+.questionnaire-form__footer button {
+    width: 100%;
+}
+
+.questionnaire-form__content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.questionnaire-form__chapters-wrapper {
+    display: flex;
+    gap: 4px;
+}
+
+.questionnaire-form__chapter {
+    background: var(--border-color);
+    height: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.questionnaire-form__chapter:first-child {
+    border-radius: 8px 0px 0px 8px;
+}
+
+.questionnaire-form__chapter:last-child {
+    border-radius: 0px 8px 8px 0px;
+}
+
+.questionnaire-form__chapter.active {
+    background: var(--brand-color);
+}
+
+.chapter {
+    padding: 28px 26px;
+}
+
+.chapter__title {
+    margin: 0;
+    color: var(--text-color-dark);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.chapter__subtitle {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.chapter-field__wrapper {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chapter-field__input, .chapter-field__select-wrapper {
+    border-radius: 11px;
+    border: 1px solid var(--border-color);
+    background: var(--light-color);
+    padding: 12px;
+}
+
+.chapter-field__select-wrapper {
+    padding: 0 12px 0 12px;
+    width: 100%;
+}
+
+.chapter-field__wrapper label {
+    color: var(--text-color-light);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.chapter-field__wrapper.boolean label {
+    margin-bottom: 0;
+}
+
+.chapter-field__select {
+    color: var(--text-color);
+    font-size: 16px;
+    border: none;
+    width: 100%;
+    padding: 12px 0;
+}
+
+.chapter-field__wrapper textarea {
+    color: var(--text-color);
+    font-size: 16px;
+    resize: none;
+    display: inline-table;
+    border: none;
+    width: 100%;
+    height: 16px;
+    background-color: var(--light-color);
+}
+
+.chapter-field__wrapper textarea:focus-visible, .chapter-field__select:focus-visible {
+    outline: none;
+}
+
+.chapter-field__checkbox {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-left: 24px;
+    cursor: pointer;
+    color: var(--text-color-light);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.chapter-field__checkbox  input {
+    opacity: 0;
+}
+
+/* Create a custom checkbox */
+.chapter-field__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: var(--light-color);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.chapter-field__checkbox  input:checked ~ .chapter-field__checkmark {
+    background-color: var(--brand-color);
+}
+
+.chapter-field__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.chapter-field__checkbox  input:checked ~ .chapter-field__checkmark:after {
+    display: block;
+}
+
+.chapter-field__checkbox .chapter-field__checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.questionnaire__message {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0606066b;
+}
+
+.questionnaire__message.active {
+    display: flex;
+}
+
+.questionnaire-message__window {
+    background-color: var(--light-color);
+    width: 310px;
+    padding: 72px 18px 11px 18px;
+    border-radius: 11px;
+    box-shadow: 0px 0px 10px 0px rgba(93, 117, 147, 0.10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionnaire-message__window p {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    width: 80%;
+    margin-bottom: 46px;
+}
+
+.questionnaire-message__window .custom-button, .questionnaire-message__window .custom-button:hover {
+    background-color: #4267EC;
+}
+
+.questionnaire-message__window .custom-button:not(.clean):hover {
+    background-color: #4267EC !important;
+}

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+.note-editable ol {
+    padding-left: revert;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+
+    --text-color: #455168;
+    --text-color-light: #606580;
+    --text-color-dark: #212631;
+    --brand-color: #FC6238;
+    --background-color: #F9FAFB;
+    --light-color: #FFF;
+    --border-color: #EAECF1;
+    --icons-color: #97A3BA;
+    --btn-color: #97A3BA;
+    --error-color: #FF5252;
+}
+
+/* Стили кнопки */
+
+.custom-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--light-color);
+    background-color: var(--btn-color);
+    border-radius: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.custom-button.clean, .custom-button.clean:hover {
+    background-color: unset !important;
+    color: #97A3BA;
+}
+
+.custom-button.transparent, .custom-button.transparent:hover {
+    background-color: rgba(255, 255, 255, 0.20) !important;
+}
+
+.custom-button:hover {
+    background-color: var(--brand-color) !important;
+    transition: 300ms;
+}
+
+.custom-button.disabled {
+    cursor: not-allowed;
+}
+
+.custom-button.disabled:hover {
+    background-color: var(--btn-color) !important;
+    transition: 300ms;
+}
+
+.custom-button.disabled:active {
+    pointer-events: none;
+}
+
+@media (max-width: 530px) {
+    .custom-button {
+        background-color: var(--brand-color);
+    }
+}

@@ -1,0 +1,187 @@
+
+{
+    "chapters": [
+        {
+            "name": "Основная информация",
+            "title": "Заполните основную информацию",
+            "fields": [
+                {
+                    "name": "surname",
+                    "label": "Фамилия",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "name",
+                    "label": "Имя",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "patronymic",
+                    "label": "Отчество",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "previous_names",
+                    "label": "Предыдущие ФИО",
+                    "type": "boolean"
+                },
+                {
+                    "name": "birth_date",
+                    "label": "Дата рождения",
+                    "type": "date"
+                },
+                {
+                    "name": "family_status",
+                    "label": "Семейное положение",
+                    "type": "string",
+                    "options": ["не замужем / не женат", "замужем / женат"],
+                    "required": true
+                },
+                {
+                    "name": "having_children",
+                    "label": "Наличие детей",
+                    "type": "boolean"
+                },
+                {
+                    "name": "residence_address",
+                    "label": "Адрес проживания",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "registration_address",
+                    "label": "Адрес регистрации",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "home_number",
+                    "label": "Домашний телефон",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "mobile_number",
+                    "label": "Мобильный телефон",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "contact_number",
+                    "label": "Контактный телефон",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "email",
+                    "label": "Электронная почта",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "name": "Паспортные данные",
+            "title": "Заполните паспортные данные",
+            "fields": [
+                {
+                    "name": "passport_series",
+                    "label": "Серия",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "passport_number",
+                    "label": "Номер",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "passport_date",
+                    "label": "Дата выдачи",
+                    "type": "date"
+                },
+                {
+                    "name": "department_code",
+                    "label": "Код подразделения",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "name": "passport_place",
+                    "label": "Кем выдан",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "name": "Образование",
+            "title": "Ваше образование",
+            "subtitle": "Включая курсы и тренинги",
+            "fields": [
+                {
+                    "name": "sphere_education",
+                    "label": "Сфера образования",
+                    "type": "string",
+                    "options": ["медицина", "техническое", "гуманитарное"],
+                    "required": true
+                },
+                {
+                    "name": "education",
+                    "label": "Где учились?",
+                    "type": "complex",
+                    "button": "Добавить учебное заведение",
+                    "item": [
+                        {
+                            "name": "name_establishment",
+                            "label": "Название учебного заведения",
+                            "type": "string"
+                        },
+                        {
+                            "name": "study_form",
+                            "label": "Форма обучения",
+                            "type": "string"
+                        },
+                        {
+                            "name": "qualification",
+                            "label": "Квалификация по диплому",
+                            "type": "string"
+                        },
+                        {
+                            "name": "speciality",
+                            "label": "Специальность по диплому",
+                            "type": "string"
+                        },
+                        {
+                            "name": "start_education",
+                            "label": "Дата поступления",
+                            "type": "date"
+                        },
+                        {
+                            "name": "end_education",
+                            "label": "Дата окончания",
+                            "type": "date"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Трудовая деятельность",
+            "title": "Трудовая деятельность"
+        },
+        {
+            "name": "Семья",
+            "title": "Семья"
+        },
+        {
+            "name": "Дополнительная информация",
+            "title": "Дополнительная информация"
+        }
+    ]
+}
+
