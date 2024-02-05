@@ -11,7 +11,7 @@ $(document).ready(function () {
     $('.login__link-send').click(() => {
         sendTime = beginSendTime;
         startTimer(sendTime);
-        $('.login__link-send').removeClass('login__link-send_active');
+        $('.login__send-again').removeClass('login__send-again_active');
     });
 
     $('.login__input-code').each(function () {
@@ -42,6 +42,7 @@ $(document).ready(function () {
 
             const value = +e.originalEvent.data;
             const number = $('input', this).attr('id').replace('input-code-', '');
+            $('input', this).val(value);
 
             if (isNaN(value)) {
                 $(`#input-code-${number}`).val('');
@@ -77,7 +78,7 @@ function startTimer (time) {
             $('#send-time').text(formatTime(time));
         } else {
             $('#send-time').text('');
-            $('.login__link-send').addClass('login__link-send_active');
+            $('.login__send-again').addClass('login__send-again_active');
             clearInterval(sendTimeInterval);
         }
     }, 1000);

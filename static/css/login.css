@@ -106,19 +106,24 @@
     font-weight: 600;
 }
 
-.login__link-send {
-    cursor: not-allowed;
-}
-
-.login__link-send_active {
-    cursor: pointer;
-}
-
 .login__send-again {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 16px;
+    cursor: not-allowed;
+}
+
+.login__link-send {
+    pointer-events: none;
+}
+
+.login__send-again_active {
+    cursor: pointer;
+}
+
+.login__send-again_active .login__link-send {
+    pointer-events: auto;
 }
 
 .login__send-again span {
@@ -255,5 +260,15 @@
     }
     .login__btns-block {
         padding-bottom: 38px;
+    }
+}
+
+@media (max-height: 450px) {
+    .login-form {
+        width: 100vw;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        overflow-y: scroll;
     }
 }
