@@ -1,4 +1,7 @@
+import { init100vh } from "../../utils.js";
+
 $(document).ready(function () {
+    init100vh();
     $('.login__input').on('input', handleInput);
 
     $('.login__link').click(() => {
