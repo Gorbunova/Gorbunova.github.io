@@ -12,7 +12,9 @@ export default class OfferBlock {
                     <img src="../static/assets/icons/file.svg" alt="file icon"/>
                     <span>Приглашение на работу.pdf</span>
                 </a>
-                <button class="custom-button transparent" id="read-btn">Ознакомиться</button>
+                <div class="offer__btn-wrapper">
+                    <button class="custom-button transparent" id="read-btn">Ознакомиться</button>
+                </div>
                 <img class="offer__img" src="../static/assets/images/offer.png"" alt="offer image"/>
             </div>
             <div class="offer-code__wrapper hidden">
@@ -20,22 +22,22 @@ export default class OfferBlock {
                 <p>Был направлен Вам в сообщении <br> на номер <span id="phone-number"></span></p>
                 <div class="offer__input-code-wrapper">
                     <div class="offer__input-code">
-                        <input id="input-code-1" type="text">
+                        <input id="input-code-1" type="tel">
                     </div>
                     <div class="offer__input-code">
-                        <input id="input-code-2"  type="text">
+                        <input id="input-code-2"  type="tel">
                     </div>
                     <div class="offer__input-code">
-                        <input id="input-code-3" type="text">
+                        <input id="input-code-3" type="tel">
                     </div>
                     <div class="offer__input-code">
-                        <input id="input-code-4" type="text">
+                        <input id="input-code-4" type="tel">
                     </div>
                     <div class="offer__input-code">
-                        <input id="input-code-5" type="text">
+                        <input id="input-code-5" type="tel">
                     </div>
                     <div class="offer__input-code">
-                        <input id="input-code-6" type="text">
+                        <input id="input-code-6" type="tel">
                     </div>
                 </div>
                 <div class="offer__send-again">
@@ -47,19 +49,25 @@ export default class OfferBlock {
         `
 
         content.appendChild(el);
+        let timer = null;
 
         $('#read-btn').click(() => {
             $('.offer__inner').addClass('hidden');
             $('.offer-code__wrapper').removeClass('hidden');
-            startTimer(sendTime);
+            clearInterval(timer);
+            timer = startTimer(sendTime);
         })
 
         $('#code-cancel-btn').click(() => {
             $('.offer__inner').removeClass('hidden');
             $('.offer-code__wrapper').addClass('hidden');
+            $('.offer__input-code').each(function () {
+                $(this).removeClass('offer__input-code_active');
+                $('input', this).val('');
+            })
         })
 
-        const beginSendTime = 120;
+        const beginSendTime = 10;
         let sendTime = beginSendTime;
 
         $('#phone-number').text(localStorage.getItem('reset_password_phone'));
@@ -67,8 +75,8 @@ export default class OfferBlock {
 
         $('.offer__link-send').click(() => {
             sendTime = beginSendTime;
-            startTimer(sendTime);
-            $('.offer__link-send').removeClass('offer__link-send_active');
+            timer = startTimer(sendTime);
+            $('.offer__send-again').removeClass('offer__send-again_active');
         });
 
         $('.offer__input-code').each(function () {
@@ -107,6 +115,24 @@ export default class OfferBlock {
                     $(`#input-code-${number}`).val(value);
                     if (+number + 1 <= 6) $(`#input-code-${+number + 1}`).focus();
                 }
+
+                if (+number === 6) {
+                    $('.offer__inner').removeClass('hidden');
+                    $('.offer-code__wrapper').addClass('hidden');
+                    $('.offer__btn-wrapper').html(`
+                        <button class="custom-button transparent" id="accept-btn">Принять</button>
+                        <button class="custom-button transparent" id="reject-btn">Отклонить</button>
+                    `);
+                    $('.questionnaire__title').text('Вы можете принять или отклонить оффер. Будем рады видеть Вас в числе наших сотрудников!');
+                    $('#accept-btn').click(() => {
+                        window.location.href = 'work-start.html'
+                    })
+            
+                    $('#reject-btn').click(() => {
+                        console.log('!')
+                        window.location.href = 'questionnaire-rejected.html'
+                    })
+                }
             });
 
             $('input', this).on('keyup', (e) => {
@@ -119,11 +145,6 @@ export default class OfferBlock {
                 } else $(`#input-code-${+number}`).val('');
             });
         })
-
-/*         $('#offer-enter-code-form').submit((e) => {
-            e.preventDefault()
-            window.location.href = "new-password.html";
-        }) */
     }
 }
 
@@ -135,8 +156,9 @@ function startTimer (time) {
             $('#send-time').text(formatTime(time));
         } else {
             $('#send-time').text('');
-            $('.offer__link-send').addClass('offer__link-send_active');
+            $('.offer__send-again').addClass('offer__send-again_active');
             clearInterval(sendTimeInterval);
         }
     }, 1000);
+    return sendTimeInterval;
 }

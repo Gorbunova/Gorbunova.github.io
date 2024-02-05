@@ -46,6 +46,7 @@ export async function initQuestionnaire (state) {
 
     $('#questionnaire-fill').click(() => {
         showElement($('.questionnaire__form'), 'grid');
+        showElement($('#questionnaire-send'));
         localStorage.setItem('questionnaire_state', questionnaireStates.FILLING);
         fillMenu();
     })

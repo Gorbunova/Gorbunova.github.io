@@ -25,6 +25,7 @@
     font-size: 14px;
     font-weight: 500;
     margin: 0 0 12px 0;
+    max-width: 300px;
 }
 
 .offer__wrapper button {
@@ -81,12 +82,12 @@
     outline: none;
 }
 
-.offer__link-send {
-    cursor: not-allowed;
+.offer__send-again_active .offer__link-send {
+    pointer-events: auto;
 }
 
-.offer__link-send_active {
-    cursor: pointer;
+.offer__link-send {
+    pointer-events: none;
 }
 
 .offer__send-again {
@@ -97,10 +98,23 @@
     color: var(--light-color);
     font-size: 16px;
     font-weight: 600;
+    cursor: not-allowed;
+}
+
+.offer__send-again_active {
+    cursor: pointer;
 }
 
 .offer__send-again span {
     color: #97A3BA;
     font-size: 16px;
     font-weight: 400;
+}
+
+.offer__btn-wrapper button {
+    font-size: 14px;
+}
+
+.offer__btn-wrapper #reject-btn {
+    opacity: .5;
 }
