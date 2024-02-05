@@ -1,11 +1,13 @@
 import { createChapter } from './components/questionnare/chapter.js';
 import OfferBlock from './components/questionnare/offer-block.js';
-import questionnaire from './questionnaire.json'  assert { type: 'json' };
+/* import questionnaire from './questionnaire.json'  assert { type: 'json' }; */
 import { init100vh } from './utils.js';
 
-$(document).ready(function () {
+$(document).ready(async function () {
     alert('hello');
     let activeChapter = 0;
+    const questionnaire = await fetchJSONData();
+
     const chapters = questionnaire.chapters;
     init100vh();
     $('.questionnaire-block__content').html(`
@@ -128,3 +130,16 @@ $(document).ready(function () {
         return el;
     }
 })
+
+function fetchJSONData() {
+    return fetch("../static/js/questionnaire.json")
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error
+                    (`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .catch((error) =>
+               console.error("Unable to fetch data:", error));
+}
