@@ -24,8 +24,10 @@
     <div class="questionnaire">
         <div class="questionnaire__inner">
             <div>
-                <div class="questionnaire__label label__black">Заполнение анкеты</div>
-                <div class="questionnaire__title">Заполните анкету <br>для получения оффера<br> в компанию «Терралинк»</div>
+                <div class="questionnaire__label label__green">Анкета проверена</div>
+                <div class="questionnaire__title">
+                    Компания «Терралинк» рассмотрела Вашу анкету и приняла положительное решение. Пожалуйста, ознакомьстесь с оффером
+                </div>
                 <div class="offer__block"></div>
                 <div class="questionnaire__block">
                     <h2>Анкета</h2>
@@ -33,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <button class="custom-button" id="questionnaire-send" style="display: none">Отправить в компанию</button>
+            <button class="custom-button" id="questionnaire-send" style="display: none;">Отправить в компанию</button>
         </div>
         <div class="questionnaire__form" style="display: none">
             <div class="questionnaire-form__header">
@@ -44,20 +46,10 @@
             </div>
             <div class="questionnaire-form__content">
             </div>
-            <div class="questionnaire-form__footer">
-                <button class="custom-button" id="questionnaire-next">Сохранить и продолжить</button>
-            </div>
-        </div>
-        <div class="questionnaire__message">
-            <div class="questionnaire-message__window">
-                <p>Вы заполнили не все поля. Отправить анкету не возможно</p>
-                <button class="custom-button" >Продолжить заполнение</button>
-                <button class="custom-button clean">Отменить</button>
-            </div>
         </div>
     </div>
 </div>
 
-<script type="module" src="../../static/js/components/questionnaire/filling.js"></script>
+<script type="module" src="../../static/js/components/questionnaire/accepted.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@ import { createStringField } from "./fields/stringField.js";
 import { createBooleanField } from "./fields/booleanField.js";
 import { createSelectField } from "./fields/selectField.js";
 
-export function createChapter (content, idx, chapterObj) {
+export function createChapter (content, idx, chapterObj, isDisabled) {
     $('.questionnaire-form__chapter').each(function () {
         $(this).removeClass('active');
     });
@@ -20,19 +20,15 @@ export function createChapter (content, idx, chapterObj) {
         `
     }
 
-    const questionnaireState = localStorage.getItem('questionnaire_state');
-    const isFieldsDisabled = !(!questionnaireState || questionnaireState === 'filling');
-    if (isFieldsDisabled) $('.questionnaire-form__footer').css('display', 'none');
-
     chapterObj.fields?.forEach((field) => {
         switch (field.type) {
             case 'string': {
-                if (field.options) createSelectField(container, field, isFieldsDisabled);
-                else createStringField(container, field, isFieldsDisabled);
+                if (field.options) createSelectField(container, field, isDisabled);
+                else createStringField(container, field, isDisabled);
                 break;
             }
             case 'boolean': {
-                createBooleanField(container, field, isFieldsDisabled);
+                createBooleanField(container, field, isDisabled);
                 break;
             }
         }

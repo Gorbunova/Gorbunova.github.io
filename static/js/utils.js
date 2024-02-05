@@ -16,3 +16,23 @@ export function init100vh(){
     setHeight();
     window.addEventListener('resize', setHeight);
 };
+
+export function hideElement (el) {
+    el.css('display', 'none');
+};
+
+export function showElement (el, display = 'block') {
+    el.css('display', display);
+};
+
+export function compareArrays (arr1, arr2) {
+    let el = null;
+    for (let index = 0; index < arr1.length; index++) {
+        const arr2index = arr2.findIndex((el) => el === arr1[index]);
+        const dataObj = JSON.parse(localStorage.getItem('questionnaire_data')) ?? {};
+        if (arr2index === -1 || !dataObj[arr2[arr2index]].length) {
+            return arr1[index];
+        }
+    }
+    return el;
+};

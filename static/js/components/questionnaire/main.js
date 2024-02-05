@@ -1,61 +1,60 @@
-import { createChapter } from './components/questionnare/chapter.js';
-import OfferBlock from './components/questionnare/offer-block.js';
-import { init100vh } from './utils.js';
+import { createChapter } from './chapter.js';
+import OfferBlock from './offer-block.js';
+import { init100vh, hideElement, compareArrays, showElement } from '../../utils.js';
 
-$(document).ready(async function () {
+export const questionnaireStates = {
+    FILLING: 'filling',
+    CONSIDERATION: 'consideration',
+    ACCEPTED: 'accepted',
+    REJECTED: 'rejected',
+};
+
+export async function initQuestionnaire (state) {
+    init100vh();
     let activeChapter = 0;
     const questionnaire = await fetchJSONData();
 
-    const chapters = questionnaire.chapters;
-    init100vh();
-    $('.questionnaire-block__content').html(`
-            <img src="../static/assets/images/questionnaire_image.png" alt="questionnaire image">
-            <p class="questionnaire-block__info">Заполните, пожалуйста,<br> информацию о себе</p>
-            <button class="custom-button" id="questionnaire-fill">Заполнить анкету</button>
-        `);
+    let isDisabledFields = state === questionnaireStates.REJECTED
+    || state === questionnaireStates.ACCEPTED
+    || state === questionnaireStates.CONSIDERATION;
 
-    if (localStorage.getItem('questionnaire_state') === 'filling') {
-        $('#questionnaire-send').css('display', 'block');
-        fillMenu();
-    } else if (localStorage.getItem('questionnaire_state') === 'consideration') {
-        fillMenu();
-        $('.questionnaire__label').html('Рассмотрение анкеты');
-        $('.questionnaire__label').addClass('label__blue');
-        $('.questionnaire__title').html('Компания «Терралинк» проверяет Вашу анкету. В течение нескольких дней мы с Вами свяжемся');
-    } else if (localStorage.getItem('questionnaire_state') === 'accepted') {
-        fillMenu();
-        $('.questionnaire__label').html('Анкета проверена');
-        $('.questionnaire__label').addClass('label__green');
-        $('.questionnaire__title').html('Компания «Терралинк» рассмотрела Вашу анкету и приняла положительное решение. Пожалуйста, ознакомьстесь с оффером');
-        new OfferBlock($('.offer__block')[0])
-    } else {
+    const chapters = questionnaire.chapters;
+
+    if (state) fillMenu();
+
+    if (!state) {
         $('.questionnaire-block__content').html(`
             <img src="../static/assets/images/questionnaire_image.png" alt="questionnaire image">
             <p class="questionnaire-block__info">Заполните, пожалуйста,<br> информацию о себе</p>
             <button class="custom-button" id="questionnaire-fill">Заполнить анкету</button>
         `);
+    } else if (state === questionnaireStates.ACCEPTED) {
+        new OfferBlock($('.offer__block')[0]);
+    } else if (state === questionnaireStates.FILLING) {
+        showElement($('#questionnaire-send'));
+    } else if (state === questionnaireStates.CONSIDERATION) {
+        $('.questionnaire__label').html('Рассмотрение анкеты');
+        $('.questionnaire__label').addClass('label__blue');
+        $('.questionnaire__title').html('Компания «Терралинк» проверяет Вашу анкету. В течение нескольких дней мы с Вами свяжемся');
+        hideElement($('.questionnaire-form__footer'));
     }
-
-    $('#questionnaire-fill').click(() => {
-        $('.questionnaire__form').css('display', 'grid');
-        localStorage.setItem('questionnaire_state', 'filling');
-        fillMenu();
-    })
-
-    $('#questionnaire-send').click(() => {
-        considerationSet()
-    })
 
     chapters.forEach((_val, idx) => {
         $('.questionnaire-form__chapters-wrapper').append(`<div class="questionnaire-form__chapter" id="chapter-${idx}"></div>`);
     })
     updateChapter(activeChapter);
 
+    $('#questionnaire-fill').click(() => {
+        showElement($('.questionnaire__form'), 'grid');
+        localStorage.setItem('questionnaire_state', questionnaireStates.FILLING);
+        fillMenu();
+    })
+
+    $('#questionnaire-send').click(() => considerationSet());
+
     $('#questionnaire-next').click(() => {
         if (activeChapter < chapters.length - 1) updateChapter(++activeChapter);
-        else {
-            considerationSet();
-        }
+        else considerationSet();
     })
 
     $('.questionnaire-form__chapter').click(function () {
@@ -63,12 +62,12 @@ $(document).ready(async function () {
         updateChapter(activeChapter);
     })
 
-    $('.questionnaire__message button').click(() => {
-        $('.questionnaire__message').removeClass('active');
-    })
+    $('.questionnaire__message button').click(() => $('.questionnaire__message').removeClass('active'))
+
+    $('#back-link').click(() => hideElement($('.questionnaire__form')));
 
     function updateChapter (idx) {
-        createChapter($('.questionnaire-form__content'), idx, chapters[idx]);
+        createChapter($('.questionnaire-form__content'), idx, chapters[idx], isDisabledFields);
     }
 
     function fillMenu () {
@@ -89,7 +88,7 @@ $(document).ready(async function () {
         $('.questionnaire-chapter__menu-item').click(function () {
             activeChapter = $(this).attr('id').replace('menu-item-', '');
             updateChapter(activeChapter);
-            $('.questionnaire__form').css('display', 'grid');
+            showElement($('.questionnaire__form'), 'grid');
         })
     }
 
@@ -106,28 +105,18 @@ $(document).ready(async function () {
             return;
         }
 
-        localStorage.setItem('questionnaire_state', 'consideration');
+        localStorage.setItem('questionnaire_state', questionnaireStates.CONSIDERATION);
+        isDisabledFields = true;
+        hideElement($('.questionnaire-form__footer'));
 
-        $('.questionnaire__form').css('display', 'none');
-        $('#questionnaire-send').css('display', 'none');
+        hideElement($('.questionnaire__form'));
+        hideElement($('#questionnaire-send'));
         $('.questionnaire__label').html('Рассмотрение анкеты');
         $('.questionnaire__label').removeClass('label__black');
         $('.questionnaire__label').addClass('label__blue');
         $('.questionnaire__title').html('Компания «Терралинк» проверяет Вашу анкету. В течение нескольких дней мы с Вами свяжемся')
     }
-
-    function compareArrays (arr1, arr2) {
-        let el = null;
-        for (let index = 0; index < arr1.length; index++) {
-            const arr2index = arr2.findIndex((el) => el === arr1[index]);
-            const dataObj = JSON.parse(localStorage.getItem('questionnaire_data')) ?? {};
-            if (arr2index === -1 || !dataObj[arr2[arr2index]].length) {
-                return arr1[index];
-            }
-        }
-        return el;
-    }
-})
+}
 
 function fetchJSONData() {
     return fetch("../static/js/questionnaire.json")

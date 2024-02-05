@@ -32,6 +32,7 @@ a, a:hover {
     --text-color-light: #606580;
     --text-color-dark: #212631;
     --brand-color: #FC6238;
+    --brand-color-dark: #FBAF99;
     --background-color: #F9FAFB;
     --light-color: #FFF;
     --border-color: #EAECF1;
@@ -68,8 +69,9 @@ a, a:hover {
     transition: 300ms;
 }
 
-.custom-button.disabled {
+.custom-button:disabled, .custom-button:disabled:hover, .custom-butto.disabled {
     cursor: not-allowed;
+    background-color: var(--brand-color-dark) !important;
 }
 
 .custom-button.disabled:hover {
