@@ -1,10 +1,8 @@
 import { createChapter } from './components/questionnare/chapter.js';
 import OfferBlock from './components/questionnare/offer-block.js';
-/* import questionnaire from './questionnaire.json'  assert { type: 'json' }; */
 import { init100vh } from './utils.js';
 
 $(document).ready(async function () {
-    alert('hello');
     let activeChapter = 0;
     const questionnaire = await fetchJSONData();
 
