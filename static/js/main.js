@@ -4,6 +4,7 @@ import questionnaire from './questionnaire.json'  assert { type: 'json' };
 import { init100vh } from './utils.js';
 
 $(document).ready(function () {
+    alert('hello');
     let activeChapter = 0;
     const chapters = questionnaire.chapters;
     init100vh();
