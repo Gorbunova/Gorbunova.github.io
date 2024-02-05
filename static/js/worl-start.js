@@ -1,4 +1,7 @@
+import { init100vh } from "./utils.js";
+
 $(document).ready(function () {
+    init100vh();
     $('.work-start__input').each(function () {
 
         $('#copy-field', this).click(() => {

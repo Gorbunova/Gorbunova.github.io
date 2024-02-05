@@ -2,7 +2,7 @@ import { formatTime, init100vh } from "../../utils.js";
 
 $(document).ready(function () {
     init100vh();
-    const beginSendTime = 120;
+    const beginSendTime = 60;
     let sendTime = beginSendTime;
     $('#phone-number').text(localStorage.getItem('reset_password_phone'));
 

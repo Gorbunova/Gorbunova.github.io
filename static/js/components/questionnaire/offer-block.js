@@ -67,7 +67,7 @@ export default class OfferBlock {
             })
         })
 
-        const beginSendTime = 10;
+        const beginSendTime = 60;
         let sendTime = beginSendTime;
 
         $('#phone-number').text(localStorage.getItem('reset_password_phone'));
@@ -127,7 +127,7 @@ export default class OfferBlock {
                     $('#accept-btn').click(() => {
                         window.location.href = 'work-start.html'
                     })
-            
+
                     $('#reject-btn').click(() => {
                         console.log('!')
                         window.location.href = 'questionnaire-rejected.html'
