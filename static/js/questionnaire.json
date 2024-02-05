@@ -38,7 +38,7 @@
                     "label": "Семейное положение",
                     "type": "string",
                     "options": ["не замужем / не женат", "замужем / женат"],
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "having_children",
@@ -49,37 +49,37 @@
                     "name": "residence_address",
                     "label": "Адрес проживания",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "registration_address",
                     "label": "Адрес регистрации",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "home_number",
                     "label": "Домашний телефон",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "mobile_number",
                     "label": "Мобильный телефон",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "contact_number",
                     "label": "Контактный телефон",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "email",
                     "label": "Электронная почта",
                     "type": "string",
-                    "required": true
+                    "required": false
                 }
             ]
         },
@@ -91,13 +91,13 @@
                     "name": "passport_series",
                     "label": "Серия",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "passport_number",
                     "label": "Номер",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "passport_date",
@@ -108,13 +108,13 @@
                     "name": "department_code",
                     "label": "Код подразделения",
                     "type": "string",
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "passport_place",
                     "label": "Кем выдан",
                     "type": "string",
-                    "required": true
+                    "required": false
                 }
             ]
         },
@@ -128,7 +128,7 @@
                     "label": "Сфера образования",
                     "type": "string",
                     "options": ["медицина", "техническое", "гуманитарное"],
-                    "required": true
+                    "required": false
                 },
                 {
                     "name": "education",
