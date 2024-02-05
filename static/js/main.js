@@ -1,10 +1,17 @@
 import { createChapter } from './components/questionnare/chapter.js';
 import OfferBlock from './components/questionnare/offer-block.js';
 import questionnaire from './questionnaire.json'  assert { type: 'json' };
+import { init100vh } from './utils.js';
 
 $(document).ready(function () {
     let activeChapter = 0;
-    const chapters = questionnaire.chapters
+    const chapters = questionnaire.chapters;
+    init100vh();
+    $('.questionnaire-block__content').html(`
+            <img src="../static/assets/images/questionnaire_image.png" alt="questionnaire image">
+            <p class="questionnaire-block__info">Заполните, пожалуйста,<br> информацию о себе</p>
+            <button class="custom-button" id="questionnaire-fill">Заполнить анкету</button>
+        `);
 
     if (localStorage.getItem('questionnaire_state') === 'filling') {
         $('#questionnaire-send').css('display', 'block');
