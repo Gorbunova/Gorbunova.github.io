@@ -62,6 +62,10 @@
     align-items: center;
 }
 
+.login__input-inner.error {
+    border-color: var(--error-color);
+}
+
 .login__input-inner .login__input {
     border: none;
     width: 100%;

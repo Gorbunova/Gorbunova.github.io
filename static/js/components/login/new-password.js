@@ -1,4 +1,7 @@
+import { init100vh } from "../../utils.js";
+
 $(document).ready(function () {
+    init100vh();
     $('#password-confirm').on('input', handleInput);
     $('#password-confirm').on('change', handleInput);
 });
