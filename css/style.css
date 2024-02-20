@@ -1,0 +1,11 @@
+@import 'common.css';
+@import 'fonts.css';
+
+@import 'blocks/promo.css';
+@import 'blocks/about.css';
+@import 'blocks/solutions.css';
+@import 'blocks/qualities.css';
+@import 'blocks/consultation.css';
+@import 'blocks/talk.css';
+@import 'blocks/article.css';
+@import 'blocks/footer.css';

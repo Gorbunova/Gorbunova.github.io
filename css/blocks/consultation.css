@@ -1,0 +1,70 @@
+.consultation {
+    padding: 120px 0;
+    position: relative;
+}
+
+.consultation__img {
+    position: absolute;
+    top: 0;
+    right: 230px;
+}
+
+.consultation__wrapper {
+    background-color: var(--color-blue);
+    border-radius: 60px;
+    padding: 40px 64px 56px 64px;
+    color: var(--color-light);
+}
+
+.consultation__title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 48px;
+    max-width: 832px;
+    letter-spacing: 1px;
+    margin-bottom: 44px;
+}
+
+.consultation__form {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.consultation__form input {
+    width: 100%;
+    border-radius: 35px;
+    background: unset;
+    border: 1px solid var(--color-light);
+    padding: 21.5px 30px;
+    color: var(--color-light);
+    font-size: 18px;
+    font-family: 'Inter';
+}
+
+.consultation__form input::placeholder {
+    color: var(--color-light);
+    font-size: 18px;
+    font-family: 'Raleway';
+}
+
+.consultation__form button {
+    padding: 10px 54px;
+    background-color: var(--color-light);
+    border-radius: 100px;
+    border: none;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.consultation__text {
+    font-size: 20px;
+    font-family: 'TildaSans';
+}
+
+.consultation__text a {
+    color: var(--color-light);
+    text-decoration: underline;
+    font-family: 'TildaSans';
+}

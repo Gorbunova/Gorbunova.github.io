@@ -1,0 +1,53 @@
+.talk {
+    background-color: var(--color-gray);
+    padding: 120px 0;
+    overflow: hidden;
+}
+
+.talk__wrapper {
+    margin-bottom: 80px;
+}
+
+.talk__main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 38px;
+}
+
+.talk__title {
+    font-size: 44px;
+    font-weight: 800;
+}
+
+.talk__text {
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 875px;
+    font-family: 'Inter';
+}
+
+.talk__buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.talk__button {
+    background-color: var(--color-light);
+    border-radius: 100px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.talk__slider-inner {
+    display: flex;
+    gap: 20px;
+    transform: translateX(0);
+    transition: transform .5s;
+}
+
+.talk__slider-inner img {
+    width: calc((100% - 40px) / 3);
+}
