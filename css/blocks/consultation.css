@@ -1,5 +1,6 @@
 .consultation {
     padding: 120px 0;
+    overflow: hidden;
 }
 
 .consultation__img {

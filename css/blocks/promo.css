@@ -46,7 +46,7 @@
 }
 
 .header__logo img {
-    height: 75px;
+    height: 64px;
 }
 
 .promo__img {
@@ -177,7 +177,7 @@
     .promo__inner h1 {
         padding: 0 24px;
         font-size: 32px;
-        line-height: 42px;
+        line-height: 40px;
     }
 
     .promo__inner {

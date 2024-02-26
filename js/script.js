@@ -237,10 +237,12 @@ const sliderInit = () => {
 
 const showModal = () => {
     document.querySelector('.modal__wrapper').classList.add('active');
+    document.body.classList.add('no-scroll');
 };
 
 const hideModal = () => {
     document.querySelector('.modal__wrapper').classList.remove('active');
+    document.body.classList.remove('no-scroll');
 };
 
 function init100vh(){

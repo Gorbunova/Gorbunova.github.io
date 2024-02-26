@@ -29,6 +29,10 @@ body {
     --border-radius-medium: 44px;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .container {
     max-width: 1516px;
     margin: 0 auto;
