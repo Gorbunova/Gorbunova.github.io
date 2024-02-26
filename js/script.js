@@ -249,5 +249,4 @@ function init100vh(){
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
     setHeight();
-    window.addEventListener('resize', setHeight);
 };
