@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function() {
+    init100vh();
     sliderInit();
 
     document.querySelector('.promo__header button').addEventListener('click', showModal);
@@ -240,4 +241,13 @@ const showModal = () => {
 
 const hideModal = () => {
     document.querySelector('.modal__wrapper').classList.remove('active');
+};
+
+function init100vh(){
+    function setHeight() {
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setHeight();
+    window.addEventListener('resize', setHeight);
 };

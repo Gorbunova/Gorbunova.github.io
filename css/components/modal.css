@@ -2,6 +2,7 @@
     position: fixed;
     top: 0;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     background-color: #0000006a;
     z-index: -2;

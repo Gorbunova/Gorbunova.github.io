@@ -54,6 +54,7 @@
 
 .article__button {
     background-color: var(--color-light);
+    color: var(--color-text);
     border-radius: 100px;
     border: none;
     padding: 18px 48px;
