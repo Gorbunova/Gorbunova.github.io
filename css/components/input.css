@@ -1,0 +1,72 @@
+.form__field {
+    width: 100%;
+    border-radius: 35px;
+    border: 1px solid var(--color-stroke-blue);
+    padding: 9px 12px 9px 22px;
+    font-family: 'Inter';
+    position: relative;
+    display: flex;
+    align-items: end;
+    min-height: 56px;
+}
+
+.form__field.error {
+    border: 1px solid #ED6F6F;
+}
+
+.form__field.error {
+    border: 1px solid #ED6F6F;
+}
+
+.form__field input, .form__field textarea {
+    width: 100%;
+    background: unset;
+    border: none;
+    color: var(--color-text);
+    font-size: 16px;
+    font-family: 'Inter';
+    resize: none;
+}
+
+.form__field textarea {
+   min-height: 100px;
+}
+
+.form__field input:focus-visible, .form__field textarea:focus-visible {
+    outline: none;
+}
+
+.form__field label {
+    color: var(--color-text);
+    font-size: 18px;
+    font-family: 'Raleway';
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 16px;
+    left: 22px;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label {
+  transform: translateY(-12px) scale(0.75);
+}
+
+.form__input:focus ~ .form__label {
+    color: #0000008e;
+}
+
+.form__error-label {
+    min-height: 36px;
+    min-width: 36px;
+    background-color: #ED6F6F;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__field.error .form__error-label {
+    display: flex;
+}

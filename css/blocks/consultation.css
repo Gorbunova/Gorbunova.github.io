@@ -1,25 +1,24 @@
 .consultation {
     padding: 120px 0;
-    position: relative;
 }
 
 .consultation__img {
     position: absolute;
-    top: 0;
-    right: 230px;
+    top: -125px;
+    right: 60px;
+    opacity: 1;
+    transition: all 2s;
 }
 
 .consultation__wrapper {
     background-color: var(--color-blue);
-    border-radius: 60px;
+    border-radius: var(--border-radius);
     padding: 40px 64px 56px 64px;
     color: var(--color-light);
+    position: relative;
 }
 
 .consultation__title {
-    font-size: 44px;
-    font-weight: 800;
-    line-height: 48px;
     max-width: 832px;
     letter-spacing: 1px;
     margin-bottom: 44px;
@@ -32,39 +31,159 @@
     margin-bottom: 16px;
 }
 
-.consultation__form input {
-    width: 100%;
-    border-radius: 35px;
-    background: unset;
-    border: 1px solid var(--color-light);
-    padding: 21.5px 30px;
-    color: var(--color-light);
-    font-size: 18px;
-    font-family: 'Inter';
-}
-
-.consultation__form input::placeholder {
-    color: var(--color-light);
-    font-size: 18px;
-    font-family: 'Raleway';
-}
-
 .consultation__form button {
     padding: 10px 54px;
     background-color: var(--color-light);
     border-radius: 100px;
     border: none;
     font-size: 21px;
-    font-weight: 800;
+    font-weight: 500;
+}
+
+.consultation .form__field {
+    border-color: var(--color-light);
+}
+
+.consultation .form__field input {
+    color: var(--color-light);
+}
+
+.consultation .form__input:focus ~ .form__label {
+    color: #ffffff8e;
+}
+
+.consultation label {
+    color: var(--color-light);
+}
+
+.consultation__form button:disabled {
+    background-color: #ffffff27;
+    color: #ffffff93;
+    cursor: not-allowed;
 }
 
 .consultation__text {
-    font-size: 20px;
-    font-family: 'TildaSans';
+    font-size: 16px;
+    font-family: 'Inter';
 }
 
 .consultation__text a {
     color: var(--color-light);
     text-decoration: underline;
-    font-family: 'TildaSans';
+    font-family: 'Inter';
+}
+
+.consultation__sended {
+    min-height: 236.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.consultation__sended h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.consultation__sended p {
+    font-size: 20px;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+@media (max-width: 1600px) {
+    .consultation__title {
+        max-width: 560px;
+    }
+
+    .consultation__img {
+        top: -62px;
+        right: 70px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .consultation {
+        padding: 80px 0;
+    }
+
+    .consultation__wrapper {
+        padding: 40px 44px 44px 44px;
+    }
+
+    .consultation__title {
+        max-width: 500px;
+    }
+
+    .consultation__form {
+        gap: 12px;
+    }
+
+    .consultation__img {
+        top: -24px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .consultation__wrapper {
+        padding: 44px 20px 44px 20px;
+    }
+
+    .consultation__title {
+        font-size: 24px;
+        max-width: 400px;
+        margin-bottom: 24px;
+    }
+
+    .consultation__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .consultation__form button {
+        padding: 18px 0;
+    }
+
+    .consultation__img {
+        top: -47px;
+        right: -24px;
+        height: 134px;
+    }
+
+    .consultation__form button {
+        margin-top: 4px;
+    }
+
+    .consultation__form .form__field:first-child, .consultation__form button {
+        grid-column: span 2;
+    }
+
+    .consultation__sended {
+        min-height: 352px;
+    }
+}
+
+@media (max-width: 600px) {
+    .consultation__title {
+        max-width: 300px;
+    }
+
+    .consultation__form {
+        grid-template-columns: 1fr;
+    }
+
+    .consultation__form .form__field:first-child, .consultation__form button {
+        grid-column: span 1;
+    }
+
+    .consultation__form button {
+        font-size: 16px;
+    }
+
+    .consultation__sended {
+        min-height: 414px;
+    }
 }

@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+    text-wrap: nowrap;
 }
 
 .footer__contacts a {
@@ -67,4 +68,70 @@
 
 .footer__phone {
     margin-bottom: 8px;
+}
+
+@media (max-width: 1300px) {
+    .footer__nav {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer .container {
+        position: relative;
+    }
+
+    .footer__wrapper {
+        flex-direction: column;
+    }
+
+    .footer__nav {
+        margin-bottom: 80px;
+    }
+
+    .footer__logo {
+        margin-bottom: 40px;
+    }
+
+    .footer__logo img {
+        margin-bottom: 0;
+    }
+
+    .footer__logo p {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer__contacts {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 23px 0 46px 0;
+    }
+
+    .footer__logo img {
+        height: 56px;
+    }
+
+    .footer__nav {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+
+    .footer__solutions-wrapper h3, .footer__about-wrapper h3 {
+        font-size: 16px;
+    }
+
+    .footer__contacts {
+        top: 8px;
+        right: 16px;
+    }
 }

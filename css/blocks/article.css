@@ -3,17 +3,18 @@
 }
 
 .article__title {
-    font-size: 44px;
-    font-weight: 800;
     margin-bottom: 80px;
 }
 
 .article__wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     background-color: var(--color-gray);
-    border-radius: 60px;
+    border-radius: var(--border-radius);
     padding: 44px 100px;
     position: relative;
+    gap: 32px;
+    overflow: hidden;
 }
 
 .article__statistics {
@@ -43,12 +44,10 @@
     font-weight: 800;
     line-height: 36px;
     margin-bottom: 16px;
-    max-width: 938px;
+    max-width: 700px;
 }
 
 .article__text {
-    font-size: 20px;
-    line-height: 24px;
     margin-bottom: 44px;
     font-family: 'Inter';
 }
@@ -57,18 +56,95 @@
     background-color: var(--color-light);
     border-radius: 100px;
     border: none;
-    padding: 13.5px 48px;
+    padding: 18px 48px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .article__img-wrapper img {
-    position: absolute;
-    height: calc(100% - 44px);
-    right: 120px;
-    bottom: 0;
+    height: 424px;
+    margin-bottom: -184px;
+}
+
+@media (max-width: 1600px) {
+    .article__wrapper {
+        padding: 44px 64px;
+    }
+
+    .article__subtitle {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .article__img-wrapper img {
+        height: 310px;
+        margin-bottom: -60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .article {
+        padding: 80px 0;
+    }
+
+    .article__title {
+        margin-bottom: 40px;
+    }
+
+    .article__wrapper {
+        padding: 44px;
+    }
+
+    .article__img-wrapper img {
+        height: 334px;
+        margin-bottom: -47px;
+    }
+}
+
+@media (max-width: 992px) {
+    .article__wrapper {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .article__img-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .article__img-wrapper img {
+        height: 347px;
+        margin-bottom: -77px;
+    }
+
+    .article__subtitle {
+        font-size: 20px;
+        line-height: 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .article {
+        padding: 80px 0 40px 0;
+    }
+
+    .article__wrapper {
+        padding: 24px 20px 0 20px;
+    }
+
+    .article__text {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 32px;
+    }
+
+    .article__img-wrapper {
+        padding: 0 20px;
+        overflow: hidden;
+    }
 }

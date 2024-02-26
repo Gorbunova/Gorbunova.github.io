@@ -33,8 +33,8 @@
 
 @font-face {
     font-family: 'Unbounded';
-    src: local('Unbounded-Black'),
-        url('../fonts/Unbounded-Black.woff') format('woff');
+    src: local('Unbounded-Bold'),
+        url('../fonts/Unbounded-Bold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 }

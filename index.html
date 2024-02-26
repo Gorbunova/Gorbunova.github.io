@@ -11,41 +11,38 @@
 <body>
     <section class="promo">
         <div class="promo__overlay"></div>
+        <header class="promo__header">
+            <div class="promo__header-wrapper">
+                <a href="#" class="header__logo">
+                    <img src="icons/logo-light.png" alt="logo">
+                </a>
+                <nav class="header__nav">
+                    <ul>
+                        <li>
+                            <a href="#about">О компании</a>
+                        </li>
+                        <li>
+                            <a href="#">Продукты</a>
+                        </li>
+                        <li>
+                            <a href="#article">Исследования</a>
+                        </li>
+                        <li>
+                            <a href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <button class="custom-button typewrite" data-period="3000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+                <span class="wrap"></span>
+            </button>
+        </header>
         <div class="container relative">
-
             <img class="promo__img" src="img/promo-img.png" logo="design element"/>
-            <header class="promo__header">
-                <div class="promo__header-wrapper">
-                    <a href="#" class="header__logo">
-                        <img src="icons/logo-light.png" alt="logo">
-                    </a>
-                    <nav class="header__nav">
-                        <ul>
-                            <li>
-                                <a href="#">О компании</a>
-                            </li>
-                            <li>
-                                <a href="#">Продукты</a>
-                            </li>
-                            <li>
-                                <a href="#">Исследования</a>
-                            </li>
-                            <li>
-                                <a href="#">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
-                    <span class="wrap"></span>
-                </button>
-            </header>
             <div class="promo__wrapper">
                 <div class="promo__inner">
-                    <h1>Создаем гибкие<br>IT-решения под задачи<br>вашего бизнеса</h1>
-                    <a href="#consultation">
-                        <button class="promo__button custom-button_rounded">Обсудить проект</button>
-                    </a>
+                    <h1>Создаем гибкие<br>IT-решения под&nbspзадачи<br>вашего бизнеса</h1>
+                    <button class="promo__button custom-button_rounded">Обсудить проект</button>
                 </div>
                 <div class="promo__stack-wrapper">
                     <div class="promo__stack">
@@ -63,40 +60,44 @@
             </div>
         </div>
     </section>
-    <section class="about">
-        <h2 class="about__title">ТерраЛинк Разработка </h2>
-        <p class="about__text">
-            Российская компания, с экспертизой в заказной разработке ИТ-решений.
-            Мы специализируемся на создании мобильных приложений (iOS, Android),
-            корпоративных порталов и внедрении решений 1С.
-            Поставляем технологические решения для клиентов в любых отраслях.
-        </p>
-        <div class="about__tags">
-            <div class="about__tag">ТЭК</div>
-            <div class="about__tag">Ритейл</div>
-            <div class="about__tag">Производство</div>
-            <div class="about__tag">Металлургия</div>
-            <div class="about__tag">Финансы</div>
-            <div class="about__tag">Развлечения</div>
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="about__title">ТерраЛинк Разработка </h2>
+            <p class="about__text text-large">
+                Российская компания, с экспертизой в заказной разработке ИТ-решений.
+                Мы специализируемся на создании мобильных приложений (iOS, Android),
+                корпоративных порталов и внедрении решений 1С.
+                Поставляем технологические решения для клиентов в любых отраслях.
+            </p>
+            <div class="about__tags">
+                <div class="about__tag">ТЭК</div>
+                <div class="about__tag">Ритейл</div>
+                <div class="about__tag">Производство</div>
+                <div class="about__tag">Металлургия</div>
+                <div class="about__tag">Финансы</div>
+                <div class="about__tag">Развлечения</div>
+            </div>
+            <img class="about__img" src="img/about-img.png" alt="decorative element">
         </div>
-        <img class="about__img" src="img/about-img.png" alt="decorative element">
     </section>
     <section class="solutions">
         <div class="container">
             <h2 class="solutions__title">С чем мы работаем:</h2>
             <div class="solutions__main">
-                <div class="solutions__main-tag">Мобильные решения</div>
-                <h3>Корпоративный мобильный портал</h3>
-                <p>
-                    Единая точка входа для ваших сотрудников.
-                    Узнавайте новости, пишите коллегам и обменивайтесь документами,
-                    находите информацию и получайте ответы через чат-бот.
-                </p>
-                <p>
-                    Персональный помощник с искусственным интеллектом поможет вам
-                    с решением любых корпоративных задач.
-                </p>
-                <button class="promo__button custom-button_rounded custom-button_rounded_mini">Заказать демо</button>
+                <div>
+                    <div class="solutions__main-tag">Мобильные решения</div>
+                    <h3>Корпоративный мобильный портал</h3>
+                    <p class="text">
+                        Единая точка входа для ваших сотрудников.
+                        Узнавайте новости, пишите коллегам и обменивайтесь документами,
+                        находите информацию и получайте ответы через чат-бот.
+                    </p>
+                    <p class="text">
+                        Персональный помощник с искусственным интеллектом поможет вам
+                        с решением любых корпоративных задач.
+                    </p>
+                    <button class="custom-button_rounded custom-button_rounded_mini">Заказать демо</button>
+                </div>
                 <div class="solutions__imgs">
                     <img src="img/mockup.png" alt="phone image">
                     <img src="img/mockup2.png" alt="phone image">
@@ -105,20 +106,20 @@
             <div class="solutions__secondary">
                 <div class="solutions__secondary-item">
                     <h3>UX-аудит и дизайн</h3>
-                    <p>
+                    <p class="text">
                         Проектируем решения с учетом ваших задач и требований.
                         Проводим UX-исследование любых мобильных и web-приложений.
                     </p>
-                    <button class="header__order custom-button">Подробнее</button>
+                    <button class="solutions__secondary-btn custom-button">Подробнее</button>
                     <img src="img/solutions-img.png" alt="design element">
                 </div>
                 <div class="solutions__secondary-item">
                     <h3>Разработка под ключ</h3>
-                    <p>
+                    <p class="text">
                         Создаем мультиплатформенные ИТ-решения учитывая задачи вашего бизнеса.
                         Начинаем с концепции и заканчиваем готовым продуктом.
                     </p>
-                    <button class="header__order custom-button">Подробнее</button>
+                    <button class="solutions__secondary-btn custom-button">Подробнее</button>
                     <img src="img/solutions-img-2.png" alt="design element">
                 </div>
             </div>
@@ -132,8 +133,8 @@
                     <div class="qualities__img">
                         <img src="/img/target.png" alt="target">
                     </div>
-                    <h3>Работу<br>на результат</h3>
-                    <p>
+                    <h4>Работу<br>на результат</h4>
+                    <p class="text">
                         Фокусируем внимание на задачах вашего бизнеса и предлагаем максимально
                         подходящее готовое решение или разрабатываем новое
                     </p>
@@ -142,8 +143,8 @@
                     <div class="qualities__img">
                         <img src="/img/lock.png" alt="lock">
                     </div>
-                    <h3>Безопасность</h3>
-                    <p>
+                    <h4>Безопасность</h4>
+                    <p class="text">
                         Мы гарантируем, что наши решения будут защищены от киберугроз в соответствии
                         с требованиями регуляторов в сфере информационной безопасности
                     </p>
@@ -152,8 +153,8 @@
                     <div class="qualities__img">
                         <img src="/img/thumbs-up.png" alt="thumbs up">
                     </div>
-                    <h3>Поддержку</h3>
-                    <p>
+                    <h4>Поддержку</h4>
+                    <p class="text">
                         Оказываем техническую поддержку и даем гарантию на все наши разработки.
                         50+ сертифицированных экспертов технического и функционального направления
                     </p>
@@ -162,8 +163,8 @@
                     <div class="qualities__img">
                         <img src="/img/toggle-switches.png" alt="toggle switches">
                     </div>
-                    <h3>Технологии</h3>
-                    <p>
+                    <h4>Технологии</h4>
+                    <p class="text">
                         Используем в наших решениях аналитику данных,
                         ИИ и популярные стеки технологий, чтобы создавать  эффективные решения
                     </p>
@@ -174,22 +175,35 @@
     </section>
     <section class="consultation" id="consultation">
         <div class="container">
-            <img class="consultation__img" src="img/airplane.png" alt="airplane image">
             <div class="consultation__wrapper">
                 <h2 class="consultation__title">Предлагаем обсудить ваш проект</h2>
                 <form id="consultation-form" action="#" class="consultation__form">
-                    <input name="name" placeholder="Имя" type="text" required>
-                    <input name="phone" placeholder="Телефон" type="tel">
-                    <input name="email" placeholder="Email" type="email" required>
+                    <div class="form__field">
+                        <input class="form__input" id="name" name="name" type="text" placeholder=" ">
+                        <label class="form__label" for="name">Имя</label>
+                    </div>
+                    <div class="form__field">
+                        <input class="form__input" id="phone" name="phone" type="text" placeholder=" ">
+                        <label class="form__label" for="phone" >Телефон</label>
+                        <div class="form__error-label">
+                            <img src="/icons/error.svg" alt="error">
+                        </div>
+                    </div>
+                    <div class="form__field">
+                        <input class="form__input" id="email" name="email" type="text" placeholder=" ">
+                        <label class="form__label" for="email">Email</label>
+                        <div class="form__error-label">
+                            <img src="/icons/error.svg" alt="error">
+                        </div>
+                    </div>
 
-                    <button class="button button_submit button_mt10" type="submit">Отправить</button>
+                    <button disabled class="button consultation__btn" type="submit">Отправить</button>
                 </form>
                 <p class="consultation__text">
-                    Согласен на обработку
-                    <a href="#" >персональных данных</a>
-                    и ознакомлен с
-                    <a href="#" >политикой конфиденциальности</a>
-                    сайта</p>
+                    Оставляя заявку, вы даете согласие на обработку ваших
+                    <a href="#" >персональных данных</a>.
+                </p>
+                <img class="consultation__img" src="img/airplane.png" alt="airplane image">
             </div>
         </div>
     </section>
@@ -207,7 +221,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="talk__text">
+                <p class="talk__text text">
                     Проект TerraTalk –– это  регулярные эфиры на тему науки,
                     здоровья и саморазвития с популярными YouTube-спикерами.
                     Чтобы наши коллеги, партнеры и друзья могли развивается не только
@@ -220,13 +234,13 @@
                     <img src="img/terra-talk/terra-talk-1.png" alt="TerraTalk card">
                     <img src="img/terra-talk/terra-talk-2.png" alt="TerraTalk card">
                     <img src="img/terra-talk/terra-talk-3.png" alt="TerraTalk card">
-                    <img src="img/terra-talk/terra-talk-1.png" alt="TerraTalk card">
-                    <img src="img/terra-talk/terra-talk-2.png" alt="TerraTalk card">
+                    <img src="img/terra-talk/terra-talk-4.png" alt="TerraTalk card">
+                    <img src="img/terra-talk/terra-talk-5.png" alt="TerraTalk card">
                 </div>
             </div>
         </div>
     </section>
-    <section class="article">
+    <section class="article" id="article">
         <div class="container">
             <h2 class="article__title">Мы постоянно изучаем рынок</h2>
             <div class="article__wrapper">
@@ -242,8 +256,8 @@
                         </div>
                     </div>
                     <h3 class="article__subtitle">Как мобильные решения изменили корпоративную культуру</h3>
-                    <p class="article__text">Благодаря нашим продуктам вы забудете, что такое «неэффективные коммуникации».</p>
-                    <button class="article__button">Подробнее</button>
+                    <p class="article__text text">Благодаря нашим продуктам вы забудете, что такое «неэффективные коммуникации».</p>
+                    <button class="article__button">Посмотреть</button>
                 </div>
                 <div class="article__img-wrapper">
                     <img src="img/mockup3.png" alt="phone image">
@@ -283,10 +297,10 @@
                         <h3>О нас</h3>
                         <ul class="footer__about">
                             <li>
-                                <a href="#">О компании</a>
+                                <a href="#about">О компании</a>
                             </li>
                             <li>
-                                <a href="#">Исследования</a>
+                                <a href="#article">Исследования</a>
                             </li>
                             <li>
                                 <a href="#">Реквизиты ООО «ТерраЛинк Разработка»</a>
@@ -301,6 +315,53 @@
             </div>
         </div>
     </footer>
+    <div class="modal__wrapper">
+        <div class="modal__inner">
+            <h2>Предлагаем обсудить ваш проект</h2>
+            <form id="modal-form" action="#" class="modal__form">
+                <div class="modal__input-block">
+                    <div class="form__field">
+                        <input class="form__input" id="modal-name" name="name" type="text" placeholder=" ">
+                        <label class="form__label" for="modal-name">Имя</label>
+                    </div>
+                    <div class="form__field">
+                        <input class="form__input" id="modal-company" name="company" type="text" placeholder=" ">
+                        <label class="form__label" for="modal-company">Компания</label>
+                    </div>
+                </div>
+                <div class="modal__input-block">
+                    <div class="form__field">
+                        <input class="form__input" id="modal-phone" name="phone" type="text" placeholder=" ">
+                        <label class="form__label" for="modal-phone" >Телефон</label>
+                        <div class="form__error-label">
+                            <img src="/icons/error.svg" alt="error">
+                        </div>
+                    </div>
+                    <div class="form__field">
+                        <input class="form__input" id="modal-email" name="email" type="text" placeholder=" ">
+                        <label class="form__label" for="modal-email">Email</label>
+                        <div class="form__error-label">
+                            <img src="/icons/error.svg" alt="error">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__input-block">
+                    <div class="form__field">
+                        <textarea class="form__input" id="modal-description" name="description" type="text" placeholder=" "></textarea>
+                        <label class="form__label" for="modal-description" >Опишите задачу (по желанию)</label>
+                    </div>
+                </div>
+
+                <button disabled class="custom-button_rounded custom-button_rounded_mini form__btn" type="submit">Отправить</button>
+                <p>
+                    Оставляя заявку, вы даете согласие на обработку ваших
+                    <a href="#">персональных данных</a> и ознакомлен(а) с
+                    <a href="#">политикой конфиденциальности</a> сайта.
+                </p>
+            </form>
+            <img src="icons/close.svg" alt="close" class="close">
+        </div>
+    </div>
 <script type="module" src="js/script.js"></script>
 </body>
 </html>
