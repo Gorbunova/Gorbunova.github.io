@@ -171,12 +171,19 @@
 
 @media (max-width: 600px) {
     .promo__header button {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .promo__inner h1 {
-        padding: 0 20px;
+        padding: 0 24px;
+        font-size: 32px;
+        line-height: 42px;
     }
+
+    .promo__inner {
+        gap: 32px;
+    }
+
     .promo__header button {
         right: 16px;
     }
@@ -191,5 +198,6 @@
 
     .promo__stack {
         margin-bottom: 30px;
+        row-gap: 24px;
     }
 }
