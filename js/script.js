@@ -12,6 +12,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initTypewrite();
 
+    const navBtn = document.querySelector('.nav-toggle');
+    const navClose = document.querySelector('.nav__close');
+    navBtn?.addEventListener('click', (e) => {
+        if (navBtn.classList.contains('open') && e.target.classList.contains('nav-toggle__humburger')) {
+            closeMobileNav();
+        }
+        else {
+            openMobileNav();
+        }
+    })
+    navClose?.addEventListener('click', (e) => {
+        closeMobileNav();
+    })
+
+    const navItems = document.querySelectorAll('.nav nav ul li');
+    navItems?.forEach(navItem => {
+        navItem.addEventListener('click', closeMobileNav);
+    });
+
+    const navTypewrite = document.querySelector('.nav .typewrite')
+    navTypewrite.addEventListener('click', () => {
+        closeMobileNav();
+        setTimeout(() => {
+            showModal();
+        }, 500);
+
+    });
+/*     const navCloseBtn = document.querySelector('.nav__close');
+    navCloseBtn?.addEventListener('click', () => {
+        navBtn.classList.remove('filled');
+    }) */
+
     const inputs = document.querySelectorAll('.consultation .form__input')
     inputs.forEach(input => input.addEventListener('input', () => {
         if (input.parentElement.classList.contains('error')) input.parentElement.classList.remove('error');
@@ -242,6 +274,28 @@ const showModal = () => {
 
 const hideModal = () => {
     document.querySelector('.modal__wrapper').classList.remove('active');
+    document.body.classList.remove('no-scroll');
+};
+
+const openMobileNav = () => {
+    const navBtn = document.querySelector('.nav-toggle');
+    const navContent = document.querySelector('.nav');
+
+    navBtn.classList.add('open');
+    navContent.classList.add('active');
+    navContent.classList.add('shown');
+    document.body.classList.add('no-scroll');
+};
+
+const closeMobileNav = () => {
+    const navBtn = document.querySelector('.nav-toggle');
+    const navContent = document.querySelector('.nav');
+
+    navBtn.classList.remove('open');
+    navContent.classList.remove('active');
+    setTimeout(() => {
+        navContent.classList.remove('shown');
+    }, 500);
     document.body.classList.remove('no-scroll');
 };
 

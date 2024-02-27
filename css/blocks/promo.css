@@ -85,7 +85,7 @@
     align-items: center;
     margin-top: 130px;
     gap: 64px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .promo__inner h1 {
@@ -137,6 +137,10 @@
 @media (max-width: 1200px) {
     .header__nav {
         display: none;
+    }
+
+    .promo__header button {
+        right: 100px;
     }
 }
 

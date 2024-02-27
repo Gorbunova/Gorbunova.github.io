@@ -1,0 +1,161 @@
+.nav-toggle {
+    display: none;
+    position: fixed;
+    right: 24px;
+    top: 77px;
+}
+
+.nav-toggle__overlay {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--color-light);
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    transition: transform .5s;
+}
+
+.nav-toggle.open .nav-toggle__overlay {
+    transform: scale(100);
+}
+
+.nav-toggle.open .nav-toggle__humburger div:first-child {
+    transform: rotate(45deg) translate(3px, 3px);
+}
+
+.nav-toggle.open .nav-toggle__humburger div:last-child {
+    transform: rotate(-45deg) translate(3px, -2.5px);
+}
+
+.nav-toggle__humburger {
+    position: absolute;
+    left: -56px;
+    top: -20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-toggle__humburger div {
+    width: 17px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: transform .5s;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    z-index: -2;
+    display: flex;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.nav.shown {
+    z-index: 3;
+}
+
+.nav.active {
+    opacity: 1;
+}
+
+.nav__close {
+    cursor: pointer;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 32px;
+    top: 37px;
+}
+
+.nav__logo {
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    opacity: 0;
+    transition: opacity .7s;
+}
+
+.nav.active .nav__logo {
+    opacity: 1;
+}
+
+.nav nav {
+    position: absolute;
+    height: 100%;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all .7s;
+}
+
+.nav nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+}
+
+.nav nav ul li a {
+    font-size: 28px;
+    line-height: 59px;
+    color: var(--color-text);
+}
+
+.nav nav ul li a:active {
+    color: #A9452B;
+}
+
+.nav.active nav {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.nav .typewrite {
+    position: absolute;
+    bottom: 64px;
+    right: 32px;
+    font-size: 13px;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all .7s;
+}
+
+.nav.active .typewrite {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.nav .typewrite span {
+    font-family: 'Inter';
+}
+
+@media (max-width: 1200px) {
+    .nav-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-toggle {
+        right: 16px;
+        top: 58px;
+    }
+}
