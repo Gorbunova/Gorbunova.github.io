@@ -46,7 +46,7 @@
 }
 
 .header__logo img {
-    height: 64px;
+    height: 72px;
 }
 
 .promo__img {
@@ -62,6 +62,7 @@
 .promo .header__nav ul {
     display: flex;
     gap: 42px;
+    margin-right: 90px;
 }
 
 .promo .header__nav a {
@@ -171,7 +172,7 @@
 
 @media (max-width: 600px) {
     .promo__header button {
-        font-size: 13px;
+        display: none;
     }
 
     .promo__inner h1 {

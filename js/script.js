@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     init100vh();
-    sliderInit();
+    setTimeout(() => {
+        sliderInit();
+    }, 250);
 
     document.querySelector('.promo__header button').addEventListener('click', showModal);
     document.querySelector('.promo__wrapper button').addEventListener('click', showModal);
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (input.parentElement.classList.contains('error')) input.parentElement.classList.remove('error');
         const allInputs = Array.from(document.querySelectorAll('.consultation  .form__input'));
         const allInputsLengths = allInputs.map(input => input.value.length);
-        console.log(allInputsLengths)
+
         if (!allInputsLengths.includes(0)) document.querySelector('.consultation__btn').removeAttribute("disabled");
         else document.querySelector('.consultation__btn').setAttribute("disabled", true);
     }))
@@ -61,10 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     inputPhone.addEventListener('input', (e) => {
         e.preventDefault();
-        console.log(e)
-        console.log(getpos(inputPhone))
         phoneVal = phoneVal.replace('_', e.data)
-        console.log(phoneVal)
         inputPhone.value = phoneVal
         /* inputPhone.value = inputPhone.value.replace('_', e.data) */
     });
@@ -75,10 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const inputEmail = document.querySelector('#email');
         if (!inputEmail.value.match(emailRegexp)) inputEmail.parentElement.classList.add('error');
         else {
-            document.querySelector('.consultation__img').style.transform = 'translate(-364px, -200px) scale(0.5)';
+            const transform = window.innerWidth > 992 ? 'translate(-364px, -200px) scale(0.5)' : 'translate(-182px, -100px) scale(0.5)'
+            document.querySelector('.consultation__img').style.transform = transform;
             setTimeout(() => {
                 document.querySelector('.consultation__img').style.opacity = '0';
-            }, 1000);
+            }, 350);
             setTimeout(() => {
                 document.querySelector('.consultation__wrapper').innerHTML = `
             <div class="consultation__sended">
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Скоро наш менеджер свяжется с вам для уточнения деталей</p>
             </div>
         `;
-            }, 2000); 
+            }, 700);
         }
     })
 })
@@ -194,10 +194,10 @@ function getpos(el) {
 const sliderInit = () => {
     let sliderOffset = 0;
     const slider = document.querySelector('.talk__slider-inner');
-    const cardWidth = slider.children[0].clientWidth;
+    const cardWidth = slider.querySelector('img').clientWidth;
     const cardCount = slider.children.length;
-    const sliderWidth = cardCount * cardWidth + (cardCount - 1) * 24;
-    const maxSliderOffset = sliderWidth - slider.clientWidth;
+    const sliderWidth = cardCount * cardWidth + (cardCount - 1) * 20;
+    const maxSliderOffset = sliderWidth - slider.clientWidth + 20;
 
     let isEnableClick = true;
 
@@ -214,7 +214,7 @@ const sliderInit = () => {
 
         if (sliderOffset === 0) return;
         rightBtn.classList.add(activeClass);
-        sliderOffset -= cardWidth + 24;
+        sliderOffset -= cardWidth + 20;
         slider.style = `transform: translateX(-${sliderOffset}px)`;
         if (sliderOffset === 0) leftBtn.classList.remove(activeClass);
     });
@@ -229,7 +229,7 @@ const sliderInit = () => {
 
         if ((sliderOffset + cardWidth) > maxSliderOffset) return;
         leftBtn.classList.add(activeClass);
-        sliderOffset += cardWidth + 24;
+        sliderOffset += cardWidth + 20;
         slider.style = `transform: translateX(-${sliderOffset}px)`;
         if ((sliderOffset + cardWidth) > maxSliderOffset) rightBtn.classList.remove(activeClass);
     });

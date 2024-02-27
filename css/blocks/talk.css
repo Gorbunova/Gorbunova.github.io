@@ -42,6 +42,10 @@
     transition: transform .5s;
 }
 
+.talk__slider-inner a {
+    display: contents;
+}
+
 .talk__slider-inner img {
     width: calc((100% - 40px) / 3);
 }

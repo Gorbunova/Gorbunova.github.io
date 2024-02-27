@@ -1,6 +1,5 @@
 .consultation {
     padding: 120px 0;
-    overflow: hidden;
 }
 
 .consultation__img {
@@ -8,7 +7,7 @@
     top: -125px;
     right: 60px;
     opacity: 1;
-    transition: all 2s;
+    transition: all .7s;
 }
 
 .consultation__wrapper {
@@ -150,7 +149,7 @@
 
     .consultation__img {
         top: -47px;
-        right: -24px;
+        right: 0;
         height: 134px;
     }
 
