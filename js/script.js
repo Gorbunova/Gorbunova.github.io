@@ -124,21 +124,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const initFixedHeader = () => {
     let timeout = null;
+    let lastScrollTop = 0;
+
     const startTimeout = () => {
         timeout = setTimeout(() => {
             if (document.querySelector('.solutions').getBoundingClientRect().top <= 0) document.querySelector('.fixed-header').classList.add('active');
         }, 2000);
     };
     startTimeout();
-    document.addEventListener('wheel', (e) => {
-        clearTimeout(timeout);
-        startTimeout();
-        if (e.wheelDeltaY > 0 && document.querySelector('.solutions').getBoundingClientRect().top <= 0 && !document.querySelector('.modal__wrapper').classList.contains('active')) {
-            document.querySelector('.fixed-header').classList.add('active');
-      } else if (!document.querySelector('.mobile-nav__toggle').classList.contains('open')) {
+
+    window.addEventListener('scroll', () => { //touchmove works for iOS, I don't know if Android supports it
+        const top = window.scrollY;
+
+        if (lastScrollTop > top) scrollPage(timeout, startTimeout);
+        else scrollPage(timeout, startTimeout, true);
+
+        lastScrollTop = top;
+    });
+}
+
+const scrollPage = (timeout, startTimeout, isDown = false) => {
+    clearTimeout(timeout);
+    startTimeout();
+    if (!isDown && document.querySelector('.solutions').getBoundingClientRect().top <= 0 && !document.querySelector('.modal__wrapper').classList.contains('active')) {
+        document.querySelector('.fixed-header').classList.add('active');
+    } else if (!document.querySelector('.mobile-nav__toggle').classList.contains('open')) {
         document.querySelector('.fixed-header').classList.remove('active');
-      }
-    })
+    }
 }
 
 const initTypewrite = () => {
@@ -171,10 +183,9 @@ const initTypewrite = () => {
         if (this.isDeleting) { delta /= 2; }
 
         if (!this.isDeleting && this.txt === fullTxt) {
-            console.log(this.el.querySelector('.wrap'))
-        this.el.querySelector('.wrap').classList.remove('wrap_active')
-        delta = this.period;
-        this.isDeleting = true;
+            this.el.querySelector('.wrap').classList.remove('wrap_active')
+            delta = this.period;
+            this.isDeleting = true;
         } else if (this.isDeleting && this.txt === '') {
         this.isDeleting = false;
         this.loopNum++;
