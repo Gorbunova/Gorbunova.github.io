@@ -9,8 +9,39 @@
 </head>
 
 <body>
-    <div class="nav">
-        <div class="nav__logo">
+    <div class="fixed-header">
+        <a href="#" class="fixed-header__logo">
+            <img src="icons/logo.png" alt="logo">
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#about">О компании</a>
+                </li>
+                <li>
+                    <a href="#">Продукты</a>
+                </li>
+                <li>
+                    <a href="#article">Исследования</a>
+                </li>
+                <li>
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="custom-button typewrite" data-period="10000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+            <span class="wrap">Начать проект</span>
+        </button>
+        <div class="mobile-nav__toggle">
+            <div class="mobile-nav__overlay"></div>
+            <div class="mobile-nav__humburger">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-nav-content">
+        <div class="mobile-nav-content__logo">
             <img src="icons/logo.png" alt="logo terralink">
         </div>
         <nav>
@@ -29,7 +60,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="nav__close"></div>
+        <div class="mobile-nav-content__close"></div>
         <button class="custom-button typewrite" data-period="10000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
             <span class="wrap">Начать проект</span>
         </button>
@@ -61,9 +92,9 @@
             <button class="custom-button typewrite" data-period="10000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
                 <span class="wrap">Начать проект</span>
             </button>
-            <div class="nav-toggle">
-                <div class="nav-toggle__overlay"></div>
-                <div class="nav-toggle__humburger">
+            <div class="mobile-nav__toggle">
+                <div class="mobile-nav__overlay"></div>
+                <div class="mobile-nav__humburger">
                     <div></div>
                     <div></div>
                 </div>

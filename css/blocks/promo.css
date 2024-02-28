@@ -37,12 +37,8 @@
     transform: translateY(-50%);
 }
 
-.promo .wrap_active {
+.wrap_active {
     border-right: 0.08em solid #fff;
-}
-
-.promo__header button span {
-    font-family: 'Inter';
 }
 
 .header__logo img {
@@ -124,21 +120,12 @@
 }
 
 @media (max-width: 1400px) {
-    .promo .header__nav ul {
-        gap: 20px;
-        margin-right: 155px;
-    }
-
     .promo__stack {
         min-width: 892px;
     }
 }
 
 @media (max-width: 1200px) {
-    .header__nav {
-        display: none;
-    }
-
     .promo__header button {
         right: 100px;
     }

@@ -1,44 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
     init100vh();
-    setTimeout(() => {
-        sliderInit();
-    }, 250);
+    initFixedHeader();
+    initTypewrite();
+    setTimeout(sliderInit, 250);
 
-    document.querySelector('.promo__header button').addEventListener('click', showModal);
-    document.querySelector('.promo__wrapper button').addEventListener('click', showModal);
+    document.querySelectorAll('.typewrite').forEach(btn => {
+        btn.addEventListener('click', showModal);
+    })
     document.querySelector('.modal__wrapper').addEventListener('click', (e) => {
         if (!document.querySelector('.modal__inner').contains(e.target) || e.target.classList.contains('close')) hideModal();
     });
 
-    initTypewrite();
-
-    const navBtn = document.querySelector('.nav-toggle');
-    const navClose = document.querySelector('.nav__close');
-    navBtn?.addEventListener('click', (e) => {
-        if (navBtn.classList.contains('open') && e.target.classList.contains('nav-toggle__humburger')) {
-            closeMobileNav();
+    const navBtn = document.querySelectorAll('.mobile-nav__toggle');
+    navBtn?.forEach(btn => btn.addEventListener('click', (e) => {
+        if (btn.classList.contains('open') && e.target.classList.contains('mobile-nav__humburger')) {
+            closeMobileNav(btn);
         }
         else {
-            openMobileNav();
+            openMobileNav(btn);
         }
-    })
-    navClose?.addEventListener('click', (e) => {
-        closeMobileNav();
-    })
+        const navClose = document.querySelector('.mobile-nav-content__close');
+        navClose?.addEventListener('click', (e) => {
+            closeMobileNav(btn);
+        })
 
-    const navItems = document.querySelectorAll('.nav nav ul li');
-    navItems?.forEach(navItem => {
-        navItem.addEventListener('click', closeMobileNav);
-    });
+        const navItems = document.querySelectorAll('.mobile-nav-content nav ul li a');
+        navItems?.forEach(navItem => {
+            navItem.addEventListener('click', () => closeMobileNav(btn));
+        });
 
-    const navTypewrite = document.querySelector('.nav .typewrite')
-    navTypewrite.addEventListener('click', () => {
-        closeMobileNav();
-        setTimeout(() => {
-            showModal();
-        }, 500);
+        const navTypewrite = document.querySelector('.mobile-nav-content .typewrite')
+        navTypewrite.addEventListener('click', () => {
+            closeMobileNav(btn);
+            setTimeout(() => {
+                showModal();
+            }, 500);
+        });
+    }));
 
-    });
 /*     const navCloseBtn = document.querySelector('.nav__close');
     navCloseBtn?.addEventListener('click', () => {
         navBtn.classList.remove('filled');
@@ -123,12 +122,24 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
-/* const phoneValidate = () => {
-    const phoneInput = document.querySelector('input[name=phone]');
-    phoneInput.addEventListener('input', (e) => {
-        phoneInput.value = (e.target.value.replace(/[^+ -\d]/g, ''));
-    });
-}; */
+const initFixedHeader = () => {
+    let timeout = null;
+    const startTimeout = () => {
+        timeout = setTimeout(() => {
+            if (document.querySelector('.solutions').getBoundingClientRect().top <= 0) document.querySelector('.fixed-header').classList.add('active');
+        }, 2000);
+    };
+    startTimeout();
+    document.addEventListener('wheel', (e) => {
+        clearTimeout(timeout);
+        startTimeout();
+        if (e.wheelDeltaY > 0 && document.querySelector('.solutions').getBoundingClientRect().top <= 0 && !document.querySelector('.modal__wrapper').classList.contains('active')) {
+            document.querySelector('.fixed-header').classList.add('active');
+      } else if (!document.querySelector('.mobile-nav__toggle').classList.contains('open')) {
+        document.querySelector('.fixed-header').classList.remove('active');
+      }
+    })
+}
 
 const initTypewrite = () => {
     var TxtType = function(el, toRotate, period) {
@@ -151,7 +162,7 @@ const initTypewrite = () => {
         this.txt = fullTxt.substring(0, this.txt.length + 1);
         }
 
-        const dopclass = document.querySelector('.wrap').classList.contains('.wrap_active') ? '' : 'wrap_active';
+        const dopclass = this.el.querySelector('.wrap').classList.contains('.wrap_active') ? '' : 'wrap_active';
         this.el.innerHTML = `<span class="wrap ${dopclass}">`+this.txt+'</span>';
 
         var that = this;
@@ -160,7 +171,8 @@ const initTypewrite = () => {
         if (this.isDeleting) { delta /= 2; }
 
         if (!this.isDeleting && this.txt === fullTxt) {
-        document.querySelector('.wrap').classList.remove('wrap_active')
+            console.log(this.el.querySelector('.wrap'))
+        this.el.querySelector('.wrap').classList.remove('wrap_active')
         delta = this.period;
         this.isDeleting = true;
         } else if (this.isDeleting && this.txt === '') {
@@ -188,7 +200,7 @@ const initTypewrite = () => {
 
 function getpos(el) {
     var pos, sel;
- 
+
     // Internet Explorer
     if (document.selection) {
         el.focus();
@@ -270,6 +282,7 @@ const sliderInit = () => {
 const showModal = () => {
     document.querySelector('.modal__wrapper').classList.add('active');
     document.body.classList.add('no-scroll');
+    document.querySelector('.fixed-header').classList.remove('active');
 };
 
 const hideModal = () => {
@@ -277,21 +290,19 @@ const hideModal = () => {
     document.body.classList.remove('no-scroll');
 };
 
-const openMobileNav = () => {
-    const navBtn = document.querySelector('.nav-toggle');
-    const navContent = document.querySelector('.nav');
+const openMobileNav = (btn) => {
+    const navContent = document.querySelector('.mobile-nav-content');
 
-    navBtn.classList.add('open');
+    btn.classList.add('open');
     navContent.classList.add('active');
     navContent.classList.add('shown');
     document.body.classList.add('no-scroll');
 };
 
-const closeMobileNav = () => {
-    const navBtn = document.querySelector('.nav-toggle');
-    const navContent = document.querySelector('.nav');
+const closeMobileNav = (btn) => {
+    const navContent = document.querySelector('.mobile-nav-content');
 
-    navBtn.classList.remove('open');
+    btn.classList.remove('open');
     navContent.classList.remove('active');
     setTimeout(() => {
         navContent.classList.remove('shown');
