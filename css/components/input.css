@@ -11,11 +11,7 @@
 }
 
 .form__field.error {
-    border: 1px solid #ED6F6F;
-}
-
-.form__field.error {
-    border: 1px solid #ED6F6F;
+    border: 1px solid #ED6F6F !important;
 }
 
 .form__field input, .form__field textarea {
@@ -30,6 +26,7 @@
 
 .form__field textarea {
    min-height: 100px;
+   margin-top: 16px;
 }
 
 .form__field input:focus-visible, .form__field textarea:focus-visible {
@@ -51,10 +48,7 @@
 .form__input:focus ~ .form__label,
 .form__input:not(:placeholder-shown) ~ .form__label {
   transform: translateY(-12px) scale(0.75);
-}
-
-.form__input:focus ~ .form__label {
-    color: #0000008e;
+  color: #0000008e;
 }
 
 .form__error-label {

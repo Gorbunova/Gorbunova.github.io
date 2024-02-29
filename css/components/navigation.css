@@ -79,14 +79,14 @@
     position: absolute;
     height: 40px;
     width: 40px;
-    right: 32px;
-    top: 37px;
+    right: 40px;
+    top: 56px;
 }
 
 .mobile-nav-content__logo {
     position: absolute;
-    top: 24px;
-    left: 16px;
+    top: 40px;
+    left: 44px;
     opacity: 0;
     transition: opacity .7s;
 }
@@ -187,6 +187,7 @@
 
 .fixed-header nav ul li a {
     color: var(--color-text);
+    font-family: 'Inter';
 }
 
 .fixed-header .typewrite {
@@ -227,9 +228,19 @@
 }
 
 @media (max-width: 600px) {
-    .promo__header .mobile-nav__toggle {
+    .mobile-nav__toggle {
         right: 16px;
         top: 38px;
+    }
+
+    .mobile-nav-content__close {
+        right: 32px;
+        top: 42px;
+    }
+
+    .mobile-nav-content__logo {
+        top: 24px;
+        left: 16px;
     }
 
     .fixed-header {

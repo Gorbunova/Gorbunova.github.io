@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main-page/style.css">
 
     <title>TerraLink</title>
 </head>
@@ -29,7 +29,7 @@
                 </li>
             </ul>
         </nav>
-        <button class="custom-button typewrite" data-period="10000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
             <span class="wrap">Начать проект</span>
         </button>
         <div class="mobile-nav__toggle">
@@ -61,14 +61,14 @@
             </ul>
         </nav>
         <div class="mobile-nav-content__close"></div>
-        <button class="custom-button typewrite" data-period="10000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
             <span class="wrap">Начать проект</span>
         </button>
     </div>
     <section class="promo">
         <div class="promo__overlay"></div>
-        <header class="promo__header">
-            <div class="promo__header-wrapper">
+        <header class="header">
+            <div class="header-wrapper">
                 <a href="#" class="header__logo">
                     <img src="icons/logo-light.png" alt="logo">
                 </a>
@@ -89,7 +89,7 @@
                     </ul>
                 </nav>
             </div>
-            <button class="custom-button typewrite" data-period="10000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+            <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
                 <span class="wrap">Начать проект</span>
             </button>
             <div class="mobile-nav__toggle">
@@ -242,29 +242,32 @@
                 <h2 class="consultation__title">Предлагаем обсудить ваш проект</h2>
                 <form id="consultation-form" action="#" class="consultation__form">
                     <div class="form__field">
-                        <input class="form__input" id="name" name="name" type="text" placeholder=" ">
-                        <label class="form__label" for="name">Имя</label>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input" id="phone" name="phone" type="text" placeholder=" ">
-                        <label class="form__label" for="phone" >Телефон</label>
+                        <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
+                        <label class="form__label consultation__label" for="name">Имя</label>
                         <div class="form__error-label">
                             <img src="/icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
-                        <input class="form__input" id="email" name="email" type="text" placeholder=" ">
-                        <label class="form__label" for="email">Email</label>
+                        <input class="form__input form__input-phone consultation__input" id="phone" name="phone" type="tel" placeholder=" ">
+                        <label class="form__label consultation__label" for="phone" >Телефон</label>
+                        <div class="form__error-label">
+                            <img src="/icons/error.svg" alt="error">
+                        </div>
+                    </div>
+                    <div class="form__field">
+                        <input class="form__input form__input-email consultation__input" id="email" name="email" type="text" placeholder=" ">
+                        <label class="form__label consultation__label" for="email">Email</label>
                         <div class="form__error-label">
                             <img src="/icons/error.svg" alt="error">
                         </div>
                     </div>
 
-                    <button disabled class="button consultation__btn" type="submit">Отправить</button>
+                    <button disabled class="consultation__btn" type="submit">Отправить</button>
                 </form>
                 <p class="consultation__text">
                     Оставляя заявку, вы даете согласие на обработку ваших
-                    <a href="#" >персональных данных</a>.
+                    <a href="#" >персональных&nbspданных</a>.
                 </p>
                 <img class="consultation__img" src="img/airplane.png" alt="airplane image">
             </div>
@@ -394,8 +397,11 @@
             <form id="modal-form" action="#" class="modal__form">
                 <div class="modal__input-block">
                     <div class="form__field">
-                        <input class="form__input" id="modal-name" name="name" type="text" placeholder=" ">
+                        <input class="form__input form__input-name" id="modal-name" name="name" type="text" placeholder=" ">
                         <label class="form__label" for="modal-name">Имя</label>
+                        <div class="form__error-label">
+                            <img src="/icons/error.svg" alt="error">
+                        </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input" id="modal-company" name="company" type="text" placeholder=" ">
@@ -404,14 +410,14 @@
                 </div>
                 <div class="modal__input-block">
                     <div class="form__field">
-                        <input class="form__input" id="modal-phone" name="phone" type="text" placeholder=" ">
+                        <input class="form__input form__input-phone" id="modal-phone" name="phone" type="tel" placeholder=" ">
                         <label class="form__label" for="modal-phone" >Телефон</label>
                         <div class="form__error-label">
                             <img src="/icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
-                        <input class="form__input" id="modal-email" name="email" type="text" placeholder=" ">
+                        <input class="form__input form__input-email" id="modal-email" name="email" type="text" placeholder=" ">
                         <label class="form__label" for="modal-email">Email</label>
                         <div class="form__error-label">
                             <img src="/icons/error.svg" alt="error">
@@ -425,10 +431,10 @@
                     </div>
                 </div>
 
-                <button disabled class="custom-button_rounded custom-button_rounded_mini form__btn" type="submit">Отправить</button>
+                <button class="consultation__btn custom-button_rounded custom-button_rounded_mini form__btn" type="submit">Отправить</button>
                 <p>
                     Оставляя заявку, вы даете согласие на обработку ваших
-                    <a href="#">персональных данных</a> и ознакомлен(а) с
+                    <a href="#">персональных&nbspданных</a> и ознакомлен(а) с
                     <a href="#">политикой конфиденциальности</a> сайта.
                 </p>
             </form>
@@ -436,5 +442,6 @@
         </div>
     </div>
 <script type="module" src="js/script.js"></script>
+<script type="module" src="js/main-page.js"></script>
 </body>
 </html>

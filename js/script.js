@@ -1,28 +1,33 @@
-document.addEventListener('DOMContentLoaded', function() {
+import { initConsultationInputs, initConsultationBtn } from "./consultation.js";
+
+document.addEventListener('DOMContentLoaded', () => {
     init100vh();
     initFixedHeader();
     initTypewrite();
-    setTimeout(sliderInit, 250);
+    initMobileNav();
 
-    document.querySelectorAll('.typewrite').forEach(btn => {
+    document.querySelectorAll('.typewrite:not(.mobile-nav-content .typewrite)').forEach(btn => {
         btn.addEventListener('click', showModal);
     })
-    document.querySelector('.modal__wrapper').addEventListener('click', (e) => {
-        if (!document.querySelector('.modal__inner').contains(e.target) || e.target.classList.contains('close')) hideModal();
-    });
 
+    document.querySelector('.modal__wrapper').addEventListener('click', (e) => {
+        if (!document.querySelector('.modal__inner').contains(e.target)
+            || e.target.classList.contains('close')
+        ) hideModal();
+    });
+})
+
+const initMobileNav = () => {
     const navBtn = document.querySelectorAll('.mobile-nav__toggle');
     navBtn?.forEach(btn => btn.addEventListener('click', (e) => {
-        if (btn.classList.contains('open') && e.target.classList.contains('mobile-nav__humburger')) {
-            closeMobileNav(btn);
-        }
-        else {
-            openMobileNav(btn);
-        }
+        const isNavOpened = btn.classList.contains('open');
+        const isCloseBtn = e.target.classList.contains('mobile-nav__humburger');
+
+        if (isNavOpened && isCloseBtn) closeMobileNav(btn);
+        else openMobileNav(btn);
+
         const navClose = document.querySelector('.mobile-nav-content__close');
-        navClose?.addEventListener('click', (e) => {
-            closeMobileNav(btn);
-        })
+        navClose?.addEventListener('click', () => closeMobileNav(btn));
 
         const navItems = document.querySelectorAll('.mobile-nav-content nav ul li a');
         navItems?.forEach(navItem => {
@@ -32,124 +37,43 @@ document.addEventListener('DOMContentLoaded', function() {
         const navTypewrite = document.querySelector('.mobile-nav-content .typewrite')
         navTypewrite.addEventListener('click', () => {
             closeMobileNav(btn);
-            setTimeout(() => {
-                showModal();
-            }, 500);
+            setTimeout(showModal, 500);
         });
     }));
-
-/*     const navCloseBtn = document.querySelector('.nav__close');
-    navCloseBtn?.addEventListener('click', () => {
-        navBtn.classList.remove('filled');
-    }) */
-
-    const inputs = document.querySelectorAll('.consultation .form__input')
-    inputs.forEach(input => input.addEventListener('input', () => {
-        if (input.parentElement.classList.contains('error')) input.parentElement.classList.remove('error');
-        const allInputs = Array.from(document.querySelectorAll('.consultation  .form__input'));
-        const allInputsLengths = allInputs.map(input => input.value.length);
-
-        if (!allInputsLengths.includes(0)) document.querySelector('.consultation__btn').removeAttribute("disabled");
-        else document.querySelector('.consultation__btn').setAttribute("disabled", true);
-    }))
-
-    const phonemask = '+7 (___) ___-__-__';
-    let phoneVal = '+7 (___) ___-__-__';
-    let inputPosition = 4;
-    const inputPhone = document.querySelector('#phone');
-    const fields = document.querySelectorAll('.form__field')
-    fields.forEach(field => field.addEventListener('click', () => {
-        field.querySelector('input').focus();
-    }))
-
-    inputPhone.addEventListener('focus', (e) => {
-        e.preventDefault();
-        inputPosition = getpos(inputPhone);
-        if (inputPhone.value === '') {
-            inputPhone.value = phonemask;
-            inputPhone.setSelectionRange(inputPosition, inputPosition)
-        }
-        else {
-            inputPosition = inputPhone.value.indexOf('_');
-            inputPhone.setSelectionRange(inputPosition, inputPosition)
-        }
-    });
-
-    inputPhone.addEventListener('click', (e) => {
-        e.preventDefault();
-        inputPosition = getpos(inputPhone);
-        if (inputPhone.value === '') {
-            inputPhone.value = phonemask;
-            inputPhone.setSelectionRange(inputPosition, inputPosition)
-        }
-        else {
-            inputPosition = inputPhone.value.indexOf('_', inputPosition);
-            inputPhone.setSelectionRange(inputPosition, inputPosition)
-        }
-    });
-
-    inputPhone.addEventListener('focusout', () => {
-        if (inputPhone.value === phonemask) inputPhone.value = '';
-    });
-
-    inputPhone.addEventListener('input', (e) => {
-        e.preventDefault();
-        phoneVal = phoneVal.replace('_', e.data)
-        inputPhone.value = phoneVal
-        /* inputPhone.value = inputPhone.value.replace('_', e.data) */
-    });
-
-    document.querySelector('.consultation__btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        const emailRegexp = /^\S+@\S+\.\S+$/;
-        const inputEmail = document.querySelector('#email');
-        if (!inputEmail.value.match(emailRegexp)) inputEmail.parentElement.classList.add('error');
-        else {
-            const transform = window.innerWidth > 992 ? 'translate(-364px, -200px) scale(0.5)' : 'translate(-182px, -100px) scale(0.5)'
-            document.querySelector('.consultation__img').style.transform = transform;
-            setTimeout(() => {
-                document.querySelector('.consultation__img').style.opacity = '0';
-            }, 350);
-            setTimeout(() => {
-                document.querySelector('.consultation__wrapper').innerHTML = `
-            <div class="consultation__sended">
-                <h2>Первый шаг сделан</h2>
-                <p>Скоро наш менеджер свяжется с вам для уточнения деталей</p>
-            </div>
-        `;
-            }, 700);
-        }
-    })
-})
+}
 
 const initFixedHeader = () => {
     let timeout = null;
     let lastScrollTop = 0;
+    const header = document.querySelector('.fixed-header');
 
     const startTimeout = () => {
         timeout = setTimeout(() => {
-            if (document.querySelector('.solutions').getBoundingClientRect().top <= 0) document.querySelector('.fixed-header').classList.add('active');
+            const isBeforeSolutions = document.querySelector('.solutions').getBoundingClientRect().top <= 0;
+            if (isBeforeSolutions) header.classList.add('active');
         }, 2000);
     };
+
     startTimeout();
 
-    window.addEventListener('scroll', () => { //touchmove works for iOS, I don't know if Android supports it
+    window.addEventListener('scroll', () => {
         const top = window.scrollY;
 
-        if (lastScrollTop > top) scrollPage(timeout, startTimeout);
-        else scrollPage(timeout, startTimeout, true);
+        if (lastScrollTop > top) scrollPage(header, timeout, startTimeout);
+        else scrollPage(header, timeout, startTimeout, true);
 
         lastScrollTop = top;
     });
 }
 
-const scrollPage = (timeout, startTimeout, isDown = false) => {
+const scrollPage = (header, timeout, startTimeout, isDown = false) => {
     clearTimeout(timeout);
     startTimeout();
+
     if (!isDown && document.querySelector('.solutions').getBoundingClientRect().top <= 0 && !document.querySelector('.modal__wrapper').classList.contains('active')) {
-        document.querySelector('.fixed-header').classList.add('active');
+        header.classList.add('active');
     } else if (!document.querySelector('.mobile-nav__toggle').classList.contains('open')) {
-        document.querySelector('.fixed-header').classList.remove('active');
+        header.classList.remove('active');
     }
 }
 
@@ -158,7 +82,7 @@ const initTypewrite = () => {
         this.toRotate = toRotate;
         this.el = el;
         this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
+        this.period = parseInt(period, 10) || 30000;
         this.txt = '';
         this.tick();
         this.isDeleting = false;
@@ -168,137 +92,52 @@ const initTypewrite = () => {
         var i = this.loopNum % this.toRotate.length;
         var fullTxt = this.toRotate[i];
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+        if (this.isDeleting) this.txt = fullTxt.substring(0, this.txt.length - 1);
+        else this.txt = fullTxt.substring(0, this.txt.length + 1);
 
-        const dopclass = this.el.querySelector('.wrap').classList.contains('.wrap_active') ? '' : 'wrap_active';
-        this.el.innerHTML = `<span class="wrap ${dopclass}">`+this.txt+'</span>';
+        const wrapClass = this.el.querySelector('.wrap').classList.contains('.wrap_active') ? '' : 'wrap_active';
+        this.el.innerHTML = `<span class="wrap ${wrapClass}">`+this.txt+'</span>';
 
         var that = this;
         var delta = 200 - Math.random() * 100;
 
-        if (this.isDeleting) { delta /= 2; }
+        if (this.isDeleting) delta /= 2;
 
         if (!this.isDeleting && this.txt === fullTxt) {
-            this.el.querySelector('.wrap').classList.remove('wrap_active')
+            this.el.querySelector('.wrap').classList.remove('wrap_active');
             delta = this.period;
             this.isDeleting = true;
         } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
         }
 
-        setTimeout(function() {
-        that.tick();
-        }, delta);
+        setTimeout(() => that.tick(), delta);
     };
 
-    window.onload = function() {
+    window.onload = () => {
         var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
+
+        for (var i = 0; i < elements.length; i++) {
             var toRotate = elements[i].getAttribute('data-type');
             var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
+            if (toRotate) new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     };
 }
 
-function getpos(el) {
-    var pos, sel;
-
-    // Internet Explorer
-    if (document.selection) {
-        el.focus();
-        if (sel=document.selection.createRange()) {
-            sel.moveStart('character', -el.value.length);
-            pos=sel.text.length;
-        }
-        // ... something wrong ...
-        else {
-            pos=0;
-        }
-    }
-    // Mozilla, Chrome
-    else if (el.selectionStart || el.selectionStart=='0') {
-        if (el.selectionDirection) {
-            if (el.selectionDirection=='backward') {
-                pos=el.selectionStart;
-            }
-            else {
-                pos=el.selectionEnd;
-            }
-        }
-        else {
-            // Opera 9
-            pos=el.selectionEnd;
-        }
-    }
-    // ... something wrong ...
-    else {
-        pos=0;
-    }
-    return parseInt(pos);
-}
-
-const sliderInit = () => {
-    let sliderOffset = 0;
-    const slider = document.querySelector('.talk__slider-inner');
-    const cardWidth = slider.querySelector('img').clientWidth;
-    const cardCount = slider.children.length;
-    const sliderWidth = cardCount * cardWidth + (cardCount - 1) * 20;
-    const maxSliderOffset = sliderWidth - slider.clientWidth + 20;
-
-    let isEnableClick = true;
-
-    const leftBtn = document.getElementById('talk-btn-left');
-    const rightBtn = document.getElementById('talk-btn-right');
-    const activeClass = 'talk__button_active';
-    leftBtn.addEventListener('click', () => {
-        if (!isEnableClick) return;
-
-        isEnableClick = false;
-        setTimeout(() => {
-            isEnableClick = true;
-        }, 500);
-
-        if (sliderOffset === 0) return;
-        rightBtn.classList.add(activeClass);
-        sliderOffset -= cardWidth + 20;
-        slider.style = `transform: translateX(-${sliderOffset}px)`;
-        if (sliderOffset === 0) leftBtn.classList.remove(activeClass);
-    });
-
-    rightBtn.addEventListener('click', () => {
-        if (!isEnableClick) return;
-
-        isEnableClick = false;
-        setTimeout(() => {
-            isEnableClick = true;
-        }, 500);
-
-        if ((sliderOffset + cardWidth) > maxSliderOffset) return;
-        leftBtn.classList.add(activeClass);
-        sliderOffset += cardWidth + 20;
-        slider.style = `transform: translateX(-${sliderOffset}px)`;
-        if ((sliderOffset + cardWidth) > maxSliderOffset) rightBtn.classList.remove(activeClass);
-    });
-};
-
-const showModal = () => {
+export const showModal = () => {
     document.querySelector('.modal__wrapper').classList.add('active');
-    document.body.classList.add('no-scroll');
-    document.querySelector('.fixed-header').classList.remove('active');
+    blockScroll();
+
+    initConsultationInputs();
+    initConsultationBtn();
 };
 
-const hideModal = () => {
+export const hideModal = () => {
     document.querySelector('.modal__wrapper').classList.remove('active');
-    document.body.classList.remove('no-scroll');
+    unblockScroll();
 };
 
 const openMobileNav = (btn) => {
@@ -307,7 +146,7 @@ const openMobileNav = (btn) => {
     btn.classList.add('open');
     navContent.classList.add('active');
     navContent.classList.add('shown');
-    document.body.classList.add('no-scroll');
+    blockScroll();
 };
 
 const closeMobileNav = (btn) => {
@@ -318,13 +157,17 @@ const closeMobileNav = (btn) => {
     setTimeout(() => {
         navContent.classList.remove('shown');
     }, 500);
-    document.body.classList.remove('no-scroll');
+    unblockScroll();
 };
+
+const blockScroll = () => document.body.classList.add('no-scroll');
+const unblockScroll = () => document.body.classList.remove('no-scroll');
 
 function init100vh(){
     function setHeight() {
       var vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
+
     setHeight();
 };

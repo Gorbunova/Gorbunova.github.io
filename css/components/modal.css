@@ -15,7 +15,7 @@
 
 .modal__wrapper.active {
     opacity: 1;
-    z-index: 2;
+    z-index: 3;
 }
 
 .modal__inner {
@@ -52,7 +52,7 @@
     margin-bottom: 12px;
 }
 
-.modal__inner img {
+.modal__inner .close {
     position: absolute;
     right: 40px;
     top: 40px;
@@ -106,7 +106,7 @@
         flex-direction: column;
     }
 
-    .modal__inner img {
+    .modal__inner .close {
         right: 24px;
         top: 18px;
     }
