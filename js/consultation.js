@@ -8,13 +8,15 @@ export const initConsultation = () => {
 export const initConsultationBtn = () => {
     const emailRegexp = /^\S+@\S+\.\S+$/;
     const btns = document.querySelectorAll('.consultation__btn');
-    document.querySelector('.modal__inner .consultation__btn').removeAttribute('disabled');
 
     btns.forEach(btn => {
         const inputEmail = btn.parentElement.querySelector('.form__input-email');
         const inputPhone = btn.parentElement.querySelector('.form__input-phone');
         const inputName = btn.parentElement.querySelector('.form__input-name');
         const fields = btn.parentElement.querySelectorAll('.form__field');
+        const isModal = btn.parentElement.classList.contains('modal__form');
+
+        if (isModal) btn.removeAttribute('disabled');
 
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -31,9 +33,8 @@ export const initConsultationBtn = () => {
             else {
                 const plane = btn.parentElement.parentElement.querySelector('.consultation__img');
 
-                if (!plane) {
-                    hideModal();
-                } else {
+                if (!plane) hideModal();
+                else {
                     const transform = window.innerWidth > 992 ? 'translate(-364px, -200px) scale(0.5)' : 'translate(-182px, -100px) scale(0.5)'
                     plane.style.transform = transform;
 
@@ -58,7 +59,7 @@ export const initConsultationBtn = () => {
             const emailLength = inputEmail.value.length;
 
             if (nameLength && phoneLength && emailLength) btn.removeAttribute('disabled');
-            else btn.setAttribute('disabled', true);
+            else if (!isModal) btn.setAttribute('disabled', true);
         }))
     });
 }
