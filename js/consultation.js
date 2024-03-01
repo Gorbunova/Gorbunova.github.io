@@ -34,16 +34,13 @@ export const initConsultationBtn = () => {
                 const plane = btn.parentElement.parentElement.querySelector('.consultation__img');
 
                 if (!plane) {
-                    const token = document.querySelector('#captcha-container input')?.value;
+                    /* const token = document.querySelector('#captcha-container input')?.value;
 
                     if (token) check_captcha(token, (passed) => {
-                        if (passed) {
+                        if (passed) {*/
                             hideModal();
-                            console.log("Passed");
-                        } else {
-                            console.log("Robot");
-                        }
-                    });
+                    /*  }
+                     }); */
                 }
                 else {
                     const transform = window.innerWidth > 992 ? 'translate(-364px, -200px) scale(0.5)' : 'translate(-182px, -100px) scale(0.5)'
@@ -207,19 +204,9 @@ const lastIndexOfByRegexp = (str, regexp) => {
 }
 
 async function check_captcha(token, callback) {
-    const SMARTCAPTCHA_SERVER_KEY = "ysc2_e8podTmvdwKIyUrSYj7aEbsxZlMLuNuWo384CP5ddfb08edf";
-    /* const options = {
-        hostname: 'smartcaptcha.yandexcloud.net',
-        port: 443,
-        path: '/validate?' + querystring.stringify({
-            secret: SMARTCAPTCHA_SERVER_KEY,
-            token: token,
-            ip: '<IP-адрес_пользователя>', // Способ получения IP-адреса пользователя зависит от вашего фреймворка и прокси.
-        }),
-        method: 'GET',
-    }; */
-    await fetch(`https://smartcaptcha.yandexcloud.net/validate?secret=${SMARTCAPTCHA_SERVER_KEY}&token=${token}`, {
-    })
+    const SMARTCAPTCHA_SERVER_KEY = "###";
+
+    await fetch(`https://smartcaptcha.yandexcloud.net/validate?secret=${SMARTCAPTCHA_SERVER_KEY}&token=${token}`)
         .then((res) => {
             if (res.status !== 200) {
                 callback(false);
