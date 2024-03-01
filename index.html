@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/main-page/style.css">
 
     <title>TerraLink</title>
+    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
 </head>
 
 <body>
@@ -430,6 +431,12 @@
                         <label class="form__label" for="modal-description" >Опишите задачу (по желанию)</label>
                     </div>
                 </div>
+
+                <div
+                    id="captcha-container"
+                    class="smart-captcha"
+                    data-sitekey="ysc1_e8podTmvdwKIyUrSYj7a4NsGDyaUYmildr95ZWIgf914865d"
+                ></div>
 
                 <button class="consultation__btn custom-button_rounded custom-button_rounded_mini form__btn" type="submit">Отправить</button>
                 <p>
