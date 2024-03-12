@@ -1,0 +1,85 @@
+.portal-for {
+    padding: 120px 0;
+}
+
+.portal-for .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portal-for h2 {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 80px;
+}
+
+.portal-for__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portal-for__item {
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-gray);
+    padding: 64px 40px 0 40px;
+    position: relative;
+    min-height: 540px;
+    overflow: hidden;
+}
+
+.portal-for__item h3 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.portal-for__item img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.portal-for__item ul {
+    list-style-type: disc;
+}
+
+.portal-for__item ul li {
+    font-family: 'Inter';
+    margin-bottom: 8px;
+    margin-left: 24px;
+}
+
+@media (max-width: 600px) {
+    .portal-for {
+        padding: 80px 0;
+    }
+
+    .portal-for h2 {
+        margin-bottom: 40px;
+    }
+
+    .portal-for__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portal-for__item {
+        padding: 40px 24px;
+        min-height: 460px;
+    }
+
+    .portal-for__item h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .portal-for__item .text {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
+
+    .portal-for__item img {
+        width: 70%;
+    }
+}

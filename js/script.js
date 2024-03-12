@@ -49,8 +49,7 @@ const initFixedHeader = () => {
 
     const startTimeout = () => {
         timeout = setTimeout(() => {
-            const isBeforeSolutions = document.querySelector('.solutions').getBoundingClientRect().top <= 0;
-            if (isBeforeSolutions) header.classList.add('active');
+            if (getIsAfterStartSection()) header.classList.add('active');
         }, 2000);
     };
 
@@ -58,19 +57,25 @@ const initFixedHeader = () => {
 
     window.addEventListener('scroll', () => {
         const top = window.scrollY;
-
-        if (lastScrollTop > top) scrollPage(header, timeout, startTimeout);
-        else scrollPage(header, timeout, startTimeout, true);
+        const isAfterStartSection = getIsAfterStartSection();
+        if (lastScrollTop > top) scrollPage(header, timeout, startTimeout, isAfterStartSection);
+        else scrollPage(header, timeout, startTimeout, isAfterStartSection, true);
 
         lastScrollTop = top;
     });
 }
 
-const scrollPage = (header, timeout, startTimeout, isDown = false) => {
+const getIsAfterStartSection = () => {
+    const mainStartSectionTop = document.querySelector('.solutions')?.getBoundingClientRect().top;
+    const portalStartSectionTop = document.querySelector('.portal-about')?.getBoundingClientRect().top;
+    return mainStartSectionTop <= 0 || portalStartSectionTop <= 0;
+}
+
+const scrollPage = (header, timeout, startTimeout, isAfterStartSection, isDown = false) => {
     clearTimeout(timeout);
     startTimeout();
 
-    if (!isDown && document.querySelector('.solutions').getBoundingClientRect().top <= 0 && !document.querySelector('.modal__wrapper').classList.contains('active')) {
+    if (!isDown && isAfterStartSection && !document.querySelector('.modal__wrapper').classList.contains('active')) {
         header.classList.add('active');
     } else if (!document.querySelector('.mobile-nav__toggle').classList.contains('open')) {
         header.classList.remove('active');
