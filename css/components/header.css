@@ -43,7 +43,7 @@
     color: var(--color-main) !important;
     font-weight: 600;
     border-bottom: 2px solid var(--color-main);
-    padding: 12px;
+    padding: 0 0 12px 0;
 }
 
 @media (max-width: 1200px) {

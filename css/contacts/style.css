@@ -11,11 +11,5 @@
 @import '../blocks/consultation.css';
 @import '../blocks/footer.css';
 
-@import 'blocks/portal.css';
-@import 'blocks/portal-about.css';
-@import 'blocks/portal-problems.css';
-@import 'blocks/portal-review.css';
-@import 'blocks/portal-services.css';
-@import 'blocks/portal-admin.css';
-@import 'blocks/portal-for.css';
-@import 'blocks/portal-faq.css';
+@import 'blocks/contacts.css';
+

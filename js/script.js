@@ -1,4 +1,4 @@
-import { initConsultationInputs, initConsultationBtn } from "./consultation.js";
+import { initConsultation } from "./consultation/index.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     init100vh();
@@ -68,7 +68,8 @@ const initFixedHeader = () => {
 const getIsAfterStartSection = () => {
     const mainStartSectionTop = document.querySelector('.solutions')?.getBoundingClientRect().top;
     const portalStartSectionTop = document.querySelector('.portal-about')?.getBoundingClientRect().top;
-    return mainStartSectionTop <= 0 || portalStartSectionTop <= 0;
+    const aboutStartSectionTop = document.querySelector('.about-services')?.getBoundingClientRect().top;
+    return mainStartSectionTop <= 0 || portalStartSectionTop <= 0 || aboutStartSectionTop <= 0;
 }
 
 const scrollPage = (header, timeout, startTimeout, isAfterStartSection, isDown = false) => {
@@ -136,8 +137,7 @@ export const showModal = () => {
     document.querySelector('.modal__wrapper').classList.add('active');
     blockScroll();
 
-    initConsultationInputs();
-    initConsultationBtn();
+    initConsultation(true);
 };
 
 export const hideModal = () => {

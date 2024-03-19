@@ -203,6 +203,12 @@
     font-family: 'Inter';
 }
 
+.fixed-header nav ul li a.active {
+    color: var(--color-main);
+    border-bottom: 1px solid var(--color-main);
+    padding: 8px;
+}
+
 .fixed-header .typewrite {
     position: absolute;
     right: 44px;

@@ -1,0 +1,79 @@
+.about-requisites {
+    padding: 42px 0;
+    background-color: var(--color-blue);
+}
+
+.about-requisites .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-requisites__info {
+    display: flex;
+    gap: 30px;
+}
+
+.about-requisites__info h4 {
+    color: var(--color-light);
+    margin-bottom: 7px;
+}
+
+.about-requisites__info p {
+    color: var(--color-light);
+    font-size: 28px;
+    line-height: 36px;
+    font-family: 'Inter';
+}
+
+.about-requisites__download button {
+    background-color: var(--color-light);
+    font-size: 20px;
+    line-height: 24.2px;
+    font-family: 'Inter';
+    border: none;
+    border-radius: var(--border-radius-medium);
+    padding: 12px 78px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.about-requisites__download p {
+    color: var(--color-light);
+    font-size: 16px;
+    line-height: 19.36px;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .about-requisites {
+        padding: 29px 0 34.25px 0;
+    }
+
+    .about-requisites .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about-requisites__info {
+        flex-direction: column;
+        align-items: start;
+        gap: 23px;
+    }
+
+    .about-requisites__info img {
+        height: 70px;
+    }
+
+    .about-requisites__info h4 {
+        font-size: 22px;
+        line-height: 36px;
+        margin-bottom: 1px;
+    }
+
+    .about-requisites__info p {
+        font-size: 16px;
+        line-height: 36px;
+    }
+}

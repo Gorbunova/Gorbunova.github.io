@@ -1,5 +1,5 @@
 import { showModal } from './script.js';
-import { initConsultation } from './consultation.js';
+import { initConsultation } from './consultation/index.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     initConsultation();
