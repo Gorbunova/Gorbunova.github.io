@@ -34,7 +34,7 @@
 
 .modal__inner p {
     margin-top: 24px;
-    color: var(--color-text-muted-secondary);
+    color: #969696;
     font-family: 'Inter';
     font-size: 16px;
 }

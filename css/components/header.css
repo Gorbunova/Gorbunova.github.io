@@ -39,13 +39,6 @@
     font-family: 'Inter';
 }
 
-.header__nav a.active {
-    color: var(--color-main) !important;
-    font-weight: 600;
-    border-bottom: 2px solid var(--color-main);
-    padding: 0 0 12px 0;
-}
-
 @media (max-width: 1200px) {
     .header button {
         right: 100px;

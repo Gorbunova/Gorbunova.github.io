@@ -3,7 +3,6 @@
     min-height: calc(var(--vh, 1vh) * 100);
     background: center / cover no-repeat url('../../../img/promo-background.png');
     position: relative;
-    overflow: hidden;
 }
 
 .promo__overlay {

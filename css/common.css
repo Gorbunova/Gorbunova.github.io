@@ -24,7 +24,6 @@ body {
     --color-blue: #2A56FF;
     --color-gray: #F5F5F5;
     --color-text-muted: #A0A0A0;
-    --color-text-muted-secondary: #969696;
 
     --border-radius: 60px;
     --border-radius-medium: 44px;
@@ -126,15 +125,9 @@ button {
     right: 14px;
 }
 
-h1.large {
+h1 {
     font-size: 72px;
     line-height: 90px;
-    font-weight: 800;
-}
-
-h1 {
-    font-size: 60px;
-    line-height: 68px;
     font-weight: 800;
 }
 
@@ -156,19 +149,14 @@ h4 {
     font-weight: 800;
 }
 
-.text {
-    font-size: 20px;
-    line-height: 24.2px;
-}
-
 .text-large {
     font-size: 24px;
     line-height: 29.05px;
 }
 
-.text-small {
-    font-size: 14px;
-    line-height: 20px;
+.text {
+    font-size: 20px;
+    line-height: 24.2px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -179,14 +167,9 @@ h4 {
 
 
 @media (max-width: 1600px) {
-    h1.large {
+    h1 {
         font-size: 48px;
         line-height: 62px;
-    }
-
-    h1 {
-        font-size: 40px;
-        line-height: 52px;
     }
 
     h2 {
@@ -204,19 +187,14 @@ h4 {
         line-height: 32px;
     }
 
-    .text {
-        font-size: 16px;
-        line-height: 22px;
-    }
-
     .text-large {
         font-size: 20px;
         line-height: 24.2px;
     }
 
-    .text-small {
-        font-size: 14px;
-        line-height: 18px;
+    .text {
+        font-size: 16px;
+        line-height: 22px;
     }
 
     .container {
@@ -246,14 +224,9 @@ h4 {
         max-width: 892px;
     }
 
-    h1.large {
+    h1 {
         font-size: 36px;
         line-height: 48px;
-    }
-
-    h1 {
-        font-size: 34px;
-        line-height: 40px;
     }
 
     h2 {
@@ -271,19 +244,14 @@ h4 {
         line-height: 26px;
     }
 
-    .text {
-        font-size: 14px;
-        line-height: 18px;
-    }
-
     .text-large {
         font-size: 16px;
         line-height: 19.36px;
     }
 
-    .text-small {
-        font-size: 12px;
-        line-height: 14px;
+    .text {
+        font-size: 14px;
+        line-height: 18px;
     }
 }
 

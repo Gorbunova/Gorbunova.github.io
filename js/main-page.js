@@ -1,12 +1,11 @@
 import { showModal } from './script.js';
-import { initConsultation } from './consultation/index.js';
+import { initConsultation } from './consultation.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(sliderInit, 250);
     initConsultation();
 
-    document.querySelector('.qualities__button')?.addEventListener('click', showModal);
-    document.querySelector('.promo__button')?.addEventListener('click', showModal);
+    document.querySelector('.promo__button').addEventListener('click', showModal);
 })
 
 const sliderInit = () => {

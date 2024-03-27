@@ -1,4 +1,4 @@
-import { initConsultation } from "./consultation/index.js";
+import { initConsultationInputs, initConsultationBtn } from "./consultation.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     init100vh();
@@ -49,7 +49,8 @@ const initFixedHeader = () => {
 
     const startTimeout = () => {
         timeout = setTimeout(() => {
-            if (getIsAfterStartSection()) header.classList.add('active');
+            const isBeforeSolutions = document.querySelector('.solutions').getBoundingClientRect().top <= 0;
+            if (isBeforeSolutions) header.classList.add('active');
         }, 2000);
     };
 
@@ -57,26 +58,19 @@ const initFixedHeader = () => {
 
     window.addEventListener('scroll', () => {
         const top = window.scrollY;
-        const isAfterStartSection = getIsAfterStartSection();
-        if (lastScrollTop > top) scrollPage(header, timeout, startTimeout, isAfterStartSection);
-        else scrollPage(header, timeout, startTimeout, isAfterStartSection, true);
+
+        if (lastScrollTop > top) scrollPage(header, timeout, startTimeout);
+        else scrollPage(header, timeout, startTimeout, true);
 
         lastScrollTop = top;
     });
 }
 
-const getIsAfterStartSection = () => {
-    const mainStartSectionTop = document.querySelector('.solutions')?.getBoundingClientRect().top;
-    const portalStartSectionTop = document.querySelector('.portal-about')?.getBoundingClientRect().top;
-    const aboutStartSectionTop = document.querySelector('.about-services')?.getBoundingClientRect().top;
-    return mainStartSectionTop <= 0 || portalStartSectionTop <= 0 || aboutStartSectionTop <= 0;
-}
-
-const scrollPage = (header, timeout, startTimeout, isAfterStartSection, isDown = false) => {
+const scrollPage = (header, timeout, startTimeout, isDown = false) => {
     clearTimeout(timeout);
     startTimeout();
 
-    if (!isDown && isAfterStartSection && !document.querySelector('.modal__wrapper').classList.contains('active')) {
+    if (!isDown && document.querySelector('.solutions').getBoundingClientRect().top <= 0 && !document.querySelector('.modal__wrapper').classList.contains('active')) {
         header.classList.add('active');
     } else if (!document.querySelector('.mobile-nav__toggle').classList.contains('open')) {
         header.classList.remove('active');
@@ -137,7 +131,8 @@ export const showModal = () => {
     document.querySelector('.modal__wrapper').classList.add('active');
     blockScroll();
 
-    initConsultation(true);
+    initConsultationInputs();
+    initConsultationBtn();
 };
 
 export const hideModal = () => {
