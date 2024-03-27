@@ -1,0 +1,141 @@
+.promo {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    background: center / cover no-repeat url('../../../img/promo-background.png');
+    position: relative;
+    overflow: hidden;
+}
+
+.promo__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, #12042C 10%, rgba(18, 4, 44, 0));
+}
+
+.promo__img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 14%;
+    display: none;
+    z-index: 0;
+    width: 60%;
+}
+
+.promo__wrapper {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.promo__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    gap: 64px;
+    z-index: 1;
+}
+
+.promo__inner h1 {
+    color: var(--color-light);
+    text-align: center;
+}
+
+.promo__inner button {
+    background-color: var(--color-light-blue);
+}
+
+.promo__stack {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.promo__stack img {
+    max-height: 48px;
+}
+
+.promo__video {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@media (max-width: 1600px) {
+    .promo__stack-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    .promo__stack {
+        min-width: 1060px;
+        margin-bottom: 50px;
+    }
+
+    .promo__stack img {
+        max-height: 32px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .promo__stack {
+        min-width: 892px;
+    }
+}
+
+@media (max-width: 992px) {
+    .promo__inner h1 {
+        max-width: 520px;
+    }
+
+    .promo__wrapper {
+        row-gap: 80px;
+    }
+
+    .promo__inner {
+        justify-content: end;
+    }
+
+    .promo__img {
+        display: block;
+    }
+
+    .promo__stack {
+        min-width: 328px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        row-gap: 40px;
+    }
+
+    .promo__stack img {
+        max-height: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .promo__inner h1 {
+        padding: 0 24px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .promo__inner {
+        gap: 32px;
+    }
+
+    .promo__wrapper {
+        row-gap: 40px;
+    }
+
+    .promo__stack {
+        margin-bottom: 30px;
+        row-gap: 24px;
+    }
+}

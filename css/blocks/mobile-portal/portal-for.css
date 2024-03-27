@@ -1,0 +1,148 @@
+.portal-for {
+    padding: 120px 0;
+}
+
+.portal-for .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portal-for h2 {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 80px;
+}
+
+.portal-for__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portal-for__item {
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-gray);
+    padding: 64px 40px 0 40px;
+    position: relative;
+    min-height: 540px;
+    overflow: hidden;
+}
+
+.portal-for__item h3 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.portal-for__item img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.portal-for__item ul {
+    list-style-type: disc;
+}
+
+.portal-for__item ul li {
+    font-family: 'Inter';
+    margin-bottom: 8px;
+    margin-left: 24px;
+}
+
+@media (max-width: 1600px) {
+    .portal-for h2 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .portal-for__item {
+        border-radius: 24px;
+        padding: 30px 24px 0 24px;
+        min-height: 488px;
+    }
+
+    .portal-for__item h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .portal-for__item img {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .portal-for {
+        padding: 80px 0 40px 0;
+    }
+
+    .portal-for h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .portal-for__item {
+        padding: 30px 24px 0 24px;
+        min-height: 426px;
+    }
+
+    .portal-for__item h3 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .portal-for__item img {
+        width: 70%;
+    }
+
+    .portal-for__item ul li {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .portal-for {
+        padding: 80px 0;
+    }
+
+    .portal-for h2 {
+        margin-bottom: 40px;
+    }
+
+    .portal-for__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portal-for__item {
+        padding: 44px 44px 0 44px;
+        min-height: 366px;
+    }
+
+    .portal-for__item h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .portal-for__item img {
+        width: 40%;
+    }
+
+    .portal-for__item ul li {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .portal-for__item {
+        padding: 40px 24px;
+        min-height: 460px;
+    }
+
+    .portal-for__item img {
+        width: 70%;
+    }
+}

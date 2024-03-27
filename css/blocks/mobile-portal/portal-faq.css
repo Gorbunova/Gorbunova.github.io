@@ -1,0 +1,124 @@
+.portal-faq {
+    padding: 120px 0;
+}
+
+.portal-faq h2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.portal-faq__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.portal-faq__item {
+    border-radius: var(--border-radius-medium);
+    padding: 24px 24px 24px 40px;
+    background-color: var(--color-gray);
+    max-width: 1004px;
+    cursor: pointer;
+}
+
+.portal-faq__item.active .portal-faq__item-header {
+    margin-bottom: 12px;
+}
+
+.portal-faq__item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portal-faq__item-title {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 800;
+    max-width: 860px;
+    color: var(--color-text);
+    transition: color .5s;
+}
+
+.portal-faq__item-arrow {
+    height: 48px;
+    width: 48px;
+    background-color: var(--color-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portal-faq__item-arrow:after {
+    content: '';
+    border-style: solid;
+    border-color: var(--color-text-muted-secondary);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3.5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all .5s;
+}
+
+.portal-faq__item-content {
+    font-family: 'Inter';
+    overflow: hidden;
+    max-height: 0;
+    height: 0;
+    transition: all .5s;
+}
+
+.portal-faq__item.active .portal-faq__item-content {
+    max-height: 150px;
+    height: 150px;
+}
+
+.portal-faq__item.active .portal-faq__item-arrow:after {
+    border-color: var(--color-blue);
+    transform: rotate(225deg) translate(-2px, -2px);
+    -webkit-transform: rotate(225deg) translate(-2px, -2px);
+}
+
+@media (max-width: 1600px) {
+    .portal-faq {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .portal-faq h2 {
+        margin-bottom: 40px;
+    }
+
+    .portal-faq__item {
+        padding: 20px 16px 20px 24px;
+    }
+
+    .portal-faq__item-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+    }
+
+    .portal-faq__item-arrow {
+        height: 32px;
+        width: 32px;
+    }
+
+    .portal-faq__item-arrow:after {
+        border-width: 0 1px 1px 0;
+        padding: 3px;
+    }
+
+    .portal-faq__item-title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .portal-faq__item.active .portal-faq__item-header {
+        margin-bottom: 24px;
+    }
+}

@@ -1,0 +1,153 @@
+.portal-about {
+    padding: 80px 0 120px 0;
+}
+
+.portal-about__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.portal-about__img {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.portal-about__info {
+    padding: 44px 64px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-stroke-blue);
+}
+
+.portal-about__info h3 {
+    margin-bottom: 24px;
+}
+
+.portal-about__info-item {
+    padding: 24px 0;
+}
+
+.portal-about__info-item:not(:last-child) {
+    border-bottom: 1px solid var(--color-stroke-blue);
+}
+
+.portal-about__info-item .title {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Inter';
+    margin-bottom: 16px;
+}
+
+.portal-about__info-item .text {
+    font-family: 'Inter';
+}
+
+@media (max-width: 1600px) {
+    .portal-about__wrapper {
+        grid-template-columns: 428px 1fr;
+    }
+
+    .portal-about__img {
+        display: flex;
+        justify-content: end;
+        border-radius: var(--border-radius-medium);
+    }
+
+    .portal-about__img img {
+        height: 680px;
+        object-fit: cover;
+    }
+
+    .portal-about__info {
+        padding: 30px 44px;
+        border-radius: var(--border-radius-medium);
+    }
+
+    .portal-about__info-item .title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .portal-about__info-item .text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .portal-about {
+        padding: 40px 0 80px 0;
+    }
+
+    .portal-about__wrapper {
+        grid-template-columns: 360px 1fr;
+    }
+
+    .portal-about__img img {
+        height: 650px;
+    }
+
+    .portal-about__info {
+        padding: 44px;
+    }
+
+    .portal-about__info-item .title {
+        font-size: 16px;
+    }
+
+    .portal-about__info-item {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .portal-about {
+        padding: 80px 0;
+    }
+
+    .portal-about__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .portal-about__info h3 {
+        text-align: center;
+    }
+
+    .portal-about__img {
+        order: 1;
+    }
+
+    .portal-about__info {
+        padding: 24px;
+    }
+
+    .portal-about__info-item {
+        padding: 16px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .portal-about {
+        padding: 60px 0 80px 0;
+    }
+
+    .portal-about__info-item {
+        padding: 16px 0;
+    }
+
+    .portal-about__info-item .title {
+        margin-bottom: 12px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .portal-about__info-item .text {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
+
+    .portal-about__img img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+@import './common.css';
+@import './fonts.css';
+
+/* common components */
+@import './components/examples.css';
+@import './components/header.css';
+@import './components/input.css';
+@import './components/modal.css';
+@import './components/navigation.css';
+@import './components/typewrite.css';
+
+/* common blocks */
+@import './blocks/consultation.css';
+@import './blocks/footer.css';
+
+/* main page blocks */
+@import './blocks/main-page/about.css';
+@import './blocks/main-page/article.css';
+@import './blocks/main-page/promo.css';
+@import './blocks/main-page/qualities.css';
+@import './blocks/main-page/solutions.css';
+@import './blocks/main-page/talk.css';
+
+/* mobile portal blocks */
+@import './blocks/mobile-portal/portal-about.css';
+@import './blocks/mobile-portal/portal-admin.css';
+@import './blocks/mobile-portal/portal-faq.css';
+@import './blocks/mobile-portal/portal-for.css';
+@import './blocks/mobile-portal/portal-problems.css';
+@import './blocks/mobile-portal/portal-review.css';
+@import './blocks/mobile-portal/portal-services.css';
+@import './blocks/mobile-portal/portal.css';
+
+/* contacts blocks */
+@import './blocks/contacts/contacts-form.css';
+@import './blocks/contacts/contacts.css';
+
+/* about blocks */
+@import './blocks/about/about.css';
+@import './blocks/about/about-services.css';
+@import './blocks/about/about-advantages.css';
+@import './blocks/about/about-requisites.css';

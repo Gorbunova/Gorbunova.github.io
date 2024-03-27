@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/contacts/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <title>TerraLink</title>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=4edfac78-cf8e-4fa9-8bd5-c7e750e9b885&lang=ru_RU" type="text/javascript"></script>
@@ -121,6 +121,65 @@
     </section>
     <section class="contacts-map">
         <div id="map"></div>
+    </section>
+    <section class="contacts-form">
+        <div class="container">
+            <div>
+                <h2>Свяжитесь с нами</h2>
+                <p class="text">Мы готовы ответить на все ваши вопросы. Запишитесь на консультацию с нашим специалистом</p>
+            </div>
+            <div>
+                <form id="modal-form" action="#" class="modal__form cnslt">
+                    <div class="modal__input-block">
+                        <div class="form__field">
+                            <input class="form__input form__input-name" id="modal-name" name="name" type="text" placeholder=" ">
+                            <label class="form__label" for="modal-name">Имя</label>
+                            <div class="form__error-label">
+                                <img src="/icons/error.svg" alt="error">
+                            </div>
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" id="modal-company" name="company" type="text" placeholder=" ">
+                            <label class="form__label" for="modal-company">Компания</label>
+                        </div>
+                    </div>
+                    <div class="modal__input-block">
+                        <div class="form__field">
+                            <input class="form__input form__input-phone" id="modal-phone" name="phone" type="tel" placeholder=" ">
+                            <label class="form__label" for="modal-phone" >Телефон</label>
+                            <div class="form__error-label">
+                                <img src="/icons/error.svg" alt="error">
+                            </div>
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input form__input-email" id="modal-email" name="email" type="text" placeholder=" ">
+                            <label class="form__label" for="modal-email">Email</label>
+                            <div class="form__error-label">
+                                <img src="/icons/error.svg" alt="error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__input-block">
+                        <div class="form__field">
+                            <textarea class="form__input" id="modal-description" name="description" type="text" placeholder=" "></textarea>
+                            <label class="form__label" for="modal-description" >Комментарий</label>
+                        </div>
+                    </div>
+                    <!-- <div
+                    id="captcha-container"
+                    class="smart-captcha"
+                    data-sitekey="###"
+                    ></div> -->
+
+                    <button class="consultation__btn form__btn" type="submit">Отправить</button>
+                    <p>
+                        Оставляя заявку, вы даете согласие на обработку ваших
+                        <a href="#">персональных&nbspданных</a> и ознакомлен(а) с
+                        <a href="#">политикой конфиденциальности</a> сайта.
+                    </p>
+                </form>
+            </div>
+        </div>
     </section>
     <section class="examples">
         <div class="container">
@@ -270,11 +329,13 @@
                     </div>
                 </div>
 
-                <!-- <div
-                    id="captcha-container"
-                    class="smart-captcha"
-                    data-sitekey="###"
-                ></div> -->
+                <div class="modal__captcha">
+                    <div
+                        id="captcha-container"
+                        class="smart-captcha"
+                        data-sitekey="ysc1_e8podTmvdwKIyUrSYj7a4NsGDyaUYmildr95ZWIgf914865d"
+                    ></div>
+                </div>
 
                 <button class="consultation__btn custom-button_rounded custom-button_rounded_mini form__btn" type="submit">Отправить</button>
                 <p>

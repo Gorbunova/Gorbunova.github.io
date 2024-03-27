@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main-page/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <title>TerraLink</title>
     <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
@@ -11,22 +11,22 @@
 
 <body>
     <div class="fixed-header">
-        <a href="#" class="fixed-header__logo">
+        <a href="index.html" class="fixed-header__logo">
             <img src="icons/logo.png" alt="logo">
         </a>
         <nav>
             <ul>
                 <li>
-                    <a href="#about">О компании</a>
+                    <a href="about.html">О компании</a>
                 </li>
                 <li>
-                    <a href="#">Продукты</a>
+                    <a href="mobile-portal.html">Продукты</a>
                 </li>
                 <li>
                     <a href="#article">Исследования</a>
                 </li>
                 <li>
-                    <a href="#">Контакты</a>
+                    <a href="contacts.html">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -48,16 +48,16 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#about">О компании</a>
+                    <a href="about.html">О компании</a>
                 </li>
                 <li>
-                    <a href="#">Продукты</a>
+                    <a href="mobile-portal.html">Продукты</a>
                 </li>
                 <li>
                     <a href="#article">Исследования</a>
                 </li>
                 <li>
-                    <a href="#">Контакты</a>
+                    <a href="contacts.html">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -74,22 +74,22 @@
         <div class="promo__overlay"></div>
         <header class="header">
             <div class="header-wrapper">
-                <a href="#" class="header__logo">
+                <a href="index.html" class="header__logo">
                     <img src="icons/logo-light.png" alt="logo">
                 </a>
                 <nav class="header__nav">
                     <ul>
                         <li>
-                            <a href="#about">О компании</a>
+                            <a href="about.html">О компании</a>
                         </li>
                         <li>
-                            <a href="#">Продукты</a>
+                            <a href="mobile-portal.html">Продукты</a>
                         </li>
                         <li>
                             <a href="#article">Исследования</a>
                         </li>
                         <li>
-                            <a href="#">Контакты</a>
+                            <a href="contacts.html">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -109,7 +109,7 @@
             <img class="promo__img" src="img/promo-img.png" logo="design element"/>
             <div class="promo__wrapper">
                 <div class="promo__inner">
-                    <h1>Создаем гибкие<br>IT-решения под&nbspзадачи<br>вашего бизнеса</h1>
+                    <h1 class="large">Создаем гибкие<br>IT-решения под&nbspзадачи<br>вашего бизнеса</h1>
                     <button class="promo__button custom-button_rounded">Обсудить проект</button>
                 </div>
                 <div class="promo__stack-wrapper">
@@ -128,24 +128,24 @@
             </div>
         </div>
     </section>
-    <section class="about" id="about">
+    <section class="development" id="development">
         <div class="container">
-            <h2 class="about__title">ТерраЛинк Разработка </h2>
-            <p class="about__text text-large">
+            <h2 class="development__title">ТерраЛинк Разработка </h2>
+            <p class="development__text text-large">
                 Российская компания, с экспертизой в заказной разработке ИТ-решений.
                 Мы специализируемся на создании мобильных приложений (iOS, Android),
                 корпоративных порталов и внедрении решений 1С.
                 Поставляем технологические решения для клиентов в любых отраслях.
             </p>
-            <div class="about__tags">
-                <div class="about__tag">ТЭК</div>
-                <div class="about__tag">Ритейл</div>
-                <div class="about__tag">Производство</div>
-                <div class="about__tag">Металлургия</div>
-                <div class="about__tag">Финансы</div>
-                <div class="about__tag">Развлечения</div>
+            <div class="development__tags">
+                <div class="development__tag">ТЭК</div>
+                <div class="development__tag">Ритейл</div>
+                <div class="development__tag">Производство</div>
+                <div class="development__tag">Металлургия</div>
+                <div class="development__tag">Финансы</div>
+                <div class="development__tag">Развлечения</div>
             </div>
-            <img class="about__img" src="img/about-img.png" alt="decorative element">
+            <img class="development__img" src="img/about-img.png" alt="decorative element">
         </div>
     </section>
     <section class="solutions">
@@ -180,7 +180,7 @@
                         Проектируем решения с учетом ваших задач и требований.
                         Проводим UX-исследование любых мобильных и web-приложений.
                     </p>
-                    <button class="solutions__secondary-btn custom-button">Подробнее</button>
+                    <!-- <button class="solutions__secondary-btn custom-button">Подробнее</button> -->
                     <img src="img/solutions-img.png" alt="design element">
                 </div>
                 <div class="solutions__secondary-item">
@@ -189,7 +189,7 @@
                         Создаем мультиплатформенные ИТ-решения учитывая задачи вашего бизнеса.
                         Начинаем с концепции и заканчиваем готовым продуктом.
                     </p>
-                    <button class="solutions__secondary-btn custom-button">Подробнее</button>
+                    <!-- <button class="solutions__secondary-btn custom-button">Подробнее</button> -->
                     <img src="img/solutions-img-2.png" alt="design element">
                 </div>
             </div>
@@ -240,14 +240,14 @@
                     </p>
                 </div>
             </div>
-            <button class="qualities__button custom-button_rounded">Подробнее</button>
+            <button class="qualities__button custom-button_rounded">Начать проект</button>
         </div>
     </section>
     <section class="consultation" id="consultation">
         <div class="container">
             <div class="consultation__wrapper">
                 <h2 class="consultation__title">Предлагаем обсудить ваш проект</h2>
-                <form id="consultation-form" action="#" class="consultation__form">
+                <form id="consultation-form" action="#" class="consultation__form cnslt">
                     <div class="form__field">
                         <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
                         <label class="form__label consultation__label" for="name">Имя</label>
@@ -362,25 +362,25 @@
                             <li>
                                 <a href="mobile-portal.html">Корпоративный мобильный портал</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#">ТОРО для мобильных устройств</a>
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <a href="#">ECM для мобильных устройств</a>
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <a href="#">СУПТД</a>
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <a href="#">BI аналитика</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="footer__about-wrapper">
                         <h3>О нас</h3>
                         <ul class="footer__about">
                             <li>
-                                <a href="#about">О компании</a>
+                                <a href="about.html">О компании</a>
                             </li>
                             <li>
                                 <a href="#article">Исследования</a>
@@ -401,7 +401,7 @@
     <div class="modal__wrapper">
         <div class="modal__inner">
             <h2>Предлагаем обсудить ваш проект</h2>
-            <form id="modal-form" action="#" class="modal__form">
+            <form id="modal-form" action="#" class="modal__form cnslt">
                 <div class="modal__input-block">
                     <div class="form__field">
                         <input class="form__input form__input-name" id="modal-name" name="name" type="text" placeholder=" ">
@@ -438,11 +438,13 @@
                     </div>
                 </div>
 
-                <!-- <div
-                    id="captcha-container"
-                    class="smart-captcha"
-                    data-sitekey="###"
-                ></div> -->
+                <div class="modal__captcha">
+                    <div
+                        id="captcha-container"
+                        class="smart-captcha"
+                        data-sitekey="ysc1_e8podTmvdwKIyUrSYj7a4NsGDyaUYmildr95ZWIgf914865d"
+                    ></div>
+                </div>
 
                 <button class="consultation__btn custom-button_rounded custom-button_rounded_mini form__btn" type="submit">Отправить</button>
                 <p>
@@ -455,6 +457,5 @@
         </div>
     </div>
 <script type="module" src="js/script.js"></script>
-<script type="module" src="js/main-page.js"></script>
 </body>
 </html>
