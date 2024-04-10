@@ -37,9 +37,13 @@
 }
 
 .header__nav a {
-    color: var(--color-light);
+    color: var(--color-text);
     font-size: 20px;
     font-family: 'Inter';
+}
+
+.header.light .header__nav a {
+    color: var(--color-light);
 }
 
 .header__nav a.active {

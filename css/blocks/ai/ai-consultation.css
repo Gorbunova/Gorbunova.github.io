@@ -1,0 +1,7 @@
+.ai-consultation {
+    background-color: var(--color-ai);
+}
+
+.ai-consultation .consultation__wrapper {
+    background-color: var(--color-ai-light);
+}

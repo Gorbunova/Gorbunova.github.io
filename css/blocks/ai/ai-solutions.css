@@ -1,0 +1,387 @@
+.ai-solutions {
+    padding: 120px 0;
+    background-color: var(--color-ai);
+    min-height: 200vh;
+    position: relative;
+}
+
+.ai-solutions__inner {
+    width: 100%;
+}
+
+.ai-solutions .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ai-solutions h2 {
+    max-width: 1247px;
+    text-align: center;
+    margin-bottom: 44px;
+    color: var(--color-light);
+}
+
+.ai-solutions h2.mobile {
+    display: none;
+}
+
+.ai-solutions__wrapper {
+    display: flex;
+    gap: 74px;
+}
+
+.ai-solutions__types {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ai-solutions__type {
+    border: 1px solid var(--color-light);
+    border-radius: 50%;
+    width: calc((100vh - 30px * 2 - 24px * 4) / 5);
+    height: calc((100vh - 30px * 2 - 24px * 4) / 5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ai-solutions__type span {
+    font-size: 14px;
+    width: 100%;
+    word-break: break-word;
+    z-index: 1;
+}
+
+.ai-solutions__type .ai-solutions__type-circle {
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform .5s;
+}
+
+.ai-solutions__type.active .ai-solutions__type-circle {
+    opacity: 1;
+}
+
+.ai-solutions__type.metallurgy .ai-solutions__type-circle {
+    transform: translateX(0);
+    background: linear-gradient(to left, #FF5C00, #F8C600);
+}
+
+.ai-solutions__type.oilgas .ai-solutions__type-circle {
+    transform: translateY(-100%);
+    background: linear-gradient(to left, #23B4F8, #6E42E3);
+}
+
+.ai-solutions__type.mechanical-engineering .ai-solutions__type-circle {
+    transform: translateX(100%);
+    background: linear-gradient(to left, #277BD2, #05E8C2);
+}
+
+.ai-solutions__type.agricultural-industry .ai-solutions__type-circle {
+    transform: translateY(100%);
+    background: linear-gradient(to left, #30926F, #184337);
+}
+
+.ai-solutions__type.trade .ai-solutions__type-circle {
+    transform: translateX(-100%);
+    background: linear-gradient(to left, #B3BFFF, #6686FF);
+}
+
+.ai-solutions__content {
+    display: none;
+    opacity: 0;
+    transition: all .25s;
+}
+
+.ai-solutions__content.active {
+    display: block;
+}
+
+.ai-solutions__content.shown {
+    opacity: 1;
+}
+
+.ai-solutions__content-inner {
+    background-color: var(--color-ai-light);
+    border-radius: var(--border-radius-medium);
+    padding: 46px;
+}
+
+.ai-solutions__description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 46px;
+}
+
+.ai-solutions__title {
+    padding: 42px;
+    border-radius: 32px;
+}
+
+.ai-solutions__content.metallurgy .ai-solutions__title {
+    background: linear-gradient(to right, #FF5C00, #F8C600);
+}
+
+.ai-solutions__content.oilgas .ai-solutions__title {
+    background: linear-gradient(to right, #23B4F8, #6E42E3);
+}
+
+.ai-solutions__content.mechanical-engineering .ai-solutions__title {
+    background: linear-gradient(to right, #277BD2, #05E8C2);
+}
+
+.ai-solutions__content.agricultural-industry .ai-solutions__title {
+    background: linear-gradient(to right, #30926F, #184337);
+}
+
+.ai-solutions__content.trade .ai-solutions__title {
+    background: linear-gradient(to right, #B3BFFF, #6686FF);
+}
+
+.ai-solutions__title h3 {
+    color: var(--color-light);
+    margin-bottom: 24px;
+}
+
+.ai-solutions__title .text {
+    color: var(--color-light);
+    font-family: 'Inter';
+}
+
+.ai-solutions__img img {
+    height: 100%;
+    width: 100%;
+}
+
+.ai-solutions__img {
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.ai-solutions__info-title {
+    color: var(--color-light);
+    font-size: 30px;
+    line-height: 37px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.ai-solutions__info-title.mobile {
+    display: none;
+}
+
+.ai-solutions__info-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.ai-solutions__info-item {
+    background-color: #2A303D;
+    border-radius: 20px;
+    padding: 16px 16px 8px 16px;
+    min-height: 117px;
+    color: var(--color-light);
+}
+
+.ai-solutions__info-item-title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    font-family: 'Inter';
+    margin-bottom: 8px;
+}
+
+.ai-solutions__info-text {
+    font-size: 17px;
+    line-height: 20.57px;
+    font-family: 'Inter';
+}
+
+.ai-solutions__button {
+    margin-top: 46px;
+}
+
+@media (max-width: 600px) {
+    .ai-solutions {
+        padding: 80px 0;
+        min-height: unset;
+    }
+
+    .ai-solutions h2 {
+        display: none;
+    }
+
+    .ai-solutions h2.mobile {
+        display: block;
+        max-width: 328px;
+        margin-bottom: 40px;
+    }
+
+    .ai-solutions__types {
+        display: none;
+    }
+
+    .ai-solutions__content {
+        display: block;
+        opacity: 1;
+    }
+
+    .ai-solutions__wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .ai-solutions__content-inner {
+        padding: 0;
+    }
+
+    .ai-solutions__description {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin: 0;
+    }
+
+    .ai-solutions__info-wrapper {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .ai-solutions__title {
+        padding: 16px 16px 56px 16px;
+        border-radius: 19px;
+    }
+
+    .ai-solutions__title h3 {
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 16px;
+    }
+
+    .ai-solutions__img {
+        border-radius: 19px;
+        transform: translateY(-36px);
+        max-height: 236px;
+    }
+
+    .ai-solutions__info {
+        padding: 0 16px 24px 16px;
+    }
+
+    .ai-solutions__content:nth-child(5) {
+        order: 1;
+    }
+
+    .ai-solutions__content:nth-child(3) {
+        order: 2;
+    }
+
+    .ai-solutions__content:nth-child(2) {
+        order: 3;
+    }
+
+    .ai-solutions__content:nth-child(4) {
+        order: 4;
+    }
+
+    .ai-solutions__content:nth-child(6) {
+        order: 5;
+    }
+
+    .ai-solutions__info-title {
+        display: none;
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 32px;
+    }
+
+    .ai-solutions__info-title.mobile {
+        display: block;
+    }
+
+    .ai-solutions__info-item {
+        background-color: unset;
+        border-bottom: 1px solid #ffffff46;
+        border-radius: 0;
+        padding: 16px 0;
+        min-height: unset;
+        cursor: pointer;
+        position: relative;
+        transition: all .25s;
+    }
+
+    .ai-solutions__info-item::after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-color: var(--color-light);
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3.5px;
+        transform: rotate(45deg) translateY(-50%);
+        -webkit-transform: rotate(45deg);
+        transition: all .7s;
+        right: 7.25px;
+        top: calc(50% - 5px);
+    }
+
+    .ai-solutions__info-item-title {
+        font-size: 16px;
+        line-height: 19.36px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .ai-solutions__info-text {
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 16px;
+        transition: all .5s;
+        max-height: 200px;
+        overflow: hidden;
+    }
+
+    .ai-solutions__info-item:not(.active) .ai-solutions__info-text {
+        max-height: 0;
+        margin: 0;
+    }
+
+    .ai-solutions__info-text, .ai-solutions__info-item-title {
+        max-width: calc(100% - 32px);
+    }
+
+    .ai-solutions__info-item.active::after {
+        transform: rotate(225deg);
+    }
+
+    .ai-solutions__content.metallurgy .ai-solutions__title {
+        background: linear-gradient(to top, #FF5C00, #F8C600);
+    }
+
+    .ai-solutions__content.oilgas .ai-solutions__title {
+        background: linear-gradient(to top, #23B4F8, #6E42E3);
+    }
+
+    .ai-solutions__content.mechanical-engineering .ai-solutions__title {
+        background: linear-gradient(to top, #277BD2, #05E8C2);
+    }
+
+    .ai-solutions__content.agricultural-industry .ai-solutions__title {
+        background: linear-gradient(to top, #30926F, #184337);
+    }
+
+    .ai-solutions__content.trade .ai-solutions__title {
+        background: linear-gradient(to top, #B3BFFF, #6686FF);
+    }
+}

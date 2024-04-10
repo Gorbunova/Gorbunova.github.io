@@ -42,9 +42,9 @@
         </div>
     </div>
     <div class="mobile-nav-content">
-        <div class="mobile-nav-content__logo">
+        <a href="index.html" class="mobile-nav-content__logo">
             <img src="icons/logo.png" alt="logo terralink">
-        </div>
+        </a>
         <nav>
             <ul>
                 <li>
@@ -66,45 +66,45 @@
             <span class="wrap">Начать проект</span>
         </button>
     </div>
+    <header class="header light">
+        <div class="header-wrapper">
+            <a href="index.html" class="header__logo">
+                <img src="icons/logo-light.png" alt="logo">
+            </a>
+            <nav class="header__nav">
+                <ul>
+                    <li>
+                        <a href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <a href="mobile-portal.html">Продукты</a>
+                    </li>
+                    <li>
+                        <a href="#article">Исследования</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+            <span class="wrap">Начать проект</span>
+        </button>
+        <div class="mobile-nav__toggle">
+            <div class="mobile-nav__overlay"></div>
+            <div class="mobile-nav__humburger">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
     <section class="promo">
         <video autoplay muted playsinline loop class="promo__video">
             <source src="video/shimmering-highlights.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
         <div class="promo__overlay"></div>
-        <header class="header">
-            <div class="header-wrapper">
-                <a href="index.html" class="header__logo">
-                    <img src="icons/logo-light.png" alt="logo">
-                </a>
-                <nav class="header__nav">
-                    <ul>
-                        <li>
-                            <a href="about.html">О компании</a>
-                        </li>
-                        <li>
-                            <a href="mobile-portal.html">Продукты</a>
-                        </li>
-                        <li>
-                            <a href="#article">Исследования</a>
-                        </li>
-                        <li>
-                            <a href="contacts.html">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
-                <span class="wrap">Начать проект</span>
-            </button>
-            <div class="mobile-nav__toggle">
-                <div class="mobile-nav__overlay"></div>
-                <div class="mobile-nav__humburger">
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </header>
         <div class="container relative">
             <img class="promo__img" src="img/promo-img.png" logo="design element"/>
             <div class="promo__wrapper">
@@ -173,24 +173,38 @@
                     <img src="img/mockup2.png" alt="phone image">
                 </div>
             </div>
-            <div class="solutions__secondary">
-                <div class="solutions__secondary-item">
+            <div class="services">
+                <!-- <div class="services-item">
                     <h3>UX-аудит и дизайн</h3>
                     <p class="text">
                         Проектируем решения с учетом ваших задач и требований.
                         Проводим UX-исследование любых мобильных и web-приложений.
                     </p>
-                    <!-- <button class="solutions__secondary-btn custom-button">Подробнее</button> -->
-                    <img src="img/solutions-img.png" alt="design element">
-                </div>
-                <div class="solutions__secondary-item">
+                    <a href="#">
+                        <button class="services-btn custom-button">Подробнее</button>
+                    </a>
+                    <img src="img/services-img.png" alt="design element">
+                </div> -->
+                <div class="services-item">
                     <h3>Разработка под ключ</h3>
                     <p class="text">
                         Создаем мультиплатформенные ИТ-решения учитывая задачи вашего бизнеса.
                         Начинаем с концепции и заканчиваем готовым продуктом.
                     </p>
-                    <!-- <button class="solutions__secondary-btn custom-button">Подробнее</button> -->
-                    <img src="img/solutions-img-2.png" alt="design element">
+                    <a href="development.html">
+                        <button class="services-btn custom-button">Подробнее</button>
+                    </a>
+                    <img src="img/services-img-2.png" alt="design element">
+                </div>
+                <div class="services-item">
+                    <h3>Разработка решений на базе ИИ</h3>
+                    <p class="text">
+                        Технологии будущего для улучшения производительности и снижения издержек крупного бизнеса.
+                    </p>
+                    <a href="ai.html">
+                        <button class="services-btn custom-button">Подробнее</button>
+                    </a>
+                    <img src="img/services-img-3.png" alt="design element">
                 </div>
             </div>
         </div>
@@ -201,7 +215,7 @@
             <div class="qualities__wrapper">
                 <div class="qualities__item">
                     <div class="qualities__img">
-                        <img src="/img/target.png" alt="target">
+                        <img src="img/target.png" alt="target">
                     </div>
                     <h4>Работу<br>на результат</h4>
                     <p class="text">
@@ -211,7 +225,7 @@
                 </div>
                 <div class="qualities__item">
                     <div class="qualities__img">
-                        <img src="/img/lock.png" alt="lock">
+                        <img src="img/lock.png" alt="lock">
                     </div>
                     <h4>Безопасность</h4>
                     <p class="text">
@@ -221,7 +235,7 @@
                 </div>
                 <div class="qualities__item">
                     <div class="qualities__img">
-                        <img src="/img/thumbs-up.png" alt="thumbs up">
+                        <img src="img/thumbs-up.png" alt="thumbs up">
                     </div>
                     <h4>Поддержку</h4>
                     <p class="text">
@@ -231,7 +245,7 @@
                 </div>
                 <div class="qualities__item">
                     <div class="qualities__img">
-                        <img src="/img/toggle-switches.png" alt="toggle switches">
+                        <img src="img/toggle-switches.png" alt="toggle switches">
                     </div>
                     <h4>Технологии</h4>
                     <p class="text">
@@ -252,21 +266,21 @@
                         <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
                         <label class="form__label consultation__label" for="name">Имя</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-phone consultation__input" id="phone" name="phone" type="tel" placeholder=" ">
                         <label class="form__label consultation__label" for="phone" >Телефон</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-email consultation__input" id="email" name="email" type="text" placeholder=" ">
                         <label class="form__label consultation__label" for="email">Email</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
 
@@ -407,7 +421,7 @@
                         <input class="form__input form__input-name" id="modal-name" name="name" type="text" placeholder=" ">
                         <label class="form__label" for="modal-name">Имя</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
@@ -420,14 +434,14 @@
                         <input class="form__input form__input-phone" id="modal-phone" name="phone" type="tel" placeholder=" ">
                         <label class="form__label" for="modal-phone" >Телефон</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-email" id="modal-email" name="email" type="text" placeholder=" ">
                         <label class="form__label" for="modal-email">Email</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                 </div>
@@ -442,7 +456,7 @@
                     <div
                         id="captcha-container"
                         class="smart-captcha"
-                        data-sitekey="ysc1_e8podTmvdwKIyUrSYj7a4NsGDyaUYmildr95ZWIgf914865d"
+                        data-sitekey="<ключ_клиента>"
                     ></div>
                 </div>
 

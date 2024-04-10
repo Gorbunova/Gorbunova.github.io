@@ -77,10 +77,10 @@
 .mobile-nav-content__close {
     cursor: pointer;
     position: absolute;
-    height: 40px;
+    height: 80px;
     width: 40px;
     right: 40px;
-    top: 56px;
+    top: 0px !important;
 }
 
 .mobile-nav-content__logo {
@@ -89,6 +89,7 @@
     left: 44px;
     opacity: 0;
     transition: opacity .7s;
+    z-index: 2;
 }
 
 .mobile-nav-content.active .mobile-nav-content__logo {

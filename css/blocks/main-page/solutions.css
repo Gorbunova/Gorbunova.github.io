@@ -66,39 +66,6 @@
     margin-top: 60px;
 }
 
-.solutions__secondary {
-    display: flex;
-    gap: 20px;
-}
-
-.solutions__secondary-btn {
-    z-index: 1;
-}
-
-.solutions__secondary-item {
-    background-color: var(--color-gray);
-    border-radius: var(--border-radius-medium);
-    padding: 80px 90px 64px 90px;
-    position: relative;
-    overflow: hidden;
-}
-
-.solutions__secondary-item h3 {
-    margin-bottom: 24px;
-}
-
-.solutions__secondary-item p {
-    font-family: 'Inter';
-    margin-bottom: 80px;
-}
-
-.solutions__secondary-item img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 160px;
-}
-
 @media (max-width: 1600px) {
     .solutions__main {
         padding: 64px 64px 72px 64px;
@@ -119,18 +86,6 @@
 
     .solutions__main button {
         margin-top: 24px;
-    }
-
-    .solutions__secondary-item img {
-        height: 110px;
-    }
-
-    .solutions__secondary-item {
-        padding: 44px 64px 56px 64px;
-    }
-
-    .solutions__secondary-item p {
-        margin-bottom: 56px;
     }
 }
 
@@ -153,22 +108,6 @@
 
     .solutions__imgs img:nth-child(2) {
         right: 44px;
-    }
-
-    .solutions__secondary-item img {
-        height: 80px;
-    }
-
-    .solutions__secondary-item {
-        padding: 32px 44px;
-    }
-
-    .solutions__secondary-item p {
-        margin-bottom: 40px;
-    }
-
-    .solutions__secondary-item h3 {
-        margin-bottom: 12px;
     }
 }
 
@@ -203,24 +142,6 @@
         margin-right: 60px;
         margin-bottom: -138px;
         z-index: 1;
-    }
-
-    .solutions__secondary {
-        flex-direction: column;
-    }
-
-    .solutions__secondary-item p {
-        font-size: 16px;
-        line-height: 19.36px;
-        margin-bottom: 24px;
-    }
-
-    .solutions__secondary-item {
-        padding: 44px 44px 64px 44px;
-    }
-
-    .solutions__secondary-item img {
-        height: 100px;
     }
 }
 
@@ -266,13 +187,5 @@
     .solutions__main button {
         margin-top: 20px;
         width: 100%;
-    }
-
-    .solutions__secondary-item {
-        padding: 40px 20px 80px 20px;
-    }
-
-    .solutions__secondary-item h3 {
-        margin-bottom: 24px;
     }
 }

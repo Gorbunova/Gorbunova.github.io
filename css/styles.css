@@ -8,6 +8,7 @@
 @import './components/modal.css';
 @import './components/navigation.css';
 @import './components/typewrite.css';
+@import './components/services.css';
 
 /* common blocks */
 @import './blocks/consultation.css';
@@ -37,6 +38,15 @@
 
 /* about blocks */
 @import './blocks/about/about.css';
+@import './blocks/about/about-text.css';
 @import './blocks/about/about-services.css';
+@import './blocks/about/about-examples.css';
 @import './blocks/about/about-advantages.css';
 @import './blocks/about/about-requisites.css';
+
+/* ai blocks */
+@import './blocks/ai/ai.css';
+@import './blocks/ai/ai-advantages.css';
+@import './blocks/ai/ai-development.css';
+@import './blocks/ai/ai-consultation.css';
+@import './blocks/ai/ai-solutions.css';

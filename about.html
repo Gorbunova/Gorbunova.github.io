@@ -7,6 +7,7 @@
 
     <title>TerraLink</title>
     <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 
 <body>
@@ -42,9 +43,9 @@
         </div>
     </div>
     <div class="mobile-nav-content">
-        <div class="mobile-nav-content__logo">
+        <a href="index.html" class="mobile-nav-content__logo">
             <img src="icons/logo.png" alt="logo terralink">
-        </div>
+        </a>
         <nav>
             <ul>
                 <li>
@@ -66,154 +67,282 @@
             <span class="wrap">Начать проект</span>
         </button>
     </div>
+    <header class="header light">
+        <div class="header-wrapper">
+            <a href="index.html" class="header__logo">
+                <img src="icons/logo-light.png" alt="logo">
+            </a>
+            <nav class="header__nav">
+                <ul>
+                    <li>
+                        <a href="about.html" class="active">О компании</a>
+                    </li>
+                    <li>
+                        <a href="mobile-portal.html">Продукты</a>
+                    </li>
+                    <li>
+                        <a href="index.html#article">Исследования</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+            <span class="wrap">Начать проект</span>
+        </button>
+        <div class="mobile-nav__toggle">
+            <div class="mobile-nav__overlay"></div>
+            <div class="mobile-nav__humburger">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
     <section class="about">
-        <header class="header">
-            <div class="header-wrapper">
-                <a href="index.html" class="header__logo">
-                    <img src="icons/logo.png" alt="logo">
-                </a>
-                <nav class="header__nav">
-                    <ul>
-                        <li>
-                            <a href="about.html" class="active">О компании</a>
-                        </li>
-                        <li>
-                            <a href="mobile-portal.html">Продукты</a>
-                        </li>
-                        <li>
-                            <a href="index.html#article">Исследования</a>
-                        </li>
-                        <li>
-                            <a href="contacts.html">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
-                <span class="wrap">Начать проект</span>
-            </button>
-            <div class="mobile-nav__toggle">
-                <div class="mobile-nav__overlay"></div>
-                <div class="mobile-nav__humburger">
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </header>
         <div class="container">
             <div class="about__wrapper">
-                <h1>О компании</h1>
-                <h2>ТерраЛинк Разработка – российский разработчик ИТ-решений.</h2>
-                <p class="text wide">
-                    В активе команды - значительный опыт комплексных проектов по внедрению,
-                    развертыванию систем 1С, заказной разработке ИТ-решений,
-                    созданию и поддержки мобильных приложений для операционных систем iOS,
-                    Android и портальных решений.
-                </p>
-                <p class="text">
-                    Компания динамично развивается, привлекая экспертов с обширным опытом
-                    внедрений решений 1С в различных отраслях.
-                </p>
-                <div class="about__points">
-                    <div class="about-points__item">
-                        <p class="text">
-                            Мы умеем разрабатывать методологию с учетом изменения законодательства
-                            и адаптировать системы под необходимые регламентные требования
-                        </p>
+                <div class="about__title">
+                    <h1>О компании</h1>
+                    <h2>ТерраЛинк Разработка – российская команда</h2>
+                </div>
+                <div class="about__content-wrapper">
+                    <div class="about__content-item">
+                        <p class="about__item-count">50+</p>
+                        <p class="about__item-text text">разработчиков, аналитиков, продактов и методологов в команде</p>
                     </div>
-                    <div class="about-points__item">
-                        <p class="text">
-                            Мы реализуем корпоративные решения, обладаем широкой технической экспертизой и опытом
-                        </p>
+                    <div class="about__content-item">
+                        <p class="about__item-count">45</p>
+                        <p class="about__item-text text">Готовых решений под любые нужды бизнеса</p>
                     </div>
-                    <div class="about-points__item">
-                        <p class="text">
-                            В нашей команде опытные эксперты, сфокусированные на решении задач любых бизнес-функций
-                        </p>
+                    <div class="about__content-item">
+                        <p class="about__item-count">10</p>
+                        <p class="about__item-text text">стеков разработки</p>
                     </div>
-                    <div class="about-points__item">
-                        <p class="text">
-                            У нас огромная отраслевая экспертиза во всех сегментах экономики
-                        </p>
+                    <div class="about__content-item">
+                        <p class="about__item-count">29</p>
+                        <p class="about__item-text text">Клиентов из топ 100 РБК</p>
                     </div>
                 </div>
-                <img class="about__img" src="img/about/about.png" alt="designer image">
             </div>
+        </div>
+    </section>
+    <section class="about-text">
+        <div class="container">
+            <p class="text-large">
+                Мы специализируемся на разработке и внедрении IT-решений.
+                Помогаем бизнесу эффективно использовать данные для достижения своих стратегических целей.<br><br>
+                Делаем особый фокус на мобильности и искусственном интеллекте.
+                Предлагаем решения, соответствующие потребностям каждого клиента: от корпорации до футбольного клуба.<br><br>
+                В активе команды - опыт заказной разработке ИТ-решений, созданию и поддержки мобильных приложений для операционных систем iOS,
+                Android и портальных решений.
+            </p>
         </div>
     </section>
     <section class="about-services">
         <div class="container">
-            <h2>Наши услуги и решения</h2>
-            <div class="about-services__wrapper">
-                <div class="about-services__item">
-                    <img src="img/about/services/about-services-1.png" alt="development on 1c">
-                    <div class="about-services__title">
-                        <p>Разработка на 1С</p>
-                        <button>Подробнее</button>
-                    </div>
+            <h2>Наши услуги</h2>
+            <div class="services">
+                <!-- <div class="services-item">
+                    <h3>UX-аудит и дизайн</h3>
+                    <p class="text">
+                        Проектируем решения с учетом ваших задач и требований.
+                        Проводим UX-исследование любых мобильных и web-приложений.
+                    </p>
+                    <a href="#">
+                        <button class="services-btn custom-button">Подробнее</button>
+                    </a>
+                    <img src="img/services-img.png" alt="design element">
+                </div> -->
+                <div class="services-item">
+                    <h3>Разработка под ключ</h3>
+                    <p class="text">
+                        Создаем мультиплатформенные ИТ-решения учитывая задачи вашего бизнеса.
+                        Начинаем с концепции и заканчиваем готовым продуктом.
+                    </p>
+                    <a href="development.html">
+                        <button class="services-btn custom-button">Подробнее</button>
+                    </a>
+                    <img src="img/services-img-2.png" alt="design element">
                 </div>
-                <div class="about-services__item">
-                    <img src="img/about/services/about-services-2.png" alt="mobile development">
-                    <div class="about-services__title">
-                        <p>Мобильная разработка</p>
-                        <button>Подробнее</button>
-                    </div>
+                <div class="services-item">
+                    <h3>Разработка решений на базе ИИ</h3>
+                    <p class="text">
+                        Технологии будущего для улучшения производительности и снижения издержек крупного бизнеса.
+                    </p>
+                    <a href="ai.html">
+                        <button class="services-btn custom-button">Подробнее</button>
+                    </a>
+                    <img src="img/services-img-3.png" alt="design element">
                 </div>
-                <div class="about-services__item">
-                    <img src="img/about/services/about-services-3.png" alt="сustom development">
-                    <div class="about-services__title">
-                        <p>Заказная разработка</p>
-                        <button>Подробнее</button>
+            </div>
+        </div>
+    </section>
+    <section class="examples about-examples">
+        <div class="container">
+            <h2>Наши решения</h2>
+            <div class="examples__wrapper">
+                <div class="examples__item">
+                    <div class="examples__item-info">
+                        <h4>Спортивная Аналитика</h4>
+                        <p class="examples__item-text">
+                            Управление спортивным бизнесом в одном окне: видеоаналитика игр,
+                            прогнозирование действий спортсменов на базе ИИ, взаимодействие с фанатами
+                            медицинский мониторинг игроков и скаутинг талантов.
+                            Гибкое в настройке, решение адаптируется под разные виды спорта
+                        </p>
                     </div>
+                    <img src="img/examples/mockup-3.png" alt="sport screenshot">
                 </div>
+                <div class="examples__item">
+                    <div class="examples__item-info">
+                        <h4>Корпоративный мобильный портал</h4>
+                        <p class="examples__item-text">
+                            Решение для управления корпоративными ресурсами и коммуникацией,
+                            обеспечивающий доступ к бизнес-данным из любой точки мира.
+                            Включает AI HR-технологии, ускоренное согласование документов,
+                            интеграцию с ERP/CRM и защиту данных. Гибкая настройка под специфику бизнеса
+                        </p>
+                    </div>
+                    <img src="img/examples/mockup-5.png" alt="sport screenshot">
+                </div>
+                <div class="examples__item">
+                    <div class="examples__item-info">
+                        <h4>Управление корпоративным контентом (ECM Mobile)</h4>
+                        <p class="examples__item-text">
+                            Полный контроль над ECM системой в мобильном формате.
+                            Готовые коннекторы, отчеты для контроля исполнения, согласование документов,
+                            эффективная выдача поручений и полнотекстовый поиск обеспечивают удобное
+                            и мобильное управление контентом предприятия
+                        </p>
+                    </div>
+                    <img src="img/examples/mockup-2.png" alt="documents screenshot">
+                </div>
+                <div class="examples__item">
+                    <div class="examples__item-info">
+                        <h4>МОБИЛЬНОЕ ТОРО (ТOиР)</h4>
+                        <p class="examples__item-text">
+                            Комплексное управление предприятием от согласования документов
+                            до эксплуатации оборудования. Оптимизация сменных заданий, маршрутов обхода,
+                            оперативное устранение дефектов, чат-бот для сотрудников и история обслуживания
+                            обеспечивают эффективность и безопасность производственных процессов
+                        </p>
+                    </div>
+                    <img src="img/examples/mockup-1.png" alt="asset management screenshot">
+                </div>
+                <div class="examples__item">
+                    <div class="examples__item-info">
+                        <h4>Приложение для сотрудников и клиентов АЗС</h4>
+                        <p class="examples__item-text">
+                            Виртуальная карта лояльности АЗС для клиентов облегчает получение бонусов
+                            и скидок, предлагая персонализацию и дополнительные сервисы.
+                            Супер-апп для операторов АЗС позволяет отслеживать различные показатели работы,
+                            включая результативность, чек-листы и подписание отчетов
+                        </p>
+                    </div>
+                    <img src="img/examples/mockup-4.png" alt="sport screenshot">
+                </div>
+                <div class="examples__item muted">
+                    <div class="examples__item-info">
+                        <h4>HR-Решение</h4>
+                        <p class="examples__item-text">
+                            Комплексное решение для управления HR-функциями, сервисами и бизнес-процессами.
+                            Оно повышает эффективность работы персонала и оптимизирует процессы подбора и
+                            пребордеринга сотрудников
+                        </p>
+                        <p class="examples__item-soon">Скоро будет доступно</p>
+                    </div>
+                    <img src="img/examples/mockup-6.png" alt="sport screenshot">
+                </div>
+            </div>
+            <img class="examples__img" src="img/about/swipe.gif" alt="swipe animation">
+        </div>
+    </section>
+    <section class="consultation about-page" id="consultation">
+        <div class="container">
+            <div class="consultation__wrapper">
+                <h2 class="consultation__title">Предлагаем обсудить ваш проект</h2>
+                <form id="consultation-form" action="#" class="consultation__form cnslt">
+                    <div class="form__field">
+                        <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
+                        <label class="form__label consultation__label" for="name">Имя</label>
+                        <div class="form__error-label">
+                            <img src="icons/error.svg" alt="error">
+                        </div>
+                    </div>
+                    <div class="form__field">
+                        <input class="form__input form__input-phone consultation__input" id="phone" name="phone" type="tel" placeholder=" ">
+                        <label class="form__label consultation__label" for="phone" >Телефон</label>
+                        <div class="form__error-label">
+                            <img src="icons/error.svg" alt="error">
+                        </div>
+                    </div>
+                    <div class="form__field">
+                        <input class="form__input form__input-email consultation__input" id="email" name="email" type="text" placeholder=" ">
+                        <label class="form__label consultation__label" for="email">Email</label>
+                        <div class="form__error-label">
+                            <img src="icons/error.svg" alt="error">
+                        </div>
+                    </div>
+
+                    <button disabled class="consultation__btn" type="submit">Отправить</button>
+                </form>
+                <p class="consultation__text">
+                    Оставляя заявку, вы даете согласие на обработку ваших
+                    <a href="#" >персональных&nbspданных</a>.
+                </p>
+                <img class="consultation__img" src="img/airplane.png" alt="airplane image">
             </div>
         </div>
     </section>
     <section class="about-advantages">
         <div class="container">
-            <h2>Наши преимущества</h2>
-            <p class="text text-large">Выберите ТерраЛинк Разработка и вы получите лучшие в своем классе услуги</p>
-            <h3>С нами вы сможете:</h3>
+            <h2>Преимущества работы с нами</h2>
+            <h2 class="mobile">Наши преимущества</h2>
             <div class="about-advantages__wrapper">
                 <div class="about-advantages__item">
-                    <p>
-                        Воспользоваться преимуществами строгих процессов контроля качества,
-                        включая различные уровни тестирования и пилотные тесты с участием пользователей
-                    </p>
+                    <div>
+                        <h4>Широкий спектр услуг</h4>
+                        <p class="text">
+                            Мы предлагаем полный цикл разработки — от концепции до внедрения,
+                            включая поддержку и масштабирование.<br>
+                            Вы получаете все необходимые услуги под одной крышей
+                        </p>
+                    </div>
+                    <img src="img/about/advantages/rocket.png" alt="rocket">
                 </div>
                 <div class="about-advantages__item">
-                    <p>
-                        Расширить свои внутренние возможности с помощью интегрированной команды,
-                        готовой присоединиться к вашему проекту или организационной структуре
-                    </p>
+                    <div>
+                        <h4>Свой подход к&nbsp;каждому клиенту</h4>
+                        <p class="text">
+                            Каждый проект для нас уникален.
+                            Мы погружаемся в специфику вашего бизнеса, чтобы предложить решение,
+                            наилучшим образом соответствующее вашим целям и задачам
+                        </p>
+                    </div>
+                    <img src="img/about/advantages/heart-notify.png" alt="notification">
                 </div>
                 <div class="about-advantages__item">
-                    <p>
-                        Воспользоваться преимуществами строгих процессов контроля качества,
-                        включая различные уровни тестирования и пилотные тесты с участием пользователей
-                    </p>
+                    <div>
+                        <h4>Технологические решения</h4>
+                        <p class="text">
+                            В основе нашей работы лежат последние достижения в области технологий и программирования.
+                            Мы постоянно следим за инновациями и внедряем их в наши проекты
+                        </p>
+                    </div>
+                    <img src="img/about/advantages/at.png" alt="at">
                 </div>
                 <div class="about-advantages__item">
-                    <p>
-                        Получить доступ к поддержке после развертывания
-                        с увеличенным временем отклика после даты ввода в эксплуатацию
-                    </p>
-                </div>
-                <div class="about-advantages__item">
-                    <p>
-                        Получить полный контроль с помощью онлайн-отчетов,
-                        расписаний и инструментов отслеживания проблем
-                    </p>
-                </div>
-                <div class="about-advantages__item">
-                    <p>
-                        Обратиться к нашей группе внедрения для текущего обслуживания и поддержки
-                    </p>
-                </div>
-                <div class="about-advantages__item">
-                    <p>
-                        Работать с мотивированными, опытными профессионалами
-                    </p>
+                    <div>
+                        <h4>Поддержка и&nbsp;развитие проекта</h4>
+                        <p class="text">
+                            Наше сотрудничество не заканчивается на моменте запуска проекта.
+                            Мы предлагаем поддержку и дальнейшее развитие ваших IT-систем,
+                            чтобы они соответствовали меняющимся условиям рынка
+                        </p>
+                    </div>
+                    <img src="img/about/advantages/message.png" alt="message">
                 </div>
             </div>
         </div>
@@ -230,101 +359,6 @@
             <div class="about-requisites__download">
                 <button>Скачать</button>
                 <p>PDF, 189 КБ</p>
-            </div>
-        </div>
-    </section>
-    <section class="consultation" id="consultation">
-        <div class="container">
-            <div class="consultation__wrapper">
-                <h2 class="consultation__title">Предлагаем обсудить ваш проект</h2>
-                <form id="consultation-form" action="#" class="consultation__form cnslt">
-                    <div class="form__field">
-                        <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
-                        <label class="form__label consultation__label" for="name">Имя</label>
-                        <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
-                        </div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input form__input-phone consultation__input" id="phone" name="phone" type="tel" placeholder=" ">
-                        <label class="form__label consultation__label" for="phone" >Телефон</label>
-                        <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
-                        </div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input form__input-email consultation__input" id="email" name="email" type="text" placeholder=" ">
-                        <label class="form__label consultation__label" for="email">Email</label>
-                        <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
-                        </div>
-                    </div>
-
-                    <button disabled class="consultation__btn" type="submit">Отправить</button>
-                </form>
-                <p class="consultation__text">
-                    Оставляя заявку, вы даете согласие на обработку ваших
-                    <a href="#" >персональных&nbspданных</a>.
-                </p>
-                <img class="consultation__img" src="img/airplane.png" alt="airplane image">
-            </div>
-        </div>
-    </section>
-    <section class="examples">
-        <div class="container">
-            <h2>Примеры наших решений</h2>
-            <div class="examples__wrapper">
-                <div class="examples__item">
-                    <div class="examples__item-info">
-                        <div class="examples__item-label">Мобильные решения</div>
-                        <h4>Мобильные СУПТД и ТОРО</h4>
-                        <p class="examples__item-text">
-                            Комплексное управление предприятием от согласования документов
-                            до эксплуатации оборудования. Оптимизация сменных заданий, маршрутов обхода,
-                            оперативное устранение дефектов, чат-бот для сотрудников и история обслуживания
-                            обеспечивают эффективность и безопасность производственных процессов.
-                        </p>
-                    </div>
-                    <img src="img/examples/mockup-1.png" alt="asset management screenshot">
-                </div>
-                <div class="examples__item">
-                    <div class="examples__item-info">
-                        <div class="examples__item-label">Мобильные решения</div>
-                        <h4>Терралинк ECM Mobile</h4>
-                        <p class="examples__item-text">
-                            Полный контроль над ECM системой в мобильном формате.
-                            Готовые коннекторы, отчеты для контроля исполнения, согласование документов,
-                            эффективная выдача поручений и полнотекстовый поиск обеспечивают удобное
-                            и мобильное управление контентом предприятия.
-                        </p>
-                    </div>
-                    <img src="img/examples/mockup-2.png" alt="documents screenshot">
-                </div>
-                <div class="examples__item">
-                    <div class="examples__item-info">
-                        <div class="examples__item-label orange">BI аналитика</div>
-                        <h4>Спортивная Аналитика</h4>
-                        <p class="examples__item-text">
-                            Полная информация о матче для спортивных аналитиков и тренеров клубов,
-                            включая оценку сильных и слабых сторон команды для рекомендаций по усилению
-                            состава, анализ матчей команды и их соперников.
-                        </p>
-                    </div>
-                    <img src="img/examples/mockup-3.png" alt="sport screenshot">
-                </div>
-                <div class="examples__item">
-                    <div class="examples__item-info">
-                        <div class="examples__item-label">Мобильные решения</div>
-                        <h4>Приложение для сотрудников и клиентов АЗС</h4>
-                        <p class="examples__item-text">
-                            Виртуальная карта лояльности АЗС для клиентов облегчает получение бонусов
-                            и скидок, предлагая персонализацию и дополнительные сервисы.
-                            Супер-апп для операторов АЗС позволяет отслеживать различные показатели работы,
-                            включая результативность, чек-листы и подписание отчетов.
-                        </p>
-                    </div>
-                    <img src="img/examples/mockup-4.png" alt="sport screenshot">
-                </div>
             </div>
         </div>
     </section>
@@ -387,7 +421,7 @@
                         <input class="form__input form__input-name" id="modal-name" name="name" type="text" placeholder=" ">
                         <label class="form__label" for="modal-name">Имя</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
@@ -400,14 +434,14 @@
                         <input class="form__input form__input-phone" id="modal-phone" name="phone" type="tel" placeholder=" ">
                         <label class="form__label" for="modal-phone" >Телефон</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-email" id="modal-email" name="email" type="text" placeholder=" ">
                         <label class="form__label" for="modal-email">Email</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                 </div>
@@ -422,7 +456,7 @@
                     <div
                         id="captcha-container"
                         class="smart-captcha"
-                        data-sitekey="ysc1_e8podTmvdwKIyUrSYj7a4NsGDyaUYmildr95ZWIgf914865d"
+                        data-sitekey="<ключ_клиента>"
                     ></div>
                 </div>
 

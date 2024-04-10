@@ -18,6 +18,14 @@
     position: relative;
 }
 
+.consultation.contacts-page, .consultation.about-page {
+    padding-bottom: 0;
+}
+
+.consultation.contacts-page .consultation__wrapper, .consultation.about-page .consultation__wrapper {
+    background: linear-gradient(to right, #331E64, #B37CE9);
+}
+
 .consultation__title {
     max-width: 832px;
     letter-spacing: 1px;

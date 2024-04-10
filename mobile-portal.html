@@ -42,9 +42,9 @@
         </div>
     </div>
     <div class="mobile-nav-content">
-        <div class="mobile-nav-content__logo">
+        <a href="index.html" class="mobile-nav-content__logo">
             <img src="icons/logo.png" alt="logo terralink">
-        </div>
+        </a>
         <nav>
             <ul>
                 <li>
@@ -66,40 +66,40 @@
             <span class="wrap">Начать проект</span>
         </button>
     </div>
+    <header class="header">
+        <div class="header-wrapper">
+            <a href="index.html" class="header__logo">
+                <img src="icons/logo.png" alt="logo">
+            </a>
+            <nav class="header__nav">
+                <ul>
+                    <li>
+                        <a href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <a href="mobile-portal.html" class="active">Продукты</a>
+                    </li>
+                    <li>
+                        <a href="index.html#article">Исследования</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
+            <span class="wrap">Начать проект</span>
+        </button>
+        <div class="mobile-nav__toggle">
+            <div class="mobile-nav__overlay"></div>
+            <div class="mobile-nav__humburger">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
     <section class="portal">
-        <header class="header">
-            <div class="header-wrapper">
-                <a href="index.html" class="header__logo">
-                    <img src="icons/logo.png" alt="logo">
-                </a>
-                <nav class="header__nav">
-                    <ul>
-                        <li>
-                            <a href="about.html">О компании</a>
-                        </li>
-                        <li>
-                            <a href="mobile-portal.html" class="active">Продукты</a>
-                        </li>
-                        <li>
-                            <a href="index.html#article">Исследования</a>
-                        </li>
-                        <li>
-                            <a href="contacts.html">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
-                <span class="wrap">Начать проект</span>
-            </button>
-            <div class="mobile-nav__toggle">
-                <div class="mobile-nav__overlay"></div>
-                <div class="mobile-nav__humburger">
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </header>
         <div class="container">
             <div class="portal__wrapper">
                 <div class="portal__inner">
@@ -291,21 +291,21 @@
                         <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
                         <label class="form__label consultation__label" for="name">Имя</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-phone consultation__input" id="phone" name="phone" type="tel" placeholder=" ">
                         <label class="form__label consultation__label" for="phone" >Телефон</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-email consultation__input" id="email" name="email" type="text" placeholder=" ">
                         <label class="form__label consultation__label" for="email">Email</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
 
@@ -478,21 +478,21 @@
                         <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
                         <label class="form__label consultation__label" for="name">Имя</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-phone consultation__input" id="phone" name="phone" type="tel" placeholder=" ">
                         <label class="form__label consultation__label" for="phone" >Телефон</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-email consultation__input" id="email" name="email" type="text" placeholder=" ">
                         <label class="form__label consultation__label" for="email">Email</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
 
@@ -512,7 +512,6 @@
             <div class="examples__wrapper">
                 <div class="examples__item">
                     <div class="examples__item-info">
-                        <div class="examples__item-label">Мобильные решения</div>
                         <h4>Мобильные СУПТД и ТОРО</h4>
                         <p class="examples__item-text">
                             Комплексное управление предприятием от согласования документов
@@ -525,7 +524,6 @@
                 </div>
                 <div class="examples__item">
                     <div class="examples__item-info">
-                        <div class="examples__item-label">Мобильные решения</div>
                         <h4>Терралинк ECM Mobile</h4>
                         <p class="examples__item-text">
                             Полный контроль над ECM системой в мобильном формате.
@@ -538,7 +536,6 @@
                 </div>
                 <div class="examples__item">
                     <div class="examples__item-info">
-                        <div class="examples__item-label orange">BI аналитика</div>
                         <h4>Спортивная Аналитика</h4>
                         <p class="examples__item-text">
                             Полная информация о матче для спортивных аналитиков и тренеров клубов,
@@ -550,7 +547,6 @@
                 </div>
                 <div class="examples__item">
                     <div class="examples__item-info">
-                        <div class="examples__item-label">Мобильные решения</div>
                         <h4>Приложение для сотрудников и клиентов АЗС</h4>
                         <p class="examples__item-text">
                             Виртуальная карта лояльности АЗС для клиентов облегчает получение бонусов
@@ -562,6 +558,7 @@
                     <img src="img/examples/mockup-4.png" alt="sport screenshot">
                 </div>
             </div>
+            <img class="examples__img" src="img/about/swipe.gif" alt="swipe animation">
         </div>
     </section>
     <footer class="footer">
@@ -623,7 +620,7 @@
                         <input class="form__input form__input-name" id="modal-name" name="name" type="text" placeholder=" ">
                         <label class="form__label" for="modal-name">Имя</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
@@ -636,14 +633,14 @@
                         <input class="form__input form__input-phone" id="modal-phone" name="phone" type="tel" placeholder=" ">
                         <label class="form__label" for="modal-phone" >Телефон</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                     <div class="form__field">
                         <input class="form__input form__input-email" id="modal-email" name="email" type="text" placeholder=" ">
                         <label class="form__label" for="modal-email">Email</label>
                         <div class="form__error-label">
-                            <img src="/icons/error.svg" alt="error">
+                            <img src="icons/error.svg" alt="error">
                         </div>
                     </div>
                 </div>
@@ -658,7 +655,7 @@
                     <div
                         id="captcha-container"
                         class="smart-captcha"
-                        data-sitekey="ysc1_e8podTmvdwKIyUrSYj7a4NsGDyaUYmildr95ZWIgf914865d"
+                        data-sitekey="<ключ_клиента>"
                     ></div>
                 </div>
 

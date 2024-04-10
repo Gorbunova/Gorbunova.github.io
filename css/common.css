@@ -28,6 +28,9 @@ body {
 
     --border-radius: 60px;
     --border-radius-medium: 44px;
+
+    --color-ai: #181D25;
+    --color-ai-light: #212631;
 }
 
 .no-scroll {

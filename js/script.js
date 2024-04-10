@@ -31,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('.portal__button')?.addEventListener('click', showModal);
     document.querySelector('.portal-problems__button')?.addEventListener('click', showModal);
+
+    /* AI page */
+    if (!document.querySelector('.ai-solutions')) return;
+
+    document.querySelector('.ai__button')?.addEventListener('click', showModal);
+    document.querySelector('.ai-development__button')?.addEventListener('click', showModal);
+
+    aiAnimationInit();
 })
 
 const initMobileNav = () => {
@@ -84,8 +92,16 @@ const initFixedHeader = () => {
 const getIsAfterStartSection = () => {
     const mainStartSectionTop = document.querySelector('.solutions')?.getBoundingClientRect().top;
     const portalStartSectionTop = document.querySelector('.portal-about')?.getBoundingClientRect().top;
-    const aboutStartSectionTop = document.querySelector('.about-services')?.getBoundingClientRect().top;
-    return mainStartSectionTop <= 0 || portalStartSectionTop <= 0 || aboutStartSectionTop <= 0;
+    const aboutStartSectionTop = document.querySelector('.about-text')?.getBoundingClientRect().top;
+    const contactsStartSectionTop = document.querySelector('.contacts-map')?.getBoundingClientRect().top;
+    const aiStartSectionTop = document.querySelector('.ai-advantages')?.getBoundingClientRect().top;
+    return (
+        mainStartSectionTop <= 0 ||
+        portalStartSectionTop <= 0 ||
+        aboutStartSectionTop <= 0 ||
+        contactsStartSectionTop <= 0 ||
+        aiStartSectionTop <= 0
+    );
 }
 
 const scrollPage = (header, timeout, startTimeout, isAfterStartSection, isDown = false) => {
@@ -149,14 +165,14 @@ const initTypewrite = () => {
     };
 }
 
-export const showModal = () => {
+const showModal = () => {
     document.querySelector('.modal__wrapper').classList.add('active');
     blockScroll();
 
     initConsultation(true);
 };
 
-export const hideModal = () => {
+const hideModal = () => {
     document.querySelector('.modal__wrapper').classList.remove('active');
     unblockScroll();
 };
@@ -196,50 +212,26 @@ function init100vh(){
 /* Consultation ********************************************************************** */
 
 const initConsultation = (isModal = false) => {
-    const btns = document.querySelectorAll('.consultation__btn');
+/*     const btns = document.querySelectorAll('.consultation__btn');
 
     btns.forEach(btn => {
         if (isModal && btn.parentElement.getAttribute('id') !== 'modal-form') return;
         new ConsultationBtn(btn);
-        new ConsultationFields(btn);
-    });
+    }); */
 }
 
-class ConsultationBtn {
+/* class ConsultationBtn {
     constructor(btn) {
         this.btn = btn;
 
-        const emailRegexp = /^\S+@\S+\.\S+$/;
-
-        const inputEmail = btn.parentElement.querySelector('.form__input-email');
-        const inputPhone = btn.parentElement.querySelector('.form__input-phone');
-        const inputName = btn.parentElement.querySelector('.form__input-name');
-        const fields = btn.parentElement.querySelectorAll('.form__field');
         const isModal = btn.parentElement.classList.contains('modal__form');
 
         if (isModal) btn.removeAttribute('disabled');
 
         btn.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const isErrorEmail = !inputEmail.value.match(emailRegexp);
-            const isErrorPhone = inputPhone.value.replace(/[^\d]/g, '').length < 11;
-            const isErrorName = !inputName.value.length;
-
-            if (isErrorEmail || isErrorPhone || isErrorName) {
-                if (isErrorEmail) inputEmail.parentElement.classList.add('error');
-                if (isErrorPhone) inputPhone.parentElement.classList.add('error');
-                if (isErrorName) inputName.parentElement.classList.add('error');
-            }
-            else {
                 const plane = btn.closest('.consultation__wrapper')?.querySelector('.consultation__img');
 
-                if (!plane) {
-                    const token = document.querySelector('#captcha-container input')?.value;
-
-                    if (token) hideModal();
-                }
-                else {
+                if (plane) {
                     const transform = window.innerWidth > 992 ? 'translate(-364px, -200px) scale(0.5)' : 'translate(-182px, -100px) scale(0.5)'
                     plane.style.transform = transform;
 
@@ -248,161 +240,15 @@ class ConsultationBtn {
                         btn.closest('.consultation__wrapper').innerHTML = `
                             <div class="consultation__sended">
                                 <h2>Первый шаг сделан</h2>
-                                <p>Скоро наш менеджер свяжется с вам для уточнения деталей</p>
+                                <p>Скоро наш менеджер свяжется с вамC для уточнения деталей</p>
                             </div>
                         `;
                     }, 700);
                 }
             }
-        })
-
-        fields.forEach(field => field.addEventListener('input', () => {
-            if (field.classList.contains('error')) field.classList.remove('error');
-
-            const nameLength = inputName.value.length;
-            const phoneLength = inputPhone.value.length;
-            const emailLength = inputEmail.value.length;
-
-            if (nameLength && phoneLength && emailLength) btn.removeAttribute('disabled');
-            else if (!isModal) btn.setAttribute('disabled', true);
-        }))
+        )
     }
-}
-
-class ConsultationFields {
-    constructor(btn) {
-        this.btn = btn;
-
-        const phonemask = '+7 (___) ___-__-__';
-        const startInputPosition = 4;
-
-        let phoneVal = phonemask;
-        let inputPos = startInputPosition;
-
-        const fields = btn.parentElement.querySelectorAll('.form__field');
-        fields.forEach(field => {
-            field.addEventListener('click', () => field.querySelector('input')?.focus());
-
-            if (field.querySelector('input')) field.querySelector('input').value = '';
-            else if (field.querySelector('textarea')) field.querySelector('textarea').value = '';
-            field.classList.remove('error');
-        });
-
-        const inputActive = (e, input, isClick = false) => {
-            e.preventDefault();
-
-            const isEmpty = phoneVal === phonemask;
-            inputPos = isEmpty ? startInputPosition : getpos(input);
-
-            if (input.value === '') {
-                input.value = phonemask;
-                input.setSelectionRange(inputPos, inputPos);
-            } else {
-                inputPos = input.value.indexOf('_', isClick ? inputPos : undefined);
-                input.setSelectionRange(inputPos, inputPos);
-            }
-        }
-
-        const inputPhone = btn.parentElement.querySelectorAll('.form__input-phone');
-        inputPhone.forEach(input => {
-            input.addEventListener('focus', (e) => inputActive(e, input));
-            input.addEventListener('click', (e) => inputActive(e, input, true));
-
-            input.addEventListener('focusout', () => {
-                if (input.value === phonemask) input.value = '';
-            });
-
-            input.addEventListener('input', (e) => {
-                if (e.data === null) changePhone(input, 'delete');
-                else changePhone(input, 'input', e.data);
-            });
-
-            input.addEventListener('paste', (e) => {
-                e.preventDefault();
-
-                const clipboardData = e.clipboardData || window.clipboardData;
-                const pastedData = clipboardData.getData('Text');
-
-                changePhone(input, 'paste', pastedData.replace(/[^\d]/g, ''));
-            });
-        })
-
-        const changePhone = (input, action, data) => {
-            switch (action) {
-                case 'paste': {
-                    for (let i = 0; i < data.length; i++) {
-                        processPhoneValue(data[i]);
-                    }
-
-                    break;
-                }
-                case 'delete': {
-                    const lastNumberPosition = lastIndexOfByRegexp(phoneVal, /\d/g);
-
-                    if (lastNumberPosition !== null && lastNumberPosition > 2) {
-                        phoneVal = setCharAt(phoneVal, lastNumberPosition, '_');
-                        inputPos = lastNumberPosition;
-                    }
-
-                    break;
-                }
-                case 'input': {
-                    processPhoneValue(data);
-                    break;
-                }
-            }
-
-            input.value = phoneVal;
-            input.setSelectionRange(inputPos, inputPos);
-        }
-
-        const processPhoneValue = (value) => {
-            if (value.match(/\d/g)) {
-                const nextNumberPos = phoneVal.indexOf('_', inputPos);
-                const nextPos = nextNumberPos > 0 ? nextNumberPos : phonemask.length;
-                inputPos = nextPos + 1;
-                phoneVal = setCharAt(phoneVal, nextPos, value);
-            }
-        }
-    }
-}
-
-const getpos = (el) => {
-    let pos, sel;
-
-    // Internet Explorer
-    if (document.selection) {
-        el.focus();
-        if (sel=document.selection.createRange()) {
-            sel.moveStart('character', -el.value.length);
-            pos = sel.text.length;
-        } else pos = 0;
-    }
-    // Mozilla, Chrome
-    else if (el.selectionStart || el.selectionStart == '0') {
-        if (el.selectionDirection) {
-            if (el.selectionDirection == 'backward') {
-                pos = el.selectionStart;
-            } else pos = el.selectionEnd;
-        } else pos = el.selectionEnd;
-    } else pos = 0;
-
-    return parseInt(pos);
-}
-
-const setCharAt = (str, index, chr) => {
-    if(index > str.length-1) return str;
-    return str.substring(0,index) + chr + str.substring(index+1);
-}
-
-const lastIndexOfByRegexp = (str, regexp) => {
-    for (let i = str.length; i >= 0; i--) {
-        const substr = str.substring(0, i);
-        if (substr[i - 1].match(regexp)) return i - 1;
-    }
-
-    return null;
-}
+} */
 
 /* Main page ********************************************************************** */
 
@@ -470,3 +316,191 @@ const initFaqAccordeon = () => {
         })
     })
 };
+
+const aiAnimationInit = () => {
+    /* Mobile animation */
+    const infoItems = document.querySelectorAll('.ai-solutions__info-item');
+    infoItems?.forEach(item => {
+        item.addEventListener('click', () => {
+            if (item.classList.contains('active')) return;
+
+            infoItems.forEach(infoItem => infoItem.classList.remove('active'));
+            setTimeout(() => item.classList.add('active'), 250);
+        })
+    })
+
+    if (window.innerWidth <= 600) return;
+    /* Desktop animation */
+
+    const solutions = document.querySelector('.ai-solutions');
+    const solutionsTypes = document.querySelectorAll('.ai-solutions__type');
+    const typeCircles = document.querySelectorAll('.ai-solutions__type .ai-solutions__type-circle');
+    const innerSolutions = document.querySelector('.ai-solutions__inner');
+    const contents = document.querySelectorAll('.ai-solutions__content');
+
+    const typesPadding = 30;
+    const typesGap = getStyle(document.querySelector('.ai-solutions__types'), 'gap');
+    const typeSize = (window.innerHeight - typesPadding * 2 - typesGap * 4) / 5;
+
+    solutionsTypes.forEach(type => {
+        type.style.height = `${typeSize}px`;
+        type.style.width = `${typeSize}px`;
+    });
+
+    let typeNumber = 0;
+    let isScrolling = false;
+
+    const solutionsPaddingTop = getStyle(solutions, 'padding-top');
+    const solutionsH2Height = solutions.querySelector('h2').getBoundingClientRect().height;
+    const solutionsH2mb = getStyle(solutions.querySelector('h2'), 'margin-bottom');
+
+    const offset = 2; //Дополнительное смещение, так как не все буквы в h2 умещаются
+    const topOffset = solutionsPaddingTop + solutionsH2Height + offset;
+
+    solutions.style.minHeight = `calc(100vh + ${typeSize * 8 + solutionsPaddingTop * 2 + solutionsH2Height}px)`;
+
+    solutionsTypes?.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            let scrollCoord = solutions.offsetTop + topOffset;
+            window.scrollTo({
+                top: scrollCoord + typeSize * i * 2,
+                behavior: 'smooth',
+            });
+        });
+    });
+
+    const solutionsTop = solutions.getBoundingClientRect().top;
+    const solutionsBottom = solutions.getBoundingClientRect().bottom;
+
+    const fixedTopOffset = -topOffset;
+    const fixedBottomOffset = solutionsPaddingTop - typesPadding * 2 + solutionsH2mb - offset - window.innerHeight;
+    const isFixTop = solutionsTop < fixedTopOffset;
+    const isFixBottom = (solutionsBottom - window.innerHeight) > fixedBottomOffset;
+
+    if (isFixBottom && isFixTop) {
+        let scrollCoord = solutions.offsetTop + topOffset;
+            window.scrollTo({
+                top: scrollCoord,
+                behavior: 'smooth',
+            });
+    }
+    window.addEventListener('scroll', throttleScroll, false);
+
+    function throttleScroll(e) {
+        if (isScrolling == false) {
+            window.requestAnimationFrame(function () {
+                scroll(e);
+                isScrolling = false;
+            });
+        }
+        isScrolling = true;
+    }
+
+    function scroll() {
+        const solutionsTop = solutions.getBoundingClientRect().top;
+        const solutionsBottom = solutions.getBoundingClientRect().bottom;
+
+        const fixedTopOffset = -topOffset;
+        const fixedBottomOffset = solutionsPaddingTop - typesPadding * 2 + solutionsH2mb - offset;
+        const isFixTop = solutionsTop < fixedTopOffset;
+        const isFixBottom = (solutionsBottom - window.innerHeight) > fixedBottomOffset;
+
+        if (!isFixTop) {
+            typeCircles[0].style.transform = `translateX(0)`;
+            solutions.style.display = 'block';
+        }
+        if (!isFixBottom) {
+            typeCircles[4].style.transform = `translateX(0)`;
+            solutions.style.display = 'flex';
+            solutions.style.alignItems = 'end';
+        }
+
+        const isFix = isFixTop && isFixBottom;
+
+        if (isFix) {
+            innerSolutions.style.position = 'fixed';
+            innerSolutions.style.top = `-${solutionsH2Height + offset}px`;
+
+            let activeTypeCircle = document.querySelector('.ai-solutions__type.active .ai-solutions__type-circle');
+
+            const scrollLen = fixedTopOffset - solutionsTop;
+            const newTypeNumber = getTypeNumber(scrollLen, typeSize);
+            let currentTransform = typeNumber === 0 ? 0 : -typeSize;
+
+            activeTypeCircle.style.transform = `${getTypeTranslate(typeNumber)}${currentTransform + getTypeOffset(scrollLen,  typeSize, typeNumber)}px)`;
+            if (newTypeNumber !== typeNumber) {
+                typeNumber = newTypeNumber;
+                solutionsTypes.forEach(type => type.classList.remove('active'));
+                solutionsTypes[typeNumber].classList.add('active');
+
+                if (!contents[typeNumber].classList.contains('active')) {
+                    const activeContents = document.querySelectorAll('.ai-solutions__content.active');
+                    activeContents.forEach(content => content.classList.remove('shown'));
+                    setTimeout(() => {
+                        activeContents.forEach(content => content.classList.remove('active'));
+                        contents[typeNumber].classList.add('active');
+                        setTimeout(() => contents[typeNumber].classList.add('shown'), 50);
+                    }, 100)
+                }
+            }
+
+            activeTypeCircle = document.querySelector('.ai-solutions__type.active .ai-solutions__type-circle');
+            currentTransform = typeNumber === 0 ? 0 : -typeSize;
+            activeTypeCircle.style.transform = `${getTypeTranslate(typeNumber)}${currentTransform + getTypeOffset(scrollLen,  typeSize, typeNumber)}px))`;
+        } else innerSolutions.style.position = 'sticky';
+    }
+}
+
+const getTypeNumber = (scrollLen, typeSize) => {
+    if (scrollLen <= typeSize) return 0;
+    else if (scrollLen > typeSize && scrollLen <= typeSize * 3) return 1;
+    else if (scrollLen > typeSize * 3 && scrollLen <= typeSize * 5) return 2;
+    else if (scrollLen > typeSize * 5 && scrollLen <= typeSize * 7) return 3;
+    else if (scrollLen > typeSize * 7) return 4;
+}
+
+const getTypeOffset = (scrollLen, typeSize, typeNumber) => {
+    switch (typeNumber) {
+        case 0:
+            return scrollLen;
+        case 1:
+            return scrollLen - typeSize;
+        case 2:
+            return scrollLen - typeSize * 3;
+        case 3:
+            return scrollLen - typeSize * 5;
+        case 4:
+            return scrollLen - typeSize * 7;
+    }
+}
+
+const getTypeTranslate = (typeNumber) => {
+    switch (typeNumber) {
+        case 0:
+            return 'translateX(calc(';
+        case 1:
+            return 'translateY(calc(';
+        case 2:
+            return 'translateX(calc(-1 *';
+        case 3:
+            return 'translateY(calc(-1 *';
+        case 4:
+            return 'translateX(calc(';
+    }
+}
+
+function getStyle(oElm, strCssRule){
+    var strValue = "";
+    if(document.defaultView && document.defaultView.getComputedStyle){
+        strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
+    }
+    else if(oElm.currentStyle){
+        strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
+            return p1.toUpperCase();
+        });
+        strValue = oElm.currentStyle[strCssRule];
+    }
+    strValue = strValue.replace(/[^+\d]/g, '');
+
+    return Number(strValue) === +strValue ? +strValue : 0;
+}

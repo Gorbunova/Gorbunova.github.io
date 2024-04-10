@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <title>TerraLink</title>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=<api key>=ru_RU" type="text/javascript"></script>
     <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
 </head>
 
@@ -27,7 +26,7 @@
                     <a href="index.html#article">Исследования</a>
                 </li>
                 <li>
-                    <a href="contacts.html" class="active">Контакты</a>
+                    <a href="contacts.html">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -58,7 +57,7 @@
                     <a href="index.html#article">Исследования</a>
                 </li>
                 <li>
-                    <a href="contacts.html" class="active">Контакты</a>
+                    <a href="contacts.html">Контакты</a>
                 </li>
             </ul>
         </nav>
@@ -67,10 +66,10 @@
             <span class="wrap">Начать проект</span>
         </button>
     </div>
-    <header class="header">
+    <header class="header light">
         <div class="header-wrapper">
             <a href="index.html" class="header__logo">
-                <img src="icons/logo.png" alt="logo">
+                <img src="icons/logo-light.png" alt="logo">
             </a>
             <nav class="header__nav">
                 <ul>
@@ -84,7 +83,7 @@
                         <a href="index.html#article">Исследования</a>
                     </li>
                     <li>
-                        <a href="contacts.html" class="active">Контакты</a>
+                        <a href="contacts.html">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -100,29 +99,22 @@
             </div>
         </div>
     </header>
-    <section class="contacts">
+    <section class="development">
         <div class="container">
-            <h1>Контакты</h1>
-            <div class="contacts__wrapper">
-                <div class="contacts__item">
-                    <div class="contacts__label">Адрес</div>
-                    <address class="contacts__content">Москва, Аптекарский пер, д 4, стр. 1, помещение 1/3</address>
-                </div>
-                <div class="contacts__item">
-                    <div class="contacts__label">Телефон</div>
-                    <a class="contacts__content" href="tel:74959751220">+7 (495) 975-12-20</a>
-                </div>
-                <div class="contacts__item">
-                    <div class="contacts__label">Электронная почта</div>
-                    <a class="contacts__content" href="mailto:info@tl-razrabotka.ru">info@tl-razrabotka.ru</a>
+            <div class="development__wrapper">
+                <div class="development__inner">
+                    <h1>Сервисы разработки ПО</h1>
+                    <p class="text text-large">
+                        Придумываем и создаем востребованные IT-продукты для вашего бизнеса
+                    </p>
+                    <button class="development__button custom-button_rounded">Обсудить проект</button>
+                    <img class="development__img" src="img/development/desktop.png" alt="desktop">
+                    <img class="development__img" src="img/development/mobile.png" alt="mobile">
                 </div>
             </div>
         </div>
     </section>
-    <section class="contacts-map">
-        <div id="map"></div>
-    </section>
-    <section class="consultation contacts-page" id="consultation">
+    <section class="ai-consultation consultation" id="consultation">
         <div class="container">
             <div class="consultation__wrapper">
                 <h2 class="consultation__title">Предлагаем обсудить ваш проект</h2>
@@ -159,7 +151,7 @@
             </div>
         </div>
     </section>
-    <section class="examples contacts-page">
+    <section class="examples">
         <div class="container">
             <h2>Примеры наших решений</h2>
             <div class="examples__wrapper">
@@ -211,7 +203,6 @@
                     <img src="img/examples/mockup-4.png" alt="sport screenshot">
                 </div>
             </div>
-            <img class="examples__img" src="img/about/swipe.gif" alt="swipe animation">
         </div>
     </section>
     <footer class="footer">
@@ -323,6 +314,5 @@
         </div>
     </div>
 <script type="module" src="js/script.js"></script>
-<script type="module" src="js/contacts.js"></script>
 </body>
 </html>
