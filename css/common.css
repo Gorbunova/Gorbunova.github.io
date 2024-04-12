@@ -31,6 +31,9 @@ body {
 
     --color-ai: #181D25;
     --color-ai-light: #212631;
+
+    --color-custom-dev: #202136;
+    --color-custom-dev-light: #33334B;
 }
 
 .no-scroll {

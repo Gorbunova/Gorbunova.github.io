@@ -1,0 +1,7 @@
+.custom-dev-consultation {
+    background-color: var(--color-custom-dev-light);
+}
+
+.custom-dev-consultation .consultation__wrapper {
+    background: linear-gradient(121.3deg, #0C3F52 24.82%, #089D8D 62.75%, #09F4D2 85.79%);
+}

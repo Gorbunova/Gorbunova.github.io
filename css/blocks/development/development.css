@@ -1,0 +1,141 @@
+.custom-dev {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--color-custom-dev);
+    padding: 216px 0 80px 0;
+}
+
+.custom-dev .container {
+    width: 100%;
+}
+
+.custom-dev__wrapper {
+    padding: 80px 90px;
+    background: linear-gradient(121.3deg, #0C3F52 24.82%, #089D8D 62.75%, #09F4D2 85.79%);
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.custom-dev__inner {
+    color: var(--color-light);
+    min-height: calc(100vh - 456px);
+    min-height: calc((var(--vh, 1vh) * 100) - 456px);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.custom-dev__inner h1 {
+    font-size: 60px;
+    line-height: 68px;
+    max-width: 650px;
+    margin-bottom: 44px;
+}
+
+.custom-dev__inner .text {
+    font-family: 'Inter';
+    max-width: 650px;
+}
+
+.custom-dev__imgs img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.custom-dev__imgs img:first-child {
+    max-width: 650px;
+}
+
+.custom-dev__imgs img:last-child {
+    max-width: 206px;
+    right: calc(650px - 206px / 2);
+}
+
+@media (max-width: 1600px) {
+    .custom-dev__wrapper {
+        padding: 60px;
+    }
+
+    .custom-dev__inner {
+        min-height: calc(100vh - 416px);
+        min-height: calc((var(--vh, 1vh) * 100) - 416px);
+    }
+
+    .custom-dev__inner h1 {
+        font-size: 40px;
+        line-height: 52px;
+        max-width: 485px;
+    }
+
+    .custom-dev__inner .text {
+        max-width: 425px;
+        font-size: 16px;
+        line-height: 19.36px;
+    }
+
+    .custom-dev__imgs img:first-child {
+        max-width: 500px;
+    }
+
+    .custom-dev__imgs img:last-child {
+        max-width: 168px;
+        right: calc(500px - 168px / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-dev {
+        padding: 116px 0 80px 0;
+    }
+
+    .custom-dev__wrapper {
+        padding: 24px 20px 0 20px;
+        overflow: hidden;
+    }
+
+    .custom-dev__inner {
+        min-height: calc(100vh - 220px);
+        min-height: calc((var(--vh, 1vh) * 100) - 220px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .custom-dev__inner h1 {
+        font-size: 28px;
+        line-height: 36px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .custom-dev__inner .text {
+        max-width: 240px;
+        margin-bottom: 48px;
+    }
+
+    .custom-dev__btn {
+        width: 100%;
+        margin-bottom: 26px;
+    }
+
+    .custom-dev__imgs {
+        display: flex;
+        justify-content: end;
+    }
+
+    .custom-dev__imgs img {
+        position: static;
+    }
+
+    .custom-dev__imgs img:first-child {
+        max-width: unset;
+        max-height: 300px;
+        margin-right: -140px;
+    }
+
+    .custom-dev__imgs img:last-child {
+        position: absolute;
+        max-width: 122px;
+        right: 210px;
+    }
+}

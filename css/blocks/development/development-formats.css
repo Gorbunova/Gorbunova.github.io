@@ -1,0 +1,132 @@
+.custom-dev-formats {
+    padding: 120px 0;
+    background-color: var(--color-custom-dev-light);
+    color: var(--color-light);
+}
+
+.custom-dev-formats h2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.custom-dev-formats__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.custom-dev-formats__item {
+    background-color: var(--color-custom-dev);
+    border-radius: var(--border-radius-medium);
+    padding: 44px;
+}
+
+.custom-dev-formats__item img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 24px;
+}
+
+.custom-dev-formats__item h3 {
+    margin-bottom: 64px;
+}
+
+.custom-dev-formats__item-points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.custom-dev-formats__item-point {
+    background-color: var(--color-custom-dev-light);
+    border-radius: 24px;
+    padding: 32px 24px;
+    min-height: 264px;
+}
+
+.custom-dev-formats__item-point h4 {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 24px;
+}
+
+.custom-dev-formats__item-point p {
+    font-family: 'Inter';
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@media (max-width: 1600px) {
+    .custom-dev-formats {
+        padding: 120px 0 80px 0;
+    }
+
+    .custom-dev-formats h2 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .custom-dev-formats__item {
+        padding: 32px;
+    }
+
+    .custom-dev-formats__item h3 {
+        margin-bottom: 44px;
+    }
+
+    .custom-dev-formats__item-points {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-dev-formats__item-point {
+        min-height: 216px;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-dev-formats {
+        padding: 80px 0 40px;
+    }
+
+    .custom-dev-formats h2 {
+        margin-bottom: 40px;
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .custom-dev-formats__wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .custom-dev-formats__item {
+        padding: 30px;
+    }
+
+    .custom-dev-formats__item img {
+        margin-bottom: 12px;
+    }
+
+    .custom-dev-formats__item h3 {
+        margin-bottom: 28px;
+    }
+
+    .custom-dev-formats__item-points {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-dev-formats__item-point {
+        padding: 20px;
+        min-height: unset;
+    }
+
+    .custom-dev-formats__item-point h4 {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 16px;
+    }
+
+    .custom-dev-formats__item-point p {
+        line-height: 18px;
+    }
+}

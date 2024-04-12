@@ -1,0 +1,29 @@
+.custom-dev-faq .faq__item {
+    max-width: 100%;
+}
+
+.custom-dev-faq .faq__item-title {
+    max-width: calc(100% - 90px);
+}
+
+.custom-dev-faq .faq__item.active .faq__item-content {
+    max-height: 100px;
+    height: 100px;
+}
+
+@media (max-width: 1600px) {
+    .custom-dev-faq .faq__item.active .faq__item-content {
+        max-height: 90px;
+        height: 90px;
+    }
+
+    .custom-dev-faq .faq__item-title {
+        max-width: calc(100% - 50px);
+    }
+}
+
+@media (max-width: 992px) {
+    .custom-dev-faq .faq__item-title {
+        max-width: 100%;
+    }
+}

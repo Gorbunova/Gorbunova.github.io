@@ -26,19 +26,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewItem = document.querySelector('.portal-review__item');
     if (reviewItem) initReviewAccordeon();
 
-    const faqItem = document.querySelector('.portal-faq__item');
+    const faqItem = document.querySelector('.faq__item');
     if (faqItem) initFaqAccordeon();
 
     document.querySelector('.portal__button')?.addEventListener('click', showModal);
     document.querySelector('.portal-problems__button')?.addEventListener('click', showModal);
 
     /* AI page */
-    if (!document.querySelector('.ai-solutions')) return;
+    if (document.querySelector('.ai-solutions')) {
+        document.querySelector('.ai__button')?.addEventListener('click', showModal);
+        document.querySelector('.ai-development__button')?.addEventListener('click', showModal);
 
-    document.querySelector('.ai__button')?.addEventListener('click', showModal);
-    document.querySelector('.ai-development__button')?.addEventListener('click', showModal);
+        aiAnimationInit();
+    }
 
-    aiAnimationInit();
+    /* Development page */
+    document.querySelector('.custom-dev__btn')?.addEventListener('click', showModal);
+    if (document.querySelector('.custom-dev-directions')) initDevelopmentDirections();
+    if (document.querySelector('.custom-dev-stack')) initDevelopmentStack();
+
 })
 
 const initMobileNav = () => {
@@ -308,14 +314,16 @@ const initReviewAccordeon = () => {
 };
 
 const initFaqAccordeon = () => {
-    document.querySelectorAll('.portal-faq__item').forEach(item => {
+    document.querySelectorAll('.faq__item').forEach(item => {
         item.addEventListener('click', () => {
             if (item.classList.contains('active')) return;
-            document.querySelectorAll('.portal-faq__item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.faq__item').forEach(item => item.classList.remove('active'));
             item.classList.add('active');
         })
     })
 };
+
+/* AI page ********************************************************************** */
 
 const aiAnimationInit = () => {
     /* Mobile animation */
@@ -503,4 +511,72 @@ function getStyle(oElm, strCssRule){
     strValue = strValue.replace(/[^+\d]/g, '');
 
     return Number(strValue) === +strValue ? +strValue : 0;
+}
+
+/* Development page ********************************************************************** */
+
+const initDevelopmentDirections = () => {
+    const isMobile = window.innerWidth <= 600;
+    const items = document.querySelectorAll('.custom-dev-directions__item');
+    if (isMobile) {
+        items.forEach(item => {
+            const types = item.querySelectorAll('.custom-dev-directions__type');
+            types.forEach((type, i) => {
+                const mobileContent = document.createElement('div');
+                mobileContent.innerHTML = document.querySelectorAll('.custom-dev-directions__content-inner')[i].innerHTML;
+                mobileContent.classList.add('custom-dev-directions__content-mobile');
+                if (i === 0) {
+                    mobileContent.classList.add('active');
+                    mobileContent.classList.add('shown');
+                }
+
+                type.appendChild(mobileContent);
+            })
+        })
+    }
+
+    items.forEach(item => {
+        const types = item.querySelectorAll('.custom-dev-directions__type');
+        const contents = isMobile
+            ? item.querySelectorAll('.custom-dev-directions__content-mobile')
+            : item.querySelectorAll('.custom-dev-directions__content');
+        const closeTime = isMobile ? 150 : 100;
+        const openTime = isMobile ? 150 : 50;
+
+        types.forEach((type, i) => {
+            type.addEventListener('click', () => {
+                if (types[i].classList.contains('active')) return;
+                types.forEach(type => type.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('shown'));
+                setTimeout(() => {
+                    contents.forEach(content => content.classList.remove('active'));
+                    types[i].classList.add('active');
+                    contents[i].classList.add('active');
+                    setTimeout(() => contents[i].classList.add('shown'), openTime);
+                }, closeTime);
+            })
+        })
+    })
+}
+
+const initDevelopmentStack = () => {
+    const winWidth = window.innerWidth;
+
+    const getItemOffset = () => {
+        if (winWidth >= 1600) return 120;
+        else if (winWidth < 1600 && winWidth >= 1200) return 100;
+        else return 84;
+    }
+
+    const getTopOffset = () => {
+        if (winWidth >= 1600) return 188;
+        else if (winWidth < 1600 && winWidth >= 1200) return 168;
+        else return 128;
+    }
+
+    const topOffset = getTopOffset();
+    const stackItems = document.querySelectorAll('.custom-dev-stack__item');
+    stackItems.forEach((stackItem, i) => {
+        stackItem.style.top = `${topOffset + i * getItemOffset()}px`;
+    });
 }

@@ -1,0 +1,103 @@
+.custom-dev-solutions {
+    padding: 80px 0 120px;
+    background-color: var(--color-custom-dev);
+    color: var(--color-light);
+}
+
+.custom-dev-solutions h2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.custom-dev-solutions__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.custom-dev-solutions__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-custom-dev-light);
+    padding: 44px 30px 66px 30px;
+}
+
+.custom-dev-solutions__item img {
+    height: 180px;
+    width: 180px;
+    margin-bottom: 24px;
+}
+
+.custom-dev-solutions__item h4 {
+    text-align: center;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 27px;
+}
+
+.custom-dev-solutions__item .text {
+    font-family: 'Inter';
+    text-align: center;
+}
+
+@media (max-width: 1600px) {
+    .custom-dev-solutions h2 {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 60px;
+    }
+
+    .custom-dev-solutions__wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-dev-solutions__item {
+        padding: 44px 30px;
+    }
+
+    .custom-dev-solutions__item img {
+        height: 160px;
+        width: 160px;
+        margin: 24px 0 32px 0;
+    }
+
+    .custom-dev-solutions__item h4 {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+
+    .custom-dev-solutions__item .text {
+        max-width: 415px;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-dev-solutions {
+        padding: 80px 0;
+    }
+
+    .custom-dev-solutions h2 {
+        margin-bottom: 40px;
+    }
+
+    .custom-dev-solutions__wrapper {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .custom-dev-solutions__item {
+        padding: 24px 30px 40px 30px;
+    }
+
+    .custom-dev-solutions__item h4 {
+        margin-bottom: 16px;
+    }
+
+    .custom-dev-solutions__item .text {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
+}

@@ -1,0 +1,122 @@
+.custom-dev-services {
+    padding: 80px 0 120px 0;
+    background-color: var(--color-custom-dev);
+    color: var(--color-light);
+}
+
+.custom-dev-services h2 {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.custom-dev-services__wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 44px;
+}
+
+.custom-dev-services__wrapper .text-large {
+    font-family: 'Inter';
+}
+
+.custom-dev-services__text .text-large:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.custom-dev-services__text {
+    margin-bottom: 48px;
+}
+
+.custom-dev-services__tags {
+    display: flex;
+    gap: 8px;
+}
+
+.custom-dev-services__tag {
+    background-color: #08BDA6;
+    border-radius: var(--border-radius);
+    padding: 8px 20px;
+    font-family: 'Inter';
+}
+
+.custom-dev-services__directions {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+}
+
+.custom-dev-services__direction {
+    background-color: var(--color-custom-dev-light);
+    border-radius: 24px;
+    padding: 24px 30px;
+    max-width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 104px;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 800;
+}
+
+@media (max-width: 1600px) {
+    .custom-dev-services h2 {
+        margin-bottom: 60px;
+    }
+
+    .custom-dev-services__wrapper {
+        gap: 40px;
+    }
+
+    .custom-dev-services__tags {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-dev-services {
+        padding: 80px 0;
+    }
+
+    .custom-dev-services h2 {
+        margin-bottom: 40px;
+    }
+
+    .custom-dev-services__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-dev-services__wrapper .text-large {
+        text-align: center;
+    }
+
+    .custom-dev-services__text {
+        margin-bottom: 24px;
+    }
+
+    .custom-dev-services__tags {
+        display: flex;
+        justify-content: center;
+    }
+
+    .custom-dev-services__tag {
+        font-size: 14px;
+        line-height: 16.94px;
+        padding: 6px 16px;
+        font-family: 'Inter';
+    }
+
+    .custom-dev-services__directions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .custom-dev-services__direction {
+        max-width: 100%;
+        min-height: 76px;
+        font-size: 14px;
+    }
+}

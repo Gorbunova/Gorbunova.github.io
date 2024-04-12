@@ -1,0 +1,115 @@
+.custom-dev-advantages {
+    padding: 120px 0;
+}
+
+.custom-dev-advantages h2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.custom-dev-advantages__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.custom-dev-advantages__item {
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-medium);
+    padding: 44px;
+    display: flex;
+    align-items: center;
+    gap: 46px;
+}
+
+.custom-dev-advantages__item h4 {
+    margin-bottom: 24px;
+}
+
+.custom-dev-advantages__item .text {
+    font-family: 'Inter';
+}
+
+.custom-dev-advantages__item img {
+    height: 200px;
+    width: 200px;
+}
+
+
+@media (max-width: 1600px) {
+    .custom-dev-advantages {
+        padding: 100px 0 120px 0;
+    }
+
+    .custom-dev-advantages h2 {
+        margin-bottom: 60px;
+    }
+
+    .custom-dev-advantages__item {
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        min-height: 418px;
+    }
+
+    .custom-dev-advantages__item img {
+        order: -1;
+        height: 160px;
+        width: 160px;
+    }
+
+    .custom-dev-advantages__item div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-dev-advantages__item h4 {
+        margin-bottom: 16px;
+        text-align: center;
+        max-width: 400px;
+    }
+
+    .custom-dev-advantages__item .text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-dev-advantages {
+        padding: 80px 0;
+    }
+
+    .custom-dev-advantages h2 {
+        margin-bottom: 40px;
+    }
+
+    .custom-dev-advantages__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-dev-advantages__item div {
+        align-items: start;
+    }
+
+    .custom-dev-advantages__item {
+        padding: 40px 20px;
+        align-items: start;
+        min-height: unset;
+    }
+
+    .custom-dev-advantages__item img {
+        order: -1;
+        height: 160px;
+        width: 160px;
+    }
+
+    .custom-dev-advantages__item h4 {
+        text-align: left;
+    }
+
+    .custom-dev-advantages__item .text {
+        text-align: left;
+    }
+}
