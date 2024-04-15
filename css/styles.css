@@ -26,7 +26,6 @@
 /* mobile portal blocks */
 @import './blocks/mobile-portal/portal-about.css';
 @import './blocks/mobile-portal/portal-admin.css';
-@import './blocks/mobile-portal/portal-faq.css';
 @import './blocks/mobile-portal/portal-for.css';
 @import './blocks/mobile-portal/portal-problems.css';
 @import './blocks/mobile-portal/portal-review.css';
