@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     init100vh();
+    initHeader();
     initFixedHeader();
     initTypewrite();
     initMobileNav();
@@ -54,7 +55,10 @@ const initMobileNav = () => {
         const isCloseBtn = e.target.classList.contains('mobile-nav__humburger');
 
         if (isNavOpened && isCloseBtn) closeMobileNav(btn);
-        else openMobileNav(btn);
+        else {
+            document.querySelector('.mobile-nav__subnav').classList.remove('active');
+            openMobileNav(btn);
+        }
 
         const navClose = document.querySelector('.mobile-nav-content__close');
         navClose?.addEventListener('click', () => closeMobileNav(btn));
@@ -64,12 +68,78 @@ const initMobileNav = () => {
             navItem.addEventListener('click', () => closeMobileNav(btn));
         });
 
+        const subnav = document.querySelector('.mobile-nav__subnav');
+        const backBtn = document.querySelector('.mobile-nav__subnav span');
+        const compositeNavItems = document.querySelectorAll('.mobile-nav-content nav ul li span');
+        const subnavContents = document.querySelectorAll('.mobile-nav__subnav-item');
+        compositeNavItems?.forEach(navItem => {
+            navItem.addEventListener('click', () => {
+                const navItemId = navItem.getAttribute('id');
+                subnavContents.forEach(content => content.classList.remove('active'));
+                document.querySelector(`#${navItemId}-content`).classList.add('active');
+                subnav.classList.add('active');
+                setTimeout(() => subnav.classList.add('shown'), 50);
+            });
+        });
+
+        backBtn.addEventListener('click', () => {
+            subnav.classList.remove('shown');
+            setTimeout(() => subnav.classList.remove('active'), 250);
+        })
+
         const navTypewrite = document.querySelector('.mobile-nav-content .typewrite')
         navTypewrite.addEventListener('click', () => {
             closeMobileNav(btn);
             setTimeout(showModal, 500);
         });
     }));
+}
+
+const initHeader = () => {
+    const header = document.querySelector('.header');
+    const compositeNavItems = document.querySelectorAll('.header__nav span');
+    compositeNavItems.forEach(navItem => {
+        navItem.addEventListener('click', () => {
+            if (!header.classList.contains('full')) {
+                navItem.classList.add('active');
+
+                header.classList.add('full');
+                setTimeout(() => header.classList.add('shown'), 250);
+
+                showOverlay();
+            } else {
+                if (navItem.classList.contains('active')) {
+                    navItem.classList.remove('active');
+
+                    header.classList.remove('shown');
+                    setTimeout(() => header.classList.remove('full'), 350);
+
+                    hideOverlay();
+                } else {
+                    compositeNavItems.forEach(navItem => navItem.classList.remove('active'));
+                    navItem.classList.add('active');
+                }
+            }
+
+            const idNavItem = navItem.getAttribute('id');
+            const idNavItemContents = document.querySelectorAll('.header__subnav');
+            idNavItemContents.forEach(idNavItemContent => idNavItemContent.classList.remove('active'));
+            document.querySelector(`#${idNavItem}-content`).classList.add('active');
+        });
+    });
+
+    const overlay = document.querySelector('.main-overlay');
+    overlay.addEventListener('click', () => {
+        if (!header.classList.contains('full')) return;
+        else {
+            compositeNavItems.forEach(navItem => navItem.classList.remove('active'));
+
+            header.classList.remove('shown');
+            setTimeout(() => header.classList.remove('full'), 350);
+
+            hideOverlay();
+        }
+    });
 }
 
 const initFixedHeader = () => {
@@ -93,6 +163,42 @@ const initFixedHeader = () => {
 
         lastScrollTop = top;
     });
+
+    const fixedHeader = document.querySelector('.fixed-header');
+    const compositeNavItemsFixed = document.querySelectorAll('.fixed-header__nav span');
+    compositeNavItemsFixed.forEach(navItem => {
+        navItem.addEventListener('click', () => {
+            if (!fixedHeader.classList.contains('shown')) {
+                navItem.classList.add('active');
+                fixedHeader.classList.add('shown');
+                showOverlay();
+            } else {
+                if (navItem.classList.contains('active')) {
+                    fixedHeader.classList.remove('shown');
+                    navItem.classList.remove('active');
+                    hideOverlay();
+                } else {
+                    compositeNavItemsFixed.forEach(navItem => navItem.classList.remove('active'));
+                    navItem.classList.add('active');
+                }
+            }
+
+            const idNavItem = navItem.getAttribute('id');
+            const idNavItemContents = document.querySelectorAll('.fixed-header__subnav');
+            idNavItemContents.forEach(idNavItemContent => idNavItemContent.classList.remove('active'));
+            document.querySelector(`#${idNavItem}-content`).classList.add('active');
+        });
+    });
+
+    const overlay = document.querySelector('.main-overlay');
+    overlay.addEventListener('click', () => {
+        if (!fixedHeader.classList.contains('shown')) return;
+        else {
+            compositeNavItemsFixed.forEach(navItem => navItem.classList.remove('active'));
+            fixedHeader.classList.remove('shown');
+            hideOverlay();
+        }
+    });
 }
 
 const getIsAfterStartSection = () => {
@@ -101,12 +207,15 @@ const getIsAfterStartSection = () => {
     const aboutStartSectionTop = document.querySelector('.about-text')?.getBoundingClientRect().top;
     const contactsStartSectionTop = document.querySelector('.contacts-map')?.getBoundingClientRect().top;
     const aiStartSectionTop = document.querySelector('.ai-advantages')?.getBoundingClientRect().top;
+    const developmentStartSectionTop = document.querySelector('.custom-dev-services')?.getBoundingClientRect().top;
+
     return (
         mainStartSectionTop <= 0 ||
         portalStartSectionTop <= 0 ||
         aboutStartSectionTop <= 0 ||
         contactsStartSectionTop <= 0 ||
-        aiStartSectionTop <= 0
+        aiStartSectionTop <= 0 ||
+        developmentStartSectionTop <= 0
     );
 }
 
@@ -172,6 +281,25 @@ const initTypewrite = () => {
 }
 
 const showModal = () => {
+    const header = document.querySelector('.header');
+    const fixedHeader = document.querySelector('.fixed-header');
+    if (header.classList.contains('full')) {
+        const compositeNavItems = document.querySelectorAll('.header__nav span');
+        compositeNavItems.forEach(navItem => navItem.classList.remove('active'));
+
+        header.classList.remove('shown');
+        setTimeout(() => header.classList.remove('full'), 350);
+
+        hideOverlay();
+    }
+
+    if (fixedHeader.classList.contains('shown')) {
+        const compositeNavItemsFixed = document.querySelectorAll('.fixed-header__nav span');
+        compositeNavItemsFixed.forEach(navItem => navItem.classList.remove('active'));
+        fixedHeader.classList.remove('shown');
+        hideOverlay();
+    }
+
     document.querySelector('.modal__wrapper').classList.add('active');
     blockScroll();
 
@@ -180,6 +308,25 @@ const showModal = () => {
 
 const hideModal = () => {
     document.querySelector('.modal__wrapper').classList.remove('active');
+    unblockScroll();
+};
+
+const showOverlay = () => {
+    const overlay = document.querySelector('.main-overlay');
+    overlay.classList.add('active');
+    setTimeout(() => {
+        overlay.classList.add('shown');
+    }, 50);
+    blockScroll();
+};
+
+const hideOverlay = () => {
+    document.querySelector('.modal__wrapper').classList.remove('active');
+    const overlay = document.querySelector('.main-overlay');
+    overlay.classList.remove('shown');
+    setTimeout(() => {
+        overlay.classList.remove('active');
+    }, 50);
     unblockScroll();
 };
 

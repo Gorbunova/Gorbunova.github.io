@@ -11,25 +11,68 @@
 
 <body>
     <div class="fixed-header">
-        <a href="index.html" class="fixed-header__logo">
-            <img src="icons/logo.png" alt="logo">
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="about.html">О компании</a>
-                </li>
-                <li>
-                    <a href="mobile-portal.html">Продукты</a>
-                </li>
-                <li>
-                    <a href="index.html#article">Исследования</a>
-                </li>
-                <li>
-                    <a href="contacts.html">Контакты</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="fixed-header__wrapper">
+            <a href="index.html" class="fixed-header__logo">
+                <img src="icons/logo.png" alt="logo">
+            </a>
+            <nav class="fixed-header__nav">
+                <ul>
+                    <li>
+                        <a href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <span id="fixed-nav-services">Услуги</span>
+                    </li>
+                    <li>
+                        <span id="fixed-nav-solutions">Решения</span>
+                    </li>
+                    <!-- <li>
+                        <a href="#">Исследования</a>
+                    </li> -->
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="fixed-header__subnav" id="fixed-nav-services-content">
+                <a href="development.html" class="fixed-header__subnav-item">
+                    <p>Разработка под ключ</p>
+                    <img src="img/header/services-1.png" alt="design element">
+                </a>
+                <a href="ai.html" class="fixed-header__subnav-item">
+                    <p>Разработка решений на базе ИИ</p>
+                    <img src="img/header/services-2.png" alt="design element">
+                </a>
+            </div>
+            <div class="fixed-header__subnav" id="fixed-nav-solutions-content">
+                <!-- <a href="#" class="fixed-header__subnav-item">
+                    <p>Спортивная аналитика</p>
+                    <img src="img/header/solutions-1.png" alt="design element">
+                </a> -->
+                <a href="mobile-portal.html" class="fixed-header__subnav-item">
+                    <p>Корпоративный мобильный портал</p>
+                    <img src="img/header/solutions-2.png" alt="design element">
+                </a>
+                <!-- <a href="#" class="fixed-header__subnav-item">
+                    <p>Управление корпоративным контентом (ECM Mobile)</p>
+                    <img src="img/header/solutions-3.png" alt="design element">
+                </a> -->
+                <!-- <a href="#" class="fixed-header__subnav-item">
+                    <p>Мобильное ТОРО (ТOиР)</p>
+                    <img src="img/header/solutions-4.png" alt="design element">
+                </a> -->
+                <!-- <a href="#" class="fixed-header__subnav-item">
+                    <p>Приложение для сотрудников и клиентов АЗС</p>
+                    <img src="img/header/solutions-5.png" alt="design element">
+                </a> -->
+                <a href="ai.html" class="fixed-header__subnav-item">
+                    <p>Решения на основе ИИ</p>
+                    <img src="img/header/solutions-6.png" alt="design element">
+                </a>
+            </div>
+        </div>
         <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
             <span class="wrap">Начать проект</span>
         </button>
@@ -51,25 +94,70 @@
                     <a href="about.html">О компании</a>
                 </li>
                 <li>
-                    <a href="mobile-portal.html">Продукты</a>
+                    <span id="mobile-nav-services">Услуги</span>
                 </li>
                 <li>
-                    <a href="index.html#article">Исследования</a>
+                    <span id="mobile-nav-solutions">Решения</span>
                 </li>
+                <!-- <li>
+                    <a href="#">Исследования</a>
+                </li> -->
                 <li>
                     <a href="contacts.html">Контакты</a>
                 </li>
             </ul>
         </nav>
         <div class="mobile-nav-content__close"></div>
+        <div class="mobile-nav__subnav">
+            <span>назад</span>
+            <div class="mobile-nav__subnav-item" id="mobile-nav-services-content">
+                <a href="development.html" class="header__subnav-item">
+                    <p>Разработка под ключ</p>
+                    <img src="img/header/services-1.png" alt="design element">
+                </a>
+                <a href="ai.html" class="header__subnav-item">
+                    <p>Разработка решений на базе ИИ</p>
+                    <img src="img/header/services-2.png" alt="design element">
+                </a>
+            </div>
+            <div class="mobile-nav__subnav-item" id="mobile-nav-solutions-content">
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Спортивная аналитика</p>
+                    <img src="img/header/solutions-1.png" alt="design element">
+                </a> -->
+                <a href="mobile-portal.html" class="header__subnav-item">
+                    <p>Корпоративный мобильный портал</p>
+                    <img src="img/header/solutions-2.png" alt="design element">
+                </a>
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Управление корпоративным контентом (ECM Mobile)</p>
+                    <img src="img/header/solutions-3.png" alt="design element">
+                </a> -->
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Мобильное ТОРО (ТOиР)</p>
+                    <img src="img/header/solutions-4.png" alt="design element">
+                </a> -->
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Приложение для сотрудников и клиентов АЗС</p>
+                    <img src="img/header/solutions-5.png" alt="design element">
+                </a> -->
+                <a href="ai.html" class="header__subnav-item">
+                    <p>Решения на основе ИИ</p>
+                    <img src="img/header/solutions-6.png" alt="design element">
+                </a>
+            </div>
+        </div>
         <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
             <span class="wrap">Начать проект</span>
         </button>
     </div>
     <header class="header light">
-        <div class="header-wrapper">
-            <a href="index.html" class="header__logo">
+        <div class="header__wrapper">
+            <a href="index.html" class="header__logo light">
                 <img src="icons/logo-light.png" alt="logo">
+            </a>
+            <a href="index.html" class="header__logo">
+                <img src="icons/logo.png" alt="logo">
             </a>
             <nav class="header__nav">
                 <ul>
@@ -77,16 +165,57 @@
                         <a href="about.html">О компании</a>
                     </li>
                     <li>
-                        <a href="mobile-portal.html">Продукты</a>
+                        <span id="nav-services">Услуги</span>
                     </li>
                     <li>
-                        <a href="index.html#article">Исследования</a>
+                        <span id="nav-solutions">Решения</span>
                     </li>
+                    <!-- <li>
+                        <a href="#">Исследования</a>
+                    </li> -->
                     <li>
                         <a href="contacts.html">Контакты</a>
                     </li>
                 </ul>
             </nav>
+        </div>
+        <div class="container">
+            <div class="header__subnav" id="nav-services-content">
+                <a href="development.html" class="header__subnav-item">
+                    <p>Разработка под ключ</p>
+                    <img src="img/header/services-1.png" alt="design element">
+                </a>
+                <a href="ai.html" class="header__subnav-item">
+                    <p>Разработка решений на базе ИИ</p>
+                    <img src="img/header/services-2.png" alt="design element">
+                </a>
+            </div>
+            <div class="header__subnav" id="nav-solutions-content">
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Спортивная аналитика</p>
+                    <img src="img/header/solutions-1.png" alt="design element">
+                </a> -->
+                <a href="mobile-portal.html" class="header__subnav-item">
+                    <p>Корпоративный мобильный портал</p>
+                    <img src="img/header/solutions-2.png" alt="design element">
+                </a>
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Управление корпоративным контентом (ECM Mobile)</p>
+                    <img src="img/header/solutions-3.png" alt="design element">
+                </a> -->
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Мобильное ТОРО (ТOиР)</p>
+                    <img src="img/header/solutions-4.png" alt="design element">
+                </a> -->
+                <!-- <a href="#" class="header__subnav-item">
+                    <p>Приложение для сотрудников и клиентов АЗС</p>
+                    <img src="img/header/solutions-5.png" alt="design element">
+                </a> -->
+                <a href="ai.html" class="header__subnav-item">
+                    <p>Решения на основе ИИ</p>
+                    <img src="img/header/solutions-6.png" alt="design element">
+                </a>
+            </div>
         </div>
         <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
             <span class="wrap">Начать проект</span>
@@ -99,6 +228,7 @@
             </div>
         </div>
     </header>
+    <div class="main-overlay hidden"></div>
     <section class="custom-dev">
         <div class="container">
             <div class="custom-dev__wrapper">
