@@ -494,7 +494,7 @@ const aiAnimationInit = () => {
     const contents = document.querySelectorAll('.ai-solutions__content');
 
     const typesPadding = 30;
-    const typesGap = getStyle(document.querySelector('.ai-solutions__types'), 'gap');
+    const typesGap = getStyle(document.querySelector('.ai-solutions__types'), 'column-gap');
     const typeSize = (window.innerHeight - typesPadding * 2 - typesGap * 4) / 5;
 
     solutionsTypes.forEach(type => {
