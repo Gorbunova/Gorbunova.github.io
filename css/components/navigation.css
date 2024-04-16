@@ -64,7 +64,6 @@
     display: flex;
     opacity: 0;
     transition: opacity .5s;
-    overflow-y: scroll;
 }
 
 .mobile-nav-content.shown {

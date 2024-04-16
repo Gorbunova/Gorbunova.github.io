@@ -1,5 +1,5 @@
 .contacts {
-    padding: 200px 0 75px 0;
+    padding: 200px 0 80px 0;
 }
 
 .contacts .header__nav a {
@@ -7,8 +7,8 @@
 }
 
 .contacts h1 {
-    font-size: 52px;
-    line-height: 64px;
+    font-size: 60px;
+    line-height: 68px;
     margin-bottom: 70px;
 }
 
@@ -32,15 +32,17 @@
     font-size: 20px;
     line-height: 38.99px;
     font-family: 'Inter';
+    white-space: nowrap;
 }
 
 .contacts__content {
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 38px;
     font-style: normal;
     color: var(--color-text);
+    letter-spacing: .2px;
 }
 
 a.contacts__content {
@@ -54,14 +56,68 @@ a.contacts__content {
     margin: 0;
 }
 
+@media (max-width: 1600px) {
+    .contacts h1 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .contacts__label {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 8px 24px;
+    }
+
+    .contacts__wrapper {
+        gap: 130px;
+    }
+
+    .contacts__content {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contacts h1 {
+        font-size: 34px;
+        line-height: 40px;
+        margin-bottom: 44px;
+    }
+
+    .contacts__label {
+        font-size: 14px;
+        line-height: 18px;
+        padding: 8px 24px;
+    }
+
+    .contacts__wrapper {
+        gap: 123px;
+    }
+
+    .contacts__content {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    #map {
+        height: 560px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contacts__wrapper {
+        flex-wrap: wrap;
+        gap: 44px;
+    }
+}
+
 @media (max-width: 600px) {
     .contacts {
         padding: 120px 0 80px 0;
     }
 
     .contacts h1 {
-        font-size: 28px;
-        line-height: 36px;
         margin-bottom: 40px;
         text-align: center;
     }
@@ -80,12 +136,14 @@ a.contacts__content {
     .contacts__label {
         font-size: 16px;
         line-height: 38.99px;
+        padding: 0 24px;
     }
 
     .contacts__content {
         font-size: 16px;
         line-height: 19.36px;
         text-align: center;
+        margin-top: 8px;
     }
 
     #map {
