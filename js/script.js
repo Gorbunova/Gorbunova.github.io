@@ -365,12 +365,20 @@ function init100vh(){
 /* Consultation ********************************************************************** */
 
 const initConsultation = (isModal = false) => {
-/*     const btns = document.querySelectorAll('.consultation__btn');
+    const btns = document.querySelectorAll('.consultation__btn');
 
     btns.forEach(btn => {
-        if (isModal && btn.parentElement.getAttribute('id') !== 'modal-form') return;
-        new ConsultationBtn(btn);
-    }); */
+        /* if (isModal && btn.parentElement.getAttribute('id') !== 'modal-form') return;
+        new ConsultationBtn(btn); */
+        const fields = btn.parentElement.querySelectorAll('.form__field');
+        fields.forEach(field => {
+            field.addEventListener('click', () => field.querySelector('input')?.focus());
+
+            if (field.querySelector('input')) field.querySelector('input').value = '';
+            else if (field.querySelector('textarea')) field.querySelector('textarea').value = '';
+            field.classList.remove('error');
+        });
+    });
 }
 
 /* class ConsultationBtn {
@@ -484,7 +492,7 @@ const aiAnimationInit = () => {
         })
     })
 
-    if (window.innerWidth <= 600) return;
+    if (window.innerWidth <= 1200) return;
     /* Desktop animation */
 
     const solutions = document.querySelector('.ai-solutions');
@@ -663,7 +671,7 @@ function getStyle(oElm, strCssRule){
 /* Development page ********************************************************************** */
 
 const initDevelopmentDirections = () => {
-    const isMobile = window.innerWidth <= 600;
+    const isMobile = window.innerWidth <= 992;
     const items = document.querySelectorAll('.custom-dev-directions__item');
     if (isMobile) {
         items.forEach(item => {

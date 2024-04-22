@@ -58,13 +58,37 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .custom-dev-consulting__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-dev-consulting__img {
+        min-height: unset;
+        min-width: unset;
+        max-height: 348px;
+    }
+
+    .custom-dev-consulting__info .text-large {
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .custom-dev-consulting__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-dev-consulting__img {
+        max-height: 480px;
+    }
+}
+
 @media (max-width: 600px) {
     .custom-dev-consulting {
         padding: 80px 0;
-    }
-
-    .custom-dev-consulting__wrapper {
-        flex-direction: column;
     }
 
     .custom-dev-consulting__info {
@@ -83,7 +107,6 @@
 
     .custom-dev-consulting__img {
         min-width: 100%;
-        max-height: 480px;
         display: flex;
         justify-content: end;
         border-radius: 24px;

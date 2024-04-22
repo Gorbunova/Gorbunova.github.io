@@ -44,6 +44,51 @@
     max-height: calc(100% + 150px);
 }
 
+
+@media (max-height: 928px) {
+    .portal__inner {
+        padding: 60px 70px;
+    }
+
+    .portal__inner p {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-height: 830px) and (min-width: 992px) {
+    .portal {
+        min-height: unset;
+    }
+
+    .portal__wrapper {
+        height: unset;
+        align-items: start;
+        padding: 80px 0;
+    }
+
+    .portal__inner {
+        padding: 50px 70px;
+    }
+
+    .portal__inner h1 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .portal__img {
+        max-height: calc(100% + 100px);
+    }
+}
+
+@media (max-height: 830px) and (min-width: 1600px) {
+    .portal__inner h1 {
+        font-size: 50px;
+        line-height: 54px;
+        margin-bottom: 30px;
+        max-width: 660px;
+    }
+}
+
 @media (max-width: 1600px) {
     .portal__inner {
         padding: 64px;

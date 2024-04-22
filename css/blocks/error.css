@@ -1,0 +1,246 @@
+.error {
+    padding: 120px 0 0 0;
+}
+
+.error__wrapper {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error__inner {
+    margin-bottom: 62px;
+    position: relative;
+    display: flex;
+    gap: 0;
+    animation: spreading 1s linear forwards;
+}
+
+@keyframes spreading {
+    from {
+        gap: 0;
+    }
+    to {
+        gap: 30px;
+    }
+}
+
+.error__inner img.error__inner-img {
+    max-height: 415px;
+}
+
+.error__inner img:not(.error__inner-img) {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    height: 410px;
+}
+
+.error__inner .eyes {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    display: flex;
+    gap: 12px;
+    animation: eyes 1.5s linear infinite alternate;
+}
+
+@keyframes eyes {
+    0% {
+        transform: translateX(0%);
+    }
+    35% {
+        transform: translateX(0%);
+    }
+    65% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.error__inner .eye {
+    height: 10px;
+    width: 10px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.error__title {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.error__subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.error-services {
+    padding: 80px 0;
+}
+
+.error-services h2 {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+
+.error-examples .examples__item {
+    gap: 44px;
+}
+
+.error-examples .examples__item:nth-child(1) img {
+    max-width: 329px;
+    object-fit: cover;
+    object-position: left;
+    margin-right: -58px;
+    height: 340px;
+}
+
+.error-examples .examples__item:nth-child(3) img {
+    margin-right: 0;
+    height: 374px;
+}
+
+.error-examples .examples__item.muted {
+    color: var(--color-text-muted-secondary);
+}
+
+.error-examples .examples__item-soon {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 800;
+    margin-top: 80px;
+    opacity: .5;
+}
+
+@media (max-width: 1600px) {
+    .error-services h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .error-services h2 {
+        margin-bottom: 40px;
+    }
+
+    .error__inner img.error__inner-img {
+        max-height: 316px;
+    }
+
+    .error__inner img:not(.error__inner-img) {
+        height: 316px;
+    }
+
+    .error__inner .eyes {
+        top: 55px;
+        gap: 10px;
+    }
+
+    .error__inner .eye {
+        height: 8px;
+        width: 8px;
+    }
+
+    .error__title {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .error__subtitle {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .error__wrapper {
+        padding: 80px 0 40px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .error {
+        padding: 80px 0 0 0;
+    }
+
+    .error-examples .examples__wrapper {
+        grid-template-columns: repeat(6, 316px);
+    }
+
+    .error-examples .examples__item:nth-child(3) img, .error-examples .examples__item:nth-child(1) img {
+        height: unset;
+    }
+
+    .error__inner img.error__inner-img {
+        max-height: 204px;
+    }
+
+    .error__inner img:not(.error__inner-img) {
+        height: 204px;
+    }
+
+    .error__inner .eyes {
+        top: 45px;
+        gap: 6px;
+    }
+
+    .error__inner .eye {
+        height: 6px;
+        width: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .error-examples .examples__wrapper {
+        grid-template-columns: repeat(6, calc(100vw - 32px));
+    }
+
+    .error-examples .examples__item:nth-child(3) img, .error-examples .examples__item:nth-child(1) img {
+        max-width: 100%;
+    }
+
+    .error__wrapper {
+        padding: 80px 20px 40px 20px;
+    }
+
+    .error__inner img.error__inner-img {
+        max-height: 130px;
+    }
+
+    .error__inner img:not(.error__inner-img) {
+        height: 130px;
+    }
+
+    .error__inner .eyes {
+        top: 35px;
+        gap: 4px;
+    }
+
+    .error__inner .eye {
+        height: 4px;
+        width: 4px;
+    }
+
+    .error__subtitle {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    @keyframes spreading {
+        from {
+            gap: 0;
+        }
+        to {
+            gap: 10px;
+        }
+    }
+}

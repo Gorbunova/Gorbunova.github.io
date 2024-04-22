@@ -24,7 +24,6 @@
     background-color: var(--color-light);
     border-radius: 40px;
     position: relative;
-    overflow-y: scroll;
 }
 
 .modal__inner h2 {
@@ -89,6 +88,7 @@
         height: 100%;
         width: 100%;
         padding: 18px 24px 18px 24px;
+        overflow-y: scroll;
     }
 
     .modal__inner h2 {
@@ -117,5 +117,48 @@
 
     .modal__inner button {
         min-width: 100%;
+    }
+}
+
+@media (max-height: 820px) {
+    .modal__inner h2 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .modal__inner {
+        padding: 20px 40px;
+    }
+
+    .form__field textarea {
+        min-height: 70px;
+    }
+}
+
+@media (max-height: 700px) {
+    .modal__inner h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .form__field {
+        padding: 6px 12px 6px 22px;
+    }
+
+    .modal__inner p , .modal__inner p a {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .modal__inner .close {
+        top: 20px;
+    }
+}
+
+@media (max-height: 610px) {
+    .modal__wrapper {
+        align-items: start;
+        overflow-y: scroll;
+        padding: 20px;
     }
 }

@@ -1,0 +1,275 @@
+.policy {
+    padding: 160px 0 40px 0;
+}
+
+.policy .container {
+    max-width: 1006px;
+}
+
+.policy h1 {
+    font-size: 60px;
+    line-height: 68px;
+    margin-bottom: 70px;
+}
+
+.policy ol ol li, .policy ol li a {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Inter';
+}
+
+.policy a  {
+    color: var(--color-main);
+    text-decoration: underline;
+}
+
+.policy ol {
+    margin-bottom: 44px;
+    counter-reset: list1;
+    list-style-type: none;
+}
+
+.policy ol li {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 800;
+    padding-left: 64px;
+    position: relative;
+}
+
+.policy ol li::before {
+    position: absolute;
+    left: 0;
+    counter-increment: list1;
+    content: counter(list1) ". ";
+}
+
+.policy ol ol {
+    margin-top: 24px;
+    counter-reset: list2;
+}
+
+.policy ol ol li {
+    padding-left: 0;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.policy ol ol li:last-child {
+    margin-bottom: 0;
+}
+
+.policy ol ol li::before {
+    position: absolute;
+    counter-increment: list2;
+    content: counter(list1) "." counter(list2) ". ";
+    left: -64px;
+    color: var(--color-text-muted-secondary);
+}
+
+.policy ol ol ul {
+    list-style-type: disc;
+    padding-left: 28px;
+    margin-top: 12px;
+}
+
+.policy ol ol ul li {
+    margin: 0;
+}
+
+.policy ol ol ul li::before {
+    display: none;
+}
+
+.policy table tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.policy table th {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: 'Inter';
+    color: var(--color-text-muted-secondary);
+    display: flex;
+    align-items: end;
+}
+
+.policy table td {
+    padding: 16px 8px;
+}
+
+.policy tbody td {
+    border: 1px solid var(--color-light);
+    background-color: var(--color-gray);
+}
+
+.policy tbody td, .policy tbody p, .policy tbody ul li {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Inter';
+    word-break: break-word;
+}
+
+.policy tbody ul {
+    padding-left: 20px !important;
+    margin: 0 !important;
+}
+
+.policy tbody p {
+    margin-bottom: 12px;
+}
+
+.policy tbody td:first-child, .policy tbody td:first-child ul li {
+    font-weight: 800;
+}
+
+.policy tbody tr:first-child td:first-child {
+    border-top-left-radius: 24px;
+}
+
+.policy tbody tr:first-child td:last-child {
+    border-top-right-radius: 24px;
+}
+
+.policy tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 24px;
+}
+
+.policy tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 24px;
+}
+
+.policy .table__wrapper {
+    display: none;
+}
+
+@media (max-width: 1600px) {
+    .policy .container {
+        max-width: 700px;
+    }
+
+    .policy h1 {
+        font-size: 40px;
+        line-height: 52px;
+        margin-bottom: 40px;
+    }
+
+    .policy ol ol li, .policy ol li a {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .policy ol li {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .policy tbody td, .policy tbody p, .policy tbody ul li {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .policy .container {
+        max-width: 892px;
+    }
+
+    .policy h1 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .policy ol li {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .policy ol ol li, .policy ol li a, .policy tbody td, .policy tbody p, .policy tbody ul li {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .policy {
+        padding: 120px 0 40px 0;
+    }
+
+    .policy .container {
+        max-width: 520px;
+        padding: 0;
+    }
+
+    .policy h1 {
+        font-size: 29px;
+        line-height: 36px;
+    }
+
+    .policy table {
+        display: none;
+    }
+
+    .policy .table__wrapper {
+        display: block;
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .policy .table__item {
+        background-color: var(--color-gray);
+        padding: 16px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .policy .table__item p {
+        font-size: 14px;
+        line-height: 18px;
+        font-family: 'Inter';
+    }
+
+    .policy .table__item .label {
+        font-size: 12px;
+        line-height: 14.52px;
+        color: var(--color-text-muted-secondary);
+        margin-bottom: 5px;
+    }
+
+    .policy .table__item div:first-child p, .policy .table__item div:first-child ul li {
+        font-weight: 800;
+    }
+
+    .policy .table__item ul {
+        padding-left: 20px;
+    }
+
+    .policy .table__item:first-child {
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+    }
+
+    .policy .table__item:last-child {
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .policy {
+        padding: 100px 0 80px 0;
+    }
+
+    .policy .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+}

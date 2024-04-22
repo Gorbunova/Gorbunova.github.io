@@ -59,25 +59,41 @@
     background-color: var(--color-light-blue);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1600px) {
     .ai-development {
-        padding: 80px 0;
+        padding: 60px 0;
     }
 
+    .ai-development__item-title h4 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .ai-development__item-title {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .ai-development__item-title h4 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 992px) {
     .ai-development h2 {
-        text-align: center;
-        max-width: 235px;
+       text-align: center;
+       max-width: 460px;
     }
 
     .ai-development__description {
-        max-width: unset;
         margin-bottom: 40px;
     }
 
     .ai-development-title {
-        margin-bottom: 24px;
         text-align: center;
-        max-width: 328px;
+        margin-bottom: 24px;
     }
 
     .ai-development__wrapper {
@@ -91,10 +107,6 @@
         min-width: unset;
     }
 
-    .ai-development__button {
-        width: 100%;
-    }
-
     .ai-development__item-title h4 {
         font-size: 20px;
         line-height: 26px;
@@ -103,5 +115,30 @@
     .ai-development__item p {
         font-size: 16px;
         line-height: 19.36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ai-development {
+        padding: 80px 0;
+    }
+
+    .ai-development h2 {
+        text-align: center;
+        max-width: 235px;
+    }
+
+    .ai-development__description {
+        max-width: unset;
+    }
+
+    .ai-development-title {
+        margin-bottom: 24px;
+        text-align: center;
+        max-width: 328px;
+    }
+
+    .ai-development__button {
+        width: 100%;
     }
 }

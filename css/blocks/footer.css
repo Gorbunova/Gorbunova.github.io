@@ -33,7 +33,7 @@
     gap: 67px;
 }
 
-.footer__solutions-wrapper h3, .footer__about-wrapper h3 {
+.footer__solutions-wrapper h3, .footer__about-wrapper h3, .footer__services-wrapper h3 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
@@ -126,7 +126,7 @@
         margin-bottom: 60px;
     }
 
-    .footer__solutions-wrapper h3, .footer__about-wrapper h3 {
+    .footer__solutions-wrapper h3, .footer__about-wrapper h3, .footer__services-wrapper h3 {
         font-size: 16px;
     }
 

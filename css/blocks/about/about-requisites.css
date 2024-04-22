@@ -6,6 +6,7 @@
 .about-requisites .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .about-requisites__info {
@@ -16,6 +17,7 @@
 .about-requisites__info h4 {
     color: var(--color-light);
     margin-bottom: 7px;
+    white-space: nowrap;
 }
 
 .about-requisites__info p {
@@ -45,7 +47,30 @@
     text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1600px) {
+    .about-requisites__info p {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .about-requisites__info img {
+        height: 50px;
+    }
+
+    .about-requisites__info h4 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .about-requisites__info p {
+        font-size: 16px;
+        line-height: 19.36px;
+    }
+}
+
+@media (max-width: 992px) {
     .about-requisites {
         padding: 40px 0;
     }
@@ -56,25 +81,26 @@
         gap: 49px;
     }
 
+    .about-requisites__info img {
+        height: 80px;
+    }
+
     .about-requisites__info {
         flex-direction: column;
         gap: 24px;
     }
 
-    .about-requisites__info img {
-        height: 72px;
-    }
-
     .about-requisites__info h4 {
-        text-align: center;
         font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 12px;
+        line-height: 32px;
+        text-align: center;
     }
 
     .about-requisites__info p {
         text-align: center;
-        font-size: 16px;
-        line-height: 19.36px;
+    }
+
+    .about-requisites__download button {
+        width: calc(100vw - 80px);
     }
 }

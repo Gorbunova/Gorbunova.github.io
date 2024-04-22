@@ -12,6 +12,9 @@
 @import './components/faq.css';
 
 /* common blocks */
+@import './blocks/agreement.css';
+@import './blocks/policy.css';
+@import './blocks/error.css';
 @import './blocks/consultation.css';
 @import './blocks/footer.css';
 
