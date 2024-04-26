@@ -53,6 +53,18 @@
     .services-item p {
         margin-bottom: 56px;
     }
+
+    .services-item h3 {
+        max-width: 300px;
+        min-height: 60px;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .services-item p {
+        font-size: 14px;
+        line-height: 19.36px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -97,7 +109,11 @@
     }
 
     .services-item:last-child img {
-        height: 120px;
+        height: 152px;
+    }
+
+    .services-item h3 {
+        min-height: unset;
     }
 }
 

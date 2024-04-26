@@ -53,6 +53,16 @@
         align-items: start;
         gap: 30px;
     }
+
+    .about-advantages__item h4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .about-advantages__item .text {
+        font-size: 14px;
+        line-height: 19.36px;
+    }
 }
 
 @media (max-width: 1200px) {

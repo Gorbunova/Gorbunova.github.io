@@ -18,8 +18,9 @@
 
 .solutions__main-tag {
     padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 800;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
     letter-spacing: 2px;
     background-color: #ffffff4e;
@@ -86,6 +87,11 @@
 
     .solutions__main button {
         margin-top: 24px;
+    }
+
+    .solutions__main-tag {
+        font-size: 12px;
+        line-height: 12px;
     }
 }
 

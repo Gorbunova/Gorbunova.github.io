@@ -54,6 +54,10 @@
     .talk__wrapper {
         margin-bottom: 44px;
     }
+
+    .talk__main {
+        margin-bottom: 24px;
+    }
 }
 
 @media (max-width: 1200px) {

@@ -19,7 +19,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-bottom: 80px;
 }
 
 .qualities__item {
@@ -61,7 +60,7 @@
         padding: 120px 0;
     }
 
-    .qualities h2, .qualities__wrapper {
+    .qualities h2 {
         margin-bottom: 44px;
     }
 
@@ -84,6 +83,9 @@
 
     .qualities__item h4 {
         margin-bottom: 16px;
+        font-size: 20px;
+        line-height: 24px;
+        min-height: 56px;
     }
 }
 

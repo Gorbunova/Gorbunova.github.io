@@ -14,7 +14,7 @@ function init() {
         .add(new ymaps.Placemark([55.767879, 37.674642], {
         }, {
             iconLayout: 'default#image',
-            iconImageHref: 'icons/map-mark.png',
+            iconImageHref: 'icons/map-mark.webp',
             iconImageSize: isMobile ? [40, 40] : [80, 80],
             iconImageOffset: isMobile ? [-25, -40] : [-50, -80]
         }))

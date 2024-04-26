@@ -1,7 +1,7 @@
 .about {
     padding: 242px 0 120px 0;
     min-height: 750px;
-    background: center / cover no-repeat url(../../../img/about/background.png);
+    background: center / cover no-repeat url(../../../img/about/background.webp);
 }
 
 .about__wrapper {
@@ -74,6 +74,11 @@
         font-size: 44px;
         line-height: 64px;
         margin-bottom: 0;
+    }
+
+    .about__content-item {
+        border-radius: 24px;
+        padding: 20px 30px;
     }
 }
 

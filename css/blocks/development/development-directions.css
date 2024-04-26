@@ -46,13 +46,13 @@
 
 .custom-dev-directions__main img {
     height: 340px;
-    animation: floating 1s linear infinite alternate;
+    animation: floating 2.0s ease-in infinite alternate;
     margin-top: -50px;
 }
 
 .custom-dev-directions__item:nth-child(2) img {
     margin: 0;
-    animation: floating 1.2s .5s linear infinite alternate;
+    animation: floating 2.5s .5s ease-in infinite alternate;
 }
 
 .custom-dev-directions__btn {
@@ -170,10 +170,13 @@
 }
 
 @keyframes floating {
-    from {
+    0% {
         transform: translateY(0);
     }
-    to {
+    25% {
+        transform: translateY(0);
+    }
+    100% {
         transform: translateY(-30px);
     }
 }

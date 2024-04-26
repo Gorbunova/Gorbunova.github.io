@@ -140,6 +140,7 @@
 
     .portal__inner h1 {
         margin-bottom: 20px;
+        max-width: 400px;
     }
 
     .portal__inner p {
@@ -162,6 +163,10 @@
 }
 
 @media (max-width: 600px) {
+    .portal {
+        min-height: unset;
+    }
+
     .portal__wrapper {
         height: unset;
         margin-top: 16px;
@@ -174,6 +179,9 @@
     .portal__inner h1 {
         word-wrap: break-word;
         margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 30px;
+        max-width: 300px;
     }
 
     .portal__inner p {
@@ -186,7 +194,7 @@
     }
 
     .portal__img {
-        width: 90%;
+        width: 80%;
         height: 350px;
         margin-top: 0;
     }

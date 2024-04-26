@@ -45,7 +45,7 @@
     position: absolute;
     right: 100px;
     top: 16px;
-    height: 830px;
+    height: 780px;
     opacity: 0;
     transition: opacity .5s;
 }
@@ -212,10 +212,12 @@
 
     .portal-review__wrapper {
         padding: 0;
+        max-width: unset;
     }
 
     .portal-review__item {
         padding: 20px 24px;
+        max-width: unset;
     }
 
     .portal-review__item.active {
@@ -273,5 +275,29 @@
     .portal-review__item-arrow {
         height: 32px;
         width: 32px;
+    }
+
+    .portal-review__item-img {
+        width: 100%;
+        max-height: 550px;
+    }
+
+    .portal-review__item.active .portal-review__item-content {
+        max-height: 730px;
+        height: 730px;
+    }
+}
+
+@media (max-width: 530px) {
+    .portal-review__item.active .portal-review__item-content {
+        max-height: 750px;
+        height: 750px;
+    }
+}
+
+@media (max-width: 400px) {
+    .portal-review__item.active .portal-review__item-content {
+        max-height: 800px;
+        height: 800px;
     }
 }

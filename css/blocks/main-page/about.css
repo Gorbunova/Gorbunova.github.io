@@ -1,6 +1,6 @@
 .development {
     position: relative;
-    padding: 191px 0 223px 0;
+    padding: 191px 0 188px 0;
     background-color: #12042C;
     color: var(--color-light);
 }
@@ -30,7 +30,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 275px;
+    height: 220px;
 }
 
 .development__tags {
@@ -52,13 +52,13 @@
 
 @media (max-width: 1600px) {
     .development {
-        padding: 110px 32px 240px 32px;
+        padding: 110px 32px 188px 32px;
     }
 }
 
 @media (max-width: 1200px) {
     .development {
-        padding: 70px 32px 224px 32px;
+        padding: 70px 32px 188px 32px;
     }
 }
 
@@ -88,5 +88,9 @@
 
     .development__tags {
         padding: 0 20px;
+    }
+
+    .development__text {
+        line-height: 22px;
     }
 }

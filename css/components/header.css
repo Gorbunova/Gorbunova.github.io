@@ -42,7 +42,8 @@
 
 .header__nav a, .header__nav span {
     color: var(--color-text);
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 19.36px;
     font-family: 'Inter';
     cursor: pointer;
     transition: all .5s;
@@ -132,8 +133,25 @@
 
 .header__subnav-item img {
     position: absolute;
+}
+
+.header__subnav-item img.design {
     bottom: 0;
     right: 0;
+    max-width: 110px;
+}
+
+.header__subnav-item img.mobile {
+    bottom: 0;
+    right: 16px;
+    height: 90%;
+}
+
+.header__subnav-item img.desktop {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 75%;
 }
 
 .header.light .header__logo:not(.light) {
@@ -184,13 +202,6 @@
         font-size: 14px;
         line-height: 16px;
         max-width: 228px;
-    }
-}
-@media (max-width: 1400px) {
-    .header__nav ul {
-        display: flex;
-        gap: 16px;
-        margin-right: 130px;
     }
 }
 

@@ -38,6 +38,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    width: 70%;
 }
 
 .portal-for__item ul {
@@ -65,10 +66,6 @@
     .portal-for__item h3 {
         font-size: 24px;
         line-height: 32px;
-    }
-
-    .portal-for__item img {
-        width: 70%;
     }
 }
 

@@ -64,6 +64,11 @@
         padding: 60px 0;
     }
 
+    .ai-development-title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
     .ai-development__item-title h4 {
         font-size: 20px;
         line-height: 28px;

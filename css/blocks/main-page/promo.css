@@ -1,7 +1,7 @@
 .promo {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
-    background: center / cover no-repeat url('../../../img/promo-background.png');
+    background: center / cover no-repeat url('../../../img/promo-background.webp');
     position: relative;
     overflow: hidden;
 }
@@ -16,8 +16,7 @@
 .promo__img {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    top: 14%;
+    top: 160px;
     display: none;
     z-index: 0;
     width: 60%;
@@ -90,20 +89,29 @@
 }
 
 @media (max-width: 992px) {
+    .promo {
+        min-height: unset;
+    }
+
     .promo__inner h1 {
         max-width: 520px;
+        margin-top: 260px;
     }
 
     .promo__wrapper {
         row-gap: 80px;
+        height: unset;
     }
 
     .promo__inner {
+        height: unset;
         justify-content: end;
+        gap: 40px;
     }
 
     .promo__img {
         display: block;
+        animation: floating-drop 2.5s linear infinite alternate;
     }
 
     .promo__stack {
@@ -117,13 +125,35 @@
     .promo__stack img {
         max-height: 24px;
     }
+
+    @keyframes floating-drop {
+        0% {
+            transform: translate(-50%, 0);
+        }
+        25% {
+            transform: translate(-50%, 0);
+        }
+        100% {
+            transform: translate(-50%, -20px);
+        }
+    }
 }
 
 @media (max-width: 600px) {
     .promo__inner h1 {
         padding: 0 24px;
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .promo__inner h1 {
+        margin-top: 140px;
+    }
+
+    .promo__img {
+        top: 90px;
+        height: 230px;
+        width: unset;
     }
 
     .promo__inner {
@@ -137,50 +167,5 @@
     .promo__stack {
         margin-bottom: 30px;
         row-gap: 24px;
-    }
-}
-
-@media (max-width: 600px) and (max-height: 625px) {
-    .promo__inner {
-        margin-top: 80px;
-        justify-content: start;
-    }
-
-    .promo__inner h1 {
-        font-size: 30px;
-        line-height: 36px;
-    }
-
-    .promo__img {
-        top: 10%;
-        width: 40%;
-    }
-
-    .promo__stack img {
-        max-height: 22px;
-    }
-
-    .promo__stack {
-        row-gap: 16px;
-    }
-}
-
-@media (max-width: 600px) and (max-height: 525px) {
-    .promo__inner h1 {
-        font-size: 28px;
-        line-height: 32px;
-    }
-
-    .promo__img {
-        top: 10%;
-        width: 40%;
-    }
-
-    .promo__stack img {
-        max-height: 22px;
-    }
-
-    .promo__stack {
-        row-gap: 16px;
     }
 }

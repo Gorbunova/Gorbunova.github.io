@@ -38,5 +38,6 @@
 @media (max-width: 600px) {
     .about-text p {
         text-align: left;
+        line-height: 22px;
     }
 }

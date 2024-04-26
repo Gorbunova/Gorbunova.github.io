@@ -363,8 +363,26 @@
 
 .fixed-header__subnav-item img {
     position: absolute;
+}
+
+
+.fixed-header__subnav-item img.design {
     bottom: 0;
     right: 0;
+    max-width: 110px;
+}
+
+.fixed-header__subnav-item img.mobile {
+    bottom: 0;
+    right: 16px;
+    height: 90%;
+}
+
+.fixed-header__subnav-item img.desktop {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 75%;
 }
 
 .fixed-header__subnav {
@@ -380,12 +398,6 @@
         font-size: 14px;
         line-height: 16px;
         max-width: 228px;
-    }
-}
-
-@media (max-width: 1400px) {
-    .fixed-header nav ul {
-        gap: 20px;
     }
 }
 

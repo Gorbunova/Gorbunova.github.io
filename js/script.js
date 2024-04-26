@@ -208,6 +208,7 @@ const getIsAfterStartSection = () => {
     const contactsStartSectionTop = document.querySelector('.contacts-map')?.getBoundingClientRect().top;
     const aiStartSectionTop = document.querySelector('.ai-advantages')?.getBoundingClientRect().top;
     const developmentStartSectionTop = document.querySelector('.custom-dev-services')?.getBoundingClientRect().top;
+    const errorStartSectionTop = document.querySelector('.error-services')?.getBoundingClientRect().top;
 
     return (
         mainStartSectionTop <= 0 ||
@@ -215,7 +216,8 @@ const getIsAfterStartSection = () => {
         aboutStartSectionTop <= 0 ||
         contactsStartSectionTop <= 0 ||
         aiStartSectionTop <= 0 ||
-        developmentStartSectionTop <= 0
+        developmentStartSectionTop <= 0 ||
+        errorStartSectionTop <= 0
     );
 }
 
@@ -427,21 +429,7 @@ const sliderInit = () => {
     const rightBtn = document.getElementById('talk-btn-right');
     const activeClass = 'talk__button_active';
 
-    leftBtn.addEventListener('click', () => {
-        if (!isEnableClick) return;
-
-        isEnableClick = false;
-        setTimeout(() => isEnableClick = true, 500);
-
-        if (sliderOffset === 0) return;
-
-        rightBtn.classList.add(activeClass);
-        sliderOffset -= cardWidth + 20;
-        slider.style = `transform: translateX(-${sliderOffset}px)`;
-        if (sliderOffset === 0) leftBtn.classList.remove(activeClass);
-    });
-
-    rightBtn.addEventListener('click', () => {
+    const moveRight = () => {
         if (!isEnableClick) return;
 
         isEnableClick = false;
@@ -453,7 +441,52 @@ const sliderInit = () => {
         sliderOffset += cardWidth + 20;
         slider.style = `transform: translateX(-${sliderOffset}px)`;
         if ((sliderOffset + cardWidth) > maxSliderOffset) rightBtn.classList.remove(activeClass);
-    });
+    }
+
+    const moveLeft = () => {
+        if (!isEnableClick) return;
+
+        isEnableClick = false;
+        setTimeout(() => isEnableClick = true, 500);
+
+        if (sliderOffset === 0) return;
+
+        rightBtn.classList.add(activeClass);
+        sliderOffset -= cardWidth + 20;
+        slider.style = `transform: translateX(-${sliderOffset}px)`;
+        if (sliderOffset === 0) leftBtn.classList.remove(activeClass);
+    }
+
+    leftBtn.addEventListener('click', moveLeft);
+    rightBtn.addEventListener('click', moveRight);
+
+    /* mobile events */
+    let xDown = null, yDown = null;
+
+    const handleTouchStart = (evt) => {
+        const { clientX, clientY } = evt.touches[0];
+        xDown = clientX; yDown = clientY;
+    }
+
+    function handleTouchMove(evt) {
+        if (!xDown || !yDown) {
+            return;
+        }
+
+        const etouches = evt.touches[0];
+
+        const xDiff = xDown - etouches.clientX;
+        const yDiff = yDown - etouches.clientY;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            xDiff > 0 ? moveRight() : moveLeft();
+        }
+
+        xDown = yDown = null;
+    }
+
+    document.addEventListener("touchstart", handleTouchStart, false);
+    document.addEventListener("touchmove", handleTouchMove, false);
 };
 
 /* Mobile portal ********************************************************************** */
@@ -461,9 +494,14 @@ const sliderInit = () => {
 const initReviewAccordeon = () => {
     document.querySelectorAll('.portal-review__item').forEach(item => {
         item.addEventListener('click', () => {
-            if (item.classList.contains('active')) return;
-            document.querySelectorAll('.portal-review__item').forEach(item => item.classList.remove('active'));
-            item.classList.add('active');
+            if (window.innerWidth > 992 ) {
+                document.querySelectorAll('.portal-review__item').forEach(item => item.classList.remove('active'));
+                if (item.classList.contains('active')) return;
+                item.classList.add('active');
+            } else {
+                if (item.classList.contains('active')) item.classList.remove('active');
+                else item.classList.add('active');
+            }
         })
     })
 };
@@ -485,10 +523,11 @@ const aiAnimationInit = () => {
     const infoItems = document.querySelectorAll('.ai-solutions__info-item');
     infoItems?.forEach(item => {
         item.addEventListener('click', () => {
-            if (item.classList.contains('active')) return;
-
-            infoItems.forEach(infoItem => infoItem.classList.remove('active'));
-            setTimeout(() => item.classList.add('active'), 250);
+            if (item.classList.contains('active')) item.classList.remove('active');
+            else {
+                infoItems.forEach(infoItem => infoItem.classList.remove('active'));
+                setTimeout(() => item.classList.add('active'), 250);
+            }
         })
     })
 

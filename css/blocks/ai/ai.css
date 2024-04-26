@@ -54,7 +54,7 @@
     width: max-content;
 }
 
-@media (max-height: 980px) {
+@media (max-height: 980px) and (min-width: 992px) {
     .ai {
         padding: 149px 0 120px ;
     }
@@ -116,6 +116,10 @@
 }
 
 @media (max-width: 992px) {
+    .ai {
+        padding: 88px 0 80px;
+    }
+
     .ai__inner {
         padding: 56px 44px;
     }

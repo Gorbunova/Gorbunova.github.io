@@ -1,5 +1,6 @@
 .consultation {
     padding: 120px 0;
+    overflow: hidden;
 }
 
 .consultation__img {
@@ -34,17 +35,19 @@
 
 .consultation__form {
     display: flex;
-    gap: 24px;
+    gap: 12px;
     justify-content: space-between;
     margin-bottom: 16px;
 }
 
 .consultation__form button {
+    margin-left: 12px;
     padding: 10px 54px;
     background-color: var(--color-light);
     border-radius: 100px;
     border: none;
-    font-size: 21px;
+    font-size: 16px;
+    line-height: 20px;
     font-weight: 500;
     color: var(--color-text);
 }
@@ -73,7 +76,7 @@
 }
 
 .consultation__text {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Inter';
 }
 
@@ -144,6 +147,7 @@
 
     .consultation__title {
         font-size: 24px;
+        line-height: 30px;
         max-width: 400px;
         margin-bottom: 24px;
     }
@@ -155,12 +159,13 @@
 
     .consultation__form button {
         padding: 18px 0;
+        margin-left: 0;
     }
 
     .consultation__img {
-        top: -47px;
-        right: 0;
-        height: 134px;
+        top: -30px;
+        right: -30px;
+        height: 112px;
     }
 
     .consultation__form button {

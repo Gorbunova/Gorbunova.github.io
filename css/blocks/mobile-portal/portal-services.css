@@ -47,6 +47,10 @@
     justify-content: center;
 }
 
+.portal-services__item-img img {
+    max-width: 350px;
+}
+
 @media (max-width: 1600px) {
     .portal-services__item {
         padding: 30px 16px 0 16px;
@@ -148,5 +152,9 @@
 
     .portal-services__item-img img {
         width: 100%;
+    }
+
+    .portal-services__item-content {
+        align-items: start;
     }
 }

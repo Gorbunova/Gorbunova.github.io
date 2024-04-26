@@ -60,6 +60,10 @@
     margin-top: 8px;
 }
 
+.ai-advantages a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 1600px) {
     .ai-advantages h2 {
         font-size: 36px;
