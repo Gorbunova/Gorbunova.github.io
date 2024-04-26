@@ -149,6 +149,10 @@
         font-size: 16px;
         line-height: 19px;
     }
+
+    .footer p.copyright {
+        max-width: 200px;
+    }
 }
 
 @media (max-width: 600px) {

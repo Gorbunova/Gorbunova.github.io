@@ -272,4 +272,9 @@
         max-width: 100%;
         padding: 0 16px;
     }
+
+    .policy h1 {
+        font-size: 23px;
+        line-height: 36px;
+    }
 }

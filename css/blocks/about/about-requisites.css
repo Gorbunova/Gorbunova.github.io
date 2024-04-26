@@ -29,6 +29,7 @@
 
 .about-requisites__download button {
     background-color: var(--color-light);
+    color: var(--color-text);
     font-size: 20px;
     line-height: 24.2px;
     font-family: 'Inter';

@@ -60,8 +60,8 @@
     color: var(--color-light);
 }
 
-.consultation__input:focus ~ .consultation__label,
-.consultation__input:not(:placeholder-shown) ~ .consultation__label {
+.consultation .form__input:focus ~ .form__label,
+.consultation .form__input:not(:placeholder-shown) ~ .form__label {
     color: #ffffff8e;
 }
 
