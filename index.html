@@ -1,594 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ТерраЛинк · Global Tech Week 2026</title>
+    <script type="module" crossorigin src="./assets/index-BENGY8B5.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-4g6NnsMr.css">
+  </head>
 
-    <title>TerraLink</title>
-    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
-</head>
+  <body class="locked">
 
-<body>
-    <div class="fixed-header">
-        <div class="fixed-header__wrapper">
-            <a href="index.html" class="fixed-header__logo">
-                <img src="icons/logo.svg" alt="logo">
-            </a>
-            <nav class="fixed-header__nav">
-                <ul>
-                    <li>
-                        <a href="about.html">О компании</a>
-                    </li>
-                    <li>
-                        <span id="fixed-nav-services">Услуги</span>
-                    </li>
-                    <li>
-                        <span id="fixed-nav-solutions">Решения</span>
-                    </li>
-                    <!-- <li>
-                        <a href="#">Исследования</a>
-                    </li> -->
-                    <li>
-                        <a href="contacts.html">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
+    <!-- HERO -->
+    <section class="hero">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="./assets/globaltech_site_fon-CtbiejNz.mp4" type="video/mp4">
+      </video>
+
+      <img src="data:image/svg+xml,%3csvg%20width='1366'%20height='1024'%20viewBox='0%200%201366%201024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_137_49)'%3e%3crect%20opacity='0.7'%20width='1440'%20height='1024'%20fill='black'/%3e%3crect%20opacity='0.8'%20x='579'%20width='861'%20height='1024'%20fill='url(%23paint0_linear_137_49)'/%3e%3cg%20opacity='0.4'%20filter='url(%23filter0_f_137_49)'%3e%3cellipse%20cx='683.5'%20cy='918.5'%20rx='561.5'%20ry='406.5'%20fill='%233C10C0'/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter%20id='filter0_f_137_49'%20x='-278'%20y='112'%20width='1923'%20height='1613'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='200'%20result='effect1_foregroundBlur_137_49'/%3e%3c/filter%3e%3clinearGradient%20id='paint0_linear_137_49'%20x1='1255.84'%20y1='512'%20x2='579'%20y2='512'%20gradientUnits='userSpaceOnUse'%3e%3cstop/%3e%3cstop%20offset='0.5'%20stop-opacity='0.8'/%3e%3cstop%20offset='1'%20stop-opacity='0'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_137_49'%3e%3crect%20width='1366'%20height='1024'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="" class="hero__gradient-overlay">
+
+      <div class="container">
+        <div class="hero__top">
+          <div class="hero__info">
+            <img src="data:image/svg+xml,%3csvg%20width='21'%20height='22'%20viewBox='0%200%2021%2022'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M13.75%201.79692e-06C15.1429%201.79692e-06%2016.2631%20-0.00188067%2017.1416%200.116213C18.0417%200.237229%2018.7994%200.496727%2019.4014%201.09863C20.0033%201.70055%2020.2628%202.4583%2020.3838%203.3584C20.5019%204.2369%2020.5%205.35709%2020.5%206.75V10.75C20.5%2012.1429%2020.5019%2013.2631%2020.3838%2014.1416C20.2628%2015.0417%2020.0033%2015.7994%2019.4014%2016.4014C18.7994%2017.0033%2018.0417%2017.2628%2017.1416%2017.3838C16.4012%2017.4833%2015.4891%2017.496%2014.3867%2017.498L17.7188%2020.1641C18.0422%2020.4228%2018.0947%2020.8953%2017.8359%2021.2188C17.5772%2021.5422%2017.1047%2021.5947%2016.7813%2021.3359L11.9863%2017.5H11V20.75C11%2021.1642%2010.6642%2021.5%2010.25%2021.5C9.83579%2021.5%209.5%2021.1642%209.5%2020.75V17.5H8.51367L3.71875%2021.3359C3.39531%2021.5947%202.92282%2021.5422%202.66406%2021.2188C2.40536%2020.8953%202.45783%2020.4228%202.78125%2020.1641L6.11231%2017.498C5.01039%2017.496%204.0986%2017.4833%203.3584%2017.3838C2.4583%2017.2628%201.70055%2017.0033%201.09863%2016.4014C0.496727%2015.7994%200.237229%2015.0417%200.116213%2014.1416C-0.00188067%2013.2631%201.79692e-06%2012.1429%201.79692e-06%2010.75V6.75C1.79359e-06%205.35709%20-0.00187725%204.2369%200.116213%203.3584C0.237229%202.45829%200.496719%201.70055%201.09863%201.09863C1.70055%200.496719%202.45829%200.237229%203.3584%200.116213C4.2369%20-0.00187725%205.35709%201.79359e-06%206.75%201.79692e-06H13.75ZM6.75%201.5C5.31485%201.5%204.3139%201.50202%203.5586%201.60352C2.82482%201.70217%202.43594%201.88242%202.15918%202.15918C1.88242%202.43594%201.70217%202.82482%201.60352%203.5586C1.50202%204.3139%201.5%205.31485%201.5%206.75V10.75C1.5%2012.1852%201.50202%2013.1861%201.60352%2013.9414C1.70217%2014.6752%201.88241%2015.064%202.15918%2015.3408C2.43595%2015.6176%202.82483%2015.7978%203.5586%2015.8965C4.3139%2015.998%205.31485%2016%206.75%2016H13.75C15.1852%2016%2016.1861%2015.998%2016.9414%2015.8965C17.6752%2015.7978%2018.064%2015.6176%2018.3408%2015.3408C18.6176%2015.064%2018.7978%2014.6752%2018.8965%2013.9414C18.998%2013.1861%2019%2012.1852%2019%2010.75V6.75C19%205.31485%2018.998%204.3139%2018.8965%203.5586C18.7978%202.82483%2018.6176%202.43595%2018.3408%202.15918C18.064%201.88241%2017.6752%201.70217%2016.9414%201.60352C16.1861%201.50202%2015.1852%201.5%2013.75%201.5H6.75ZM6.25%208C6.66421%208%207%208.33579%207%208.75V11.75C7%2012.1642%206.66422%2012.5%206.25%2012.5C5.83579%2012.5%205.5%2012.1642%205.5%2011.75V8.75C5.5%208.33579%205.83579%208%206.25%208ZM10.25%205C10.6642%205%2011%205.33579%2011%205.75V11.75C11%2012.1642%2010.6642%2012.5%2010.25%2012.5C9.83579%2012.5%209.5%2012.1642%209.5%2011.75V5.75C9.5%205.33579%209.83579%205%2010.25%205ZM14.25%209C14.6642%209%2015%209.33579%2015%209.75V11.75C15%2012.1642%2014.6642%2012.5%2014.25%2012.5C13.8358%2012.5%2013.5%2012.1642%2013.5%2011.75V9.75C13.5%209.33579%2013.8358%209%2014.25%209Z'%20fill='white'/%3e%3c/svg%3e" alt="" class="hero__info-icon" />
+            <span>Global Tech Week 2026</span>
+            <span class="hero__info-separator"></span>
+            <span>стенд №AI-14</span>
+          </div>
+
+          <div class="hero__logo">
+            <img src="data:image/svg+xml,%3csvg%20width='156'%20height='100'%20viewBox='0%200%20156%20100'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M122.445%2079.5701V96.3091H30.5299V79.5701H26.6094V100.222H126.365V79.5701H122.445Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M30.2741%204.13043H102.369C113.259%204.13043%20121.971%2012.8261%20121.971%2023.6957V47.8261H126.11V23.6957C126.11%2010.6522%20115.655%200%20102.586%200H26.3535V47.8261H30.2741V4.13043Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M0%2056.0874H5.66302V73.2612H9.58356V56.0874H15.0288V52.8265H0V56.0874Z'%20fill='white'/%3e%3cpath%20d='M18.0781%2073.2616H30.2754V70.0008H21.9987V64.3485H30.0576V61.0877H21.9987V56.0876H30.2754V52.8268H18.0781V73.2616Z'%20fill='white'/%3e%3cpath%20d='M45.956%2054.5656C45.3027%2053.9134%2044.4315%2053.696%2043.3423%2053.2612C42.2533%2053.0439%2041.1643%2052.8265%2039.8574%2052.8265H33.9766V73.2612H37.8972V66.7395H39.8574C41.1643%2066.7395%2042.4711%2066.5221%2043.5602%2066.0873C44.6492%2065.6525%2045.5205%2065.2177%2046.1739%2064.5657C46.8273%2063.9135%2047.4807%2063.0439%2047.6985%2062.1743C48.1342%2061.3047%2048.1342%2060.2178%2048.1342%2059.3482C48.1342%2058.2612%2047.9164%2057.3916%2047.6985%2056.5222C47.2629%2055.6526%2046.6095%2055.0004%2045.956%2054.5656ZM43.778%2061.0873C43.5602%2061.5221%2043.3423%2061.9569%2042.9068%2062.3917C42.4711%2062.8265%2042.0355%2063.0439%2041.6%2063.2613C41.1643%2063.4787%2040.5109%2063.4787%2039.8574%2063.4787H37.6794V56.0874H39.6396C40.2931%2056.0874%2040.9465%2056.0874%2041.6%2056.3048C42.0355%2056.5222%2042.4711%2056.7396%2042.9068%2056.957C43.3423%2057.1743%2043.5602%2057.609%2043.778%2058.0438C43.9958%2058.4786%2043.9958%2058.9134%2043.9958%2059.5656C43.9958%2060.2178%2043.9958%2060.6526%2043.778%2061.0873Z'%20fill='white'/%3e%3cpath%20d='M62.7293%2054.566C62.076%2053.9138%2061.2048%2053.6964%2060.1156%2053.2616C59.0266%2053.0442%2057.9376%2052.8268%2056.6307%2052.8268H50.75V73.2616H54.6705V66.7398H56.6307C57.9376%2066.7398%2059.2444%2066.5224%2060.3335%2066.0877C61.4225%2065.6529%2062.2938%2065.2181%2062.9472%2064.5659C63.6006%2063.9137%2064.254%2063.0441%2064.4718%2062.1747C64.9075%2061.3051%2064.9075%2060.2181%2064.9075%2059.3485C64.9075%2058.2616%2064.6897%2057.392%2064.4718%2056.5224C64.0363%2055.6528%2063.3828%2055.0006%2062.7293%2054.566ZM60.5513%2061.0877C60.3335%2061.5225%2060.1156%2061.9573%2059.6801%2062.3921C59.2444%2062.8267%2058.8088%2063.0441%2058.3733%2063.2615C57.9376%2063.4789%2057.2842%2063.4789%2056.6307%2063.4789H54.4527V56.0876H56.4129C57.0664%2056.0876%2057.7198%2056.0876%2058.3733%2056.305C58.8088%2056.5224%2059.2444%2056.7398%2059.6801%2056.9572C60.1156%2057.1746%2060.3335%2057.6094%2060.5513%2058.0442C60.7691%2058.479%2060.7691%2058.9137%2060.7691%2059.5659C60.987%2060.2181%2060.7691%2060.6529%2060.5513%2061.0877Z'%20fill='white'/%3e%3cpath%20d='M71.4425%2052.8265L65.3438%2073.2612H69.0465L70.1356%2069.3482H77.3232L78.4122%2073.2612H82.5506L76.452%2052.8265H71.4425ZM71.2246%2066.0873L73.8383%2056.5222L76.452%2066.0873H71.2246Z'%20fill='white'/%3e%3cpath%20d='M88.2127%2058.2605C88.2127%2059.7823%2087.9949%2061.0866%2087.777%2062.3909C87.5592%2063.4779%2087.5592%2064.5649%2087.3415%2065.4344C87.1237%2066.304%2087.1237%2066.9562%2086.9059%2067.6084C86.688%2068.2606%2086.4702%2068.6952%2086.2524%2068.9126C86.0347%2069.13%2085.8168%2069.5648%2085.599%2069.5648C85.3812%2069.7822%2085.1633%2069.7822%2084.7278%2069.7822C84.51%2069.7822%2084.0743%2069.7822%2083.8565%2069.7822L83.6387%2073.0431C84.51%2073.2605%2085.1633%2073.2605%2085.8168%2073.2605C86.4702%2073.2605%2087.1237%2073.0431%2087.777%2072.6083C88.4305%2072.1736%2088.8661%2071.7388%2089.3017%2070.8692C89.7374%2069.9996%2090.1729%2069.13%2090.3907%2067.8258C90.8264%2066.5214%2091.0442%2064.7822%2091.2621%2063.0431C91.4797%2061.0866%2091.6976%2058.9127%2091.6976%2056.0866H95.6181V73.0431H99.5387V52.6084H88.4305C88.2127%2054.7823%2088.2127%2056.7388%2088.2127%2058.2605Z'%20fill='white'/%3e%3cpath%20d='M107.596%2065.8703V52.8268H103.676V73.2616H107.378L114.348%2060.2181H114.566V73.2616H118.269V52.8268H114.566L107.596%2065.8703Z'%20fill='white'/%3e%3cpath%20d='M133.081%2061.0877H126.11V52.8268H122.189V73.2616H126.11V64.3485H133.081V73.2616H136.783V52.8268H133.081V61.0877Z'%20fill='white'/%3e%3cpath%20d='M147.675%2062.6093L154.646%2052.8268H150.071L143.973%2062.1747V52.8268H140.053V73.2616H143.973V63.2615L150.071%2073.2616H155.081L147.675%2062.6093Z'%20fill='white'/%3e%3c/svg%3e" alt="ТерраЛинк" />
+          </div>
         </div>
-        <div class="container">
-            <div class="fixed-header__subnav" id="fixed-nav-services-content">
-                <a href="development.html" class="fixed-header__subnav-item">
-                    <p>Сервисы разработки ПО</p>
-                    <img class="design" src="img/header/design-1.webp" alt="design element">
-                </a>
-                <!-- <a href="ai.html" class="fixed-header__subnav-item">
-                    <p>Разработка решений на базе ИИ</p>
-                    <img class="design" src="img/header/design-2.webp" alt="design element">
-                </a> -->
+
+        <div class="hero__content">
+          <div>
+            <span class="hero__subtitle">решения на основе ИИ</span>
+            <h1 class="hero__title">
+              Хочешь<br />
+              так же?
+            </h1>
+          </div>
+
+          <div class="hero__content-right">
+            <div class="hero__stat">
+              <h2 class="hero__stat-large stat-cost">40<span>%</span></h2>
+              <p class="hero__stat-small">
+                трудозатрат<br/>
+                на рутину благодаря<br/>
+                автоматизации
+              </p>
             </div>
-            <div class="fixed-header__subnav" id="fixed-nav-solutions-content">
-                <!-- <a href="#" class="fixed-header__subnav-item">
-                    <p>Спортивная аналитика</p>
-                    <img class="desktop" src="img/examples/mockup-sport.webp" alt="design element">
-                </a> -->
-                <a href="mobile-portal.html" class="fixed-header__subnav-item">
-                    <p>Корпоративный мобильный портал</p>
-                    <img class="mobile" src="img/examples/mockup-mob-portal.webp" alt="design element">
-                </a>
-                <!-- <a href="#" class="fixed-header__subnav-item">
-                    <p>Управление корпоративным контентом (ECM Mobile)</p>
-                    <img class="mobile" src="img/examples/mockup-ecm.webp" alt="design element">
-                </a> -->
-                <!-- <a href="#" class="fixed-header__subnav-item">
-                    <p>Мобильное ТОРО (ТOиР)</p>
-                    <img class="mobile" src="img/examples/mockup-mob-toro.webp" alt="design element">
-                </a> -->
-                <a href="ai.html" class="fixed-header__subnav-item">
-                    <p>Решения на основе ИИ</p>
-                    <img class="desktop" src="img/examples/mockup-ai.webp" alt="design element">
-                </a>
+
+            <div class="hero__stat">
+              <h2 class="hero__stat-large stat-time">50<span>%</span></h2>
+              <p class="hero__stat-small">
+                сокращение срока<br/>
+                закрытия вакансий<br/>
+                (HRTech)
+              </p>
             </div>
+          </div>
         </div>
-        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
-            <span class="wrap">Начать проект</span>
-        </button>
-        <div class="mobile-nav__toggle">
-            <div class="mobile-nav__overlay"></div>
-            <div class="mobile-nav__humburger">
-                <div></div>
-                <div></div>
+
+        <div class="hero__button-wrapper">
+          <button class="hero__scroll-button" id="scrollButton">
+            <div class="hero__scroll-content">
+              <img src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M32.1383%2026.5277C32.6753%2027.0647%2032.6753%2027.9353%2032.1383%2028.4723L22.9716%2037.6389C22.4347%2038.1759%2021.5641%2038.1759%2021.0271%2037.6389L11.8604%2028.4725C11.3234%2027.9355%2011.3234%2027.0649%2011.8604%2026.5279C12.3974%2025.9909%2013.268%2025.9909%2013.8049%2026.5279L21.9993%2034.7221L30.1937%2026.5277C30.7307%2025.9908%2031.6013%2025.9908%2032.1383%2026.5277Z'%20fill='%23161616'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22%205.95837C22.7594%205.95837%2023.375%206.57398%2023.375%207.33337L23.375%2036.6667C23.375%2037.4261%2022.7594%2038.0417%2022%2038.0417C21.2406%2038.0417%2020.625%2037.4261%2020.625%2036.6667L20.625%207.33337C20.625%206.57398%2021.2406%205.95837%2022%205.95837Z'%20fill='%23161616'/%3e%3c/svg%3e" alt="" class="hero__scroll-icon" />
+              <span>Узнать подробнее</span>
             </div>
+          </button>
         </div>
-    </div>
-    <div class="mobile-nav-content">
-        <a href="index.html" class="mobile-nav-content__logo">
-            <img src="icons/logo.svg" alt="logo terralink">
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="about.html">О компании</a>
-                </li>
-                <li>
-                    <span id="mobile-nav-services">Услуги</span>
-                </li>
-                <li>
-                    <span id="mobile-nav-solutions">Решения</span>
-                </li>
-                <li>
-                    <a href="contacts.html">Контакты</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="mobile-nav-content__close"></div>
-        <div class="mobile-nav__subnav">
-            <span>назад</span>
-            <div class="mobile-nav__subnav-item" id="mobile-nav-services-content">
-                <a href="development.html" class="header__subnav-item">
-                    <p>Сервисы разработки ПО</p>
-                    <img class="design" src="img/header/design-1.webp" alt="design element">
-                </a>
-                <!-- <a href="ai.html" class="header__subnav-item">
-                    <p>Разработка решений на базе ИИ</p>
-                    <img class="design" src="img/header/design-2.webp" alt="design element">
-                </a> -->
-            </div>
-            <div class="mobile-nav__subnav-item" id="mobile-nav-solutions-content">
-                <!-- <a href="#" class="header__subnav-item">
-                    <p>Спортивная аналитика</p>
-                    <img class="desktop" src="img/examples/mockup-sport.webp" alt="design element">
-                </a> -->
-                <a href="mobile-portal.html" class="header__subnav-item">
-                    <p>Корпоративный мобильный портал</p>
-                    <img class="mobile" src="img/examples/mockup-mob-portal.webp" alt="design element">
-                </a>
-                <!-- <a href="#" class="header__subnav-item">
-                    <p>Управление корпоративным контентом (ECM Mobile)</p>
-                    <img class="mobile" src="img/examples/mockup-ecm.webp" alt="design element">
-                </a> -->
-                <!-- <a href="#" class="header__subnav-item">
-                    <p>Мобильное ТОРО (ТOиР)</p>
-                    <img class="mobile" src="img/examples/mockup-mob-toro.webp" alt="design element">
-                </a> -->
-                <a href="ai.html" class="header__subnav-item">
-                    <p>Решения на основе ИИ</p>
-                    <img class="desktop" src="img/examples/mockup-ai.webp" alt="design element">
-                </a>
-            </div>
-        </div>
-        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
-            <span class="wrap">Начать проект</span>
-        </button>
-    </div>
-    <header class="header light">
-        <div class="header__wrapper">
-            <a href="index.html" class="header__logo light">
-                <img src="icons/logo-light.svg" alt="logo">
-            </a>
-            <a href="index.html" class="header__logo">
-                <img src="icons/logo.svg" alt="logo">
-            </a>
-            <nav class="header__nav">
-                <ul>
-                    <li>
-                        <a href="about.html">О компании</a>
-                    </li>
-                    <li>
-                        <span id="nav-services">Услуги</span>
-                    </li>
-                    <li>
-                        <span id="nav-solutions">Решения</span>
-                    </li>
-                    <li>
-                        <a href="contacts.html">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="container">
-            <div class="header__subnav" id="nav-services-content">
-                <a href="development.html" class="header__subnav-item">
-                    <p>Сервисы разработки ПО</p>
-                    <img class="design" src="img/header/design-1.webp" alt="design element">
-                </a>
-                <!-- <a href="ai.html" class="header__subnav-item">
-                    <p>Разработка решений на базе ИИ</p>
-                    <img class="design" src="img/header/design-2.webp" alt="design element">
-                </a> -->
-            </div>
-            <div class="header__subnav" id="nav-solutions-content">
-                <!-- <a href="#" class="header__subnav-item">
-                    <p>Спортивная аналитика</p>
-                    <img class="desktop" src="img/examples/mockup-sport.webp" alt="design element">
-                </a> -->
-                <a href="mobile-portal.html" class="header__subnav-item">
-                    <p>Корпоративный мобильный портал</p>
-                    <img class="mobile" src="img/examples/mockup-mob-portal.webp" alt="design element">
-                </a>
-                <!-- <a href="#" class="header__subnav-item">
-                    <p>Управление корпоративным контентом (ECM Mobile)</p>
-                    <img class="mobile" src="img/examples/mockup-ecm.webp" alt="design element">
-                </a> -->
-                <!-- <a href="#" class="header__subnav-item">
-                    <p>Мобильное ТОРО (ТOиР)</p>
-                    <img class="mobile" src="img/examples/mockup-mob-toro.webp" alt="design element">
-                </a> -->
-                <a href="ai.html" class="header__subnav-item">
-                    <p>Решения на основе ИИ</p>
-                    <img class="desktop" src="img/examples/mockup-ai.webp" alt="design element">
-                </a>
-            </div>
-        </div>
-        <button class="custom-button typewrite" data-period="30000" data-type='[ "Начать проект", "Разработка под ключ", "Нужно мобильное приложение" ]'>
-            <span class="wrap">Начать проект</span>
-        </button>
-        <div class="mobile-nav__toggle">
-            <div class="mobile-nav__overlay"></div>
-            <div class="mobile-nav__humburger">
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </header>
-    <div class="main-overlay hidden"></div>
-    <section class="promo">
-        <video autoplay muted playsinline loop class="promo__video">
-            <source src="video/shimmering-highlights.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-        <div class="promo__overlay"></div>
-        <div class="container relative">
-            <img class="promo__img" src="img/promo-img.webp" logo="design element"/>
-            <div class="promo__wrapper">
-                <div class="promo__inner">
-                    <h1 class="large">Создаем гибкие<br>IT-решения под&nbspзадачи<br>вашего бизнеса</h1>
-                    <button class="promo__button custom-button_rounded">Обсудить проект</button>
-                </div>
-                <div class="promo__stack-wrapper">
-                    <div class="promo__stack">
-                        <img src="icons/stack/ruby-on-rails.svg" alt="Ruby on Rails logo">
-                        <img src="icons/stack/python.svg" alt="Python logo">
-                        <img src="icons/stack/elixir.svg" alt="Elixir logo">
-                        <img src="icons/stack/go.svg" alt="Go logo">
-                        <img src="icons/stack/flutter.svg" alt="Flutter logo">
-                        <img src="icons/stack/node.svg" alt="Node.js logo">
-                        <img src="icons/stack/vue.svg" alt="Vue logo">
-                        <img src="icons/stack/react.svg" alt="React logo">
-                        <img src="icons/stack/net.svg" alt=".Net logo">
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <div class="hero__click-zone" id="scrollZone"></div>
+      </div>
     </section>
-    <section class="development" id="development">
-        <div class="container">
-            <h2 class="development__title">ТерраЛинк Разработка </h2>
-            <p class="development__text text-large">
-                Российская компания, с экспертизой в заказной разработке ИТ-решений.
-                Мы специализируемся на создании мобильных приложений (iOS, Android),
-                корпоративных порталов и внедрении решений 1С.
-                Поставляем технологические решения для клиентов в любых отраслях.
-            </p>
-            <div class="development__tags">
-                <div class="development__tag">ТЭК</div>
-                <div class="development__tag">Ритейл</div>
-                <div class="development__tag">Производство</div>
-                <div class="development__tag">Металлургия</div>
-                <div class="development__tag">Финансы</div>
-                <div class="development__tag">Развлечения</div>
-            </div>
-            <img class="development__img" src="img/about-img.webp" alt="decorative element">
-        </div>
-    </section>
+
+    <!-- SOLUTIONS -->
     <section class="solutions">
-        <div class="container">
-            <h2 class="solutions__title">С чем мы работаем:</h2>
-            <div class="solutions__main">
-                <div>
-                    <div class="solutions__main-tag">Решения</div>
-                    <h3>Корпоративный мобильный портал</h3>
-                    <p class="text">
-                        Единая точка входа для ваших сотрудников.
-                        Узнавайте новости, пишите коллегам и обменивайтесь документами,
-                        находите информацию и получайте ответы через чат-бот.
-                    </p>
-                    <p class="text">
-                        Персональный помощник с искусственным интеллектом поможет вам
-                        с решением любых корпоративных задач.
-                    </p>
-                    <a href="mobile-portal.html">
-                        <button class="custom-button_rounded custom-button_rounded_mini">Посмотреть решение</button>
-                    </a>
-                </div>
-                <div class="solutions__imgs">
-                    <img src="img/mockup.webp" alt="phone image">
-                    <img src="img/mockup2.webp" alt="phone image">
-                </div>
-            </div>
-            <div class="services">
-                <!-- <div class="services-item">
-                    <h3>UX-аудит и дизайн</h3>
-                    <p class="text">
-                        Проектируем решения с учетом ваших задач и требований.
-                        Проводим UX-исследование любых мобильных и web-приложений.
-                    </p>
-                    <a href="#">
-                        <button class="services-btn custom-button">Подробнее</button>
-                    </a>
-                    <img src="img/services-img.webp" alt="design element">
-                </div> -->
-                <div class="services-item">
-                    <h3>Разработка под ключ</h3>
-                    <p class="text">
-                        Создаем мультиплатформенные ИТ-решения учитывая задачи вашего бизнеса.
-                        Начинаем с концепции и заканчиваем готовым продуктом.
-                    </p>
-                    <a href="development.html">
-                        <button class="services-btn custom-button">Подробнее</button>
-                    </a>
-                    <img src="img/services-img-2.webp" alt="design element">
-                </div>
-                <div class="services-item">
-                    <h3>Разработка решений на базе ИИ</h3>
-                    <p class="text">
-                        Технологии будущего для улучшения производительности и снижения издержек крупного бизнеса.
-                    </p>
-                    <a href="ai.html">
-                        <button class="services-btn custom-button">Подробнее</button>
-                    </a>
-                    <img src="img/services-img-3.webp" alt="design element">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="qualities">
-        <div class="container">
-            <h2>Наши клиенты<br>выбирают нас за</h2>
-            <div class="qualities__wrapper">
-                <div class="qualities__item">
-                    <div class="qualities__img">
-                        <img src="img/target.webp" alt="target">
-                    </div>
-                    <h4>Работу<br>на результат</h4>
-                    <p class="text">
-                        Фокусируем внимание на задачах вашего бизнеса и предлагаем максимально
-                        подходящее готовое решение или разрабатываем новое
-                    </p>
-                </div>
-                <div class="qualities__item">
-                    <div class="qualities__img">
-                        <img src="img/lock.webp" alt="lock">
-                    </div>
-                    <h4>Безопасность</h4>
-                    <p class="text">
-                        Мы гарантируем, что наши решения будут защищены от киберугроз в соответствии
-                        с требованиями регуляторов в сфере информационной безопасности
-                    </p>
-                </div>
-                <div class="qualities__item">
-                    <div class="qualities__img">
-                        <img src="img/thumbs-up.webp" alt="thumbs up">
-                    </div>
-                    <h4>Поддержку</h4>
-                    <p class="text">
-                        Оказываем техническую поддержку и даем гарантию на все наши разработки.
-                        50+ сертифицированных экспертов технического и функционального направления
-                    </p>
-                </div>
-                <div class="qualities__item">
-                    <div class="qualities__img">
-                        <img src="img/toggle-switches.webp" alt="toggle switches">
-                    </div>
-                    <h4>Технологии</h4>
-                    <p class="text">
-                        Используем в наших решениях аналитику данных,
-                        ИИ и популярные стеки технологий, чтобы создавать  эффективные решения
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="consultation" id="consultation">
-        <div class="container">
-            <div class="consultation__wrapper">
-                <h2 class="consultation__title">Предлагаем обсудить ваш проект</h2>
-                <form id="consultation-form" action="#" class="consultation__form cnslt">
-                    <div class="form__field">
-                        <input class="form__input form__input-name consultation__input" id="name" name="name" type="text" placeholder=" ">
-                        <label class="form__label consultation__label" for="name">Имя</label>
-                        <div class="form__error-label">
-                            <img src="icons/error.svg" alt="error">
-                        </div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input form__input-phone consultation__input" id="phone" name="phone" type="tel" placeholder=" ">
-                        <label class="form__label consultation__label" for="phone" >Телефон</label>
-                        <div class="form__error-label">
-                            <img src="icons/error.svg" alt="error">
-                        </div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input form__input-email consultation__input" id="email" name="email" type="text" placeholder=" ">
-                        <label class="form__label consultation__label" for="email">Email</label>
-                        <div class="form__error-label">
-                            <img src="icons/error.svg" alt="error">
-                        </div>
-                    </div>
+      <div class="container">
+        <span class="solutions__subtitle">решения на основе ИИ</span>
+        <h2 class="solutions__title">Готовые AI-решения, которые уже работают</h2>
+        <div class="solutions__grid">
 
-                    <button disabled class="consultation__btn" type="submit">Отправить</button>
-                </form>
-                <p class="consultation__text">
-                    Оставляя заявку, вы даете согласие на обработку ваших
-                    <a href="agreement.html" >персональных&nbspданных</a>.
-                </p>
-                <img class="consultation__img" src="img/airplane.webp" alt="airplane image">
-            </div>
-        </div>
-    </section>
-    <section class="talk">
-        <div class="container">
-            <div class="talk__wrapper">
-                <div class="talk__main">
-                    <h2 class="talk__title">TerraTalk</h2>
-                    <div class="talk__buttons">
-                        <div class="talk__button" id="talk-btn-left">
-                            <img src="icons/arrow-left.svg" alt="left arrow icon">
-                        </div>
-                        <div class="talk__button talk__button_active" id="talk-btn-right">
-                            <img src="icons/arrow-right.svg" alt="right arrow icon">
-                        </div>
-                    </div>
-                </div>
-                <p class="talk__text text">
-                    Проект TerraTalk –– это  регулярные эфиры на тему науки,
-                    здоровья и саморазвития с популярными YouTube-спикерами.
-                    Чтобы наши коллеги, партнеры и друзья могли развивается не только
-                    в профессиональной IT-среде, но и узнавать что-то новое,
-                    полезное и увлекательное из разных сфер нашей многогранной реальности.
-                </p>
-            </div>
-            <div class="talk__slider-wrapper">
-                <div class="talk__slider-inner">
-                    <a href="https://www.youtube.com/watch?v=iTT1fr-_n0I" target="_blank">
-                        <img src="img/terra-talk/terra-talk-1.webp" alt="TerraTalk card">
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=XPWkmBLWkqE" target="_blank">
-                        <img src="img/terra-talk/terra-talk-2.webp" alt="TerraTalk card">
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=YrQV23Y7ONI" target="_blank">
-                        <img src="img/terra-talk/terra-talk-3.webp" alt="TerraTalk card">
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=Q1VCUQVEig4" target="_blank">
-                        <img src="img/terra-talk/terra-talk-4.webp" alt="TerraTalk card">
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=iasAvbH0Dkc" target="_blank">
-                        <img src="img/terra-talk/terra-talk-5.webp" alt="TerraTalk card">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- <section class="article" id="article">
-        <div class="container">
-            <h2 class="article__title">Мы постоянно изучаем рынок</h2>
-            <div class="article__wrapper">
-                <div class="article__inner">
-                    <div class="article__statistics">
-                        <div class="article__views">
-                            <img src="icons/eye.svg" alt="eye icon">
-                            <span>223</span>
-                        </div>
-                        <div class="article__date">
-                            <img src="icons/calendar.svg" alt="calendar icon">
-                            <span>18.05.2023</span>
-                        </div>
-                    </div>
-                    <h3 class="article__subtitle">Как мобильные решения изменили корпоративную культуру</h3>
-                    <p class="article__text text">Благодаря нашим продуктам вы забудете, что такое «неэффективные коммуникации».</p>
-                    <button class="article__button">Посмотреть</button>
-                </div>
-                <div class="article__img-wrapper">
-                    <img src="img/mockup3.webp" alt="phone image">
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__wrapper">
-                <div class="footer__logo">
-                    <img src="icons/logo.svg" alt="logo">
-                </div>
-                <div class="footer__nav">
-                    <div class="footer__services-wrapper">
-                        <h3>Услуги</h3>
-                        <ul class="footer__solutions">
-                            <li>
-                                <a href="development.html">Сервисы разработки&nbsp;ПО</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer__solutions-wrapper">
-                        <h3>Решения</h3>
-                        <ul class="footer__solutions">
-                            <li>
-                                <a href="mobile-portal.html">Корпоративный мобильный портал</a>
-                            </li>
-                            <!-- <li>
-                                <a href="#">ТОРО для мобильных устройств</a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="#">ECM для мобильных устройств</a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="#">СУПТД</a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="#">BI аналитика</a>
-                            </li> -->
-                        </ul>
-                    </div>
-                    <div class="footer__about-wrapper">
-                        <h3>О нас</h3>
-                        <ul class="footer__about">
-                            <li>
-                                <a href="about.html">О компании</a>
-                            </li>
-                            <li>
-                                <a href="#article">Исследования</a>
-                            </li>
-                            <li>
-                                <a href="#">Реквизиты ООО «ТерраЛинк Разработка»</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer__contacts">
-                    <a class="footer__phone" href="tel:74959751220">+7 (495) 975-12-20</a>
-                    <a class="footer__email" href="mailto:tl-razrabotka@terralink.ru">tl-razrabotka@terralink.ru</a>
-                </div>
-            </div>
-            <p class="copyright">© ТерраЛинк Разработка, 2024 <a href="policy.html">Политика конфиденциальности</a></p>
-        </div>
-    </footer>
-    <div class="modal__wrapper">
-        <div class="modal__inner">
-            <h2>Предлагаем обсудить ваш проект</h2>
-            <form id="modal-form" action="#" class="modal__form cnslt">
-                <div class="modal__input-block">
-                    <div class="form__field">
-                        <input class="form__input form__input-name" id="modal-name" name="name" type="text" placeholder=" ">
-                        <label class="form__label" for="modal-name">Имя</label>
-                        <div class="form__error-label">
-                            <img src="icons/error.svg" alt="error">
-                        </div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input" id="modal-company" name="company" type="text" placeholder=" ">
-                        <label class="form__label" for="modal-company">Компания</label>
-                    </div>
-                </div>
-                <div class="modal__input-block">
-                    <div class="form__field">
-                        <input class="form__input form__input-phone" id="modal-phone" name="phone" type="tel" placeholder=" ">
-                        <label class="form__label" for="modal-phone" >Телефон</label>
-                        <div class="form__error-label">
-                            <img src="icons/error.svg" alt="error">
-                        </div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input form__input-email" id="modal-email" name="email" type="text" placeholder=" ">
-                        <label class="form__label" for="modal-email">Email</label>
-                        <div class="form__error-label">
-                            <img src="icons/error.svg" alt="error">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal__input-block">
-                    <div class="form__field">
-                        <textarea class="form__input" id="modal-description" name="description" type="text" placeholder=" "></textarea>
-                        <label class="form__label" for="modal-description" >Опишите задачу (по желанию)</label>
-                    </div>
-                </div>
+          <article
+            class="solution-card"
+            data-subtitle="ИИ-фильтрация кандидатов, оценка релевантности до&nbsp;90%."
+            data-points="
+              <ul>
+                <li>Общая база резюме и вакансий, загрузка в&nbsp;сервис</li>
+                <li>ИИ подбирает релевантные резюме к&nbsp;вакансии</li>
+                <li>Отправка резюме заказчику или отклонение в&nbsp;один клик</li>
+                <li>Фильтрация по статусу, полу, заметкам, источнику</li>
+                <li>Вычисление %&nbsp;совпадения по&nbsp;навыкам, опыту, ключевым словам</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22%209.16667C17.9499%209.16667%2014.6667%2012.4499%2014.6667%2016.5C14.6667%2020.55%2017.9499%2023.8333%2022%2023.8333C26.05%2023.8333%2029.3333%2020.55%2029.3333%2016.5C29.3333%2012.4499%2026.05%209.16667%2022%209.16667ZM15.0406%2025.0191C13.3723%2025.6196%2011.8482%2026.4325%2010.5291%2027.4219C7.52769%2029.6729%205.5%2032.9226%205.5%2036.6667C5.5%2037.6792%206.32082%2038.5%207.33333%2038.5C8.34585%2038.5%209.16667%2037.6792%209.16667%2036.6667C9.16667%2034.3356%2010.4222%2032.0854%2012.7291%2030.3552C15.0365%2028.6246%2018.3082%2027.5%2022%2027.5C28.0751%2027.5%2033%2022.5751%2033%2016.5C33%2010.4249%2028.0751%205.5%2022%205.5C15.9249%205.5%2011%2010.4249%2011%2016.5C11%2019.9348%2012.5743%2023.0019%2015.0406%2025.0191ZM31.1667%2029.3333C30.1541%2029.3333%2029.3333%2030.1541%2029.3333%2031.1667C29.3333%2032.1792%2030.1541%2033%2031.1667%2033C32.1792%2033%2033%2032.1792%2033%2031.1667C33%2030.1541%2032.1792%2029.3333%2031.1667%2029.3333ZM25.6667%2031.1667C25.6667%2028.129%2028.129%2025.6667%2031.1667%2025.6667C34.2043%2025.6667%2036.6667%2028.129%2036.6667%2031.1667C36.6667%2032.0157%2036.4742%2032.82%2036.1306%2033.5379L37.963%2035.3703C38.6789%2036.0862%2038.6789%2037.2471%2037.963%2037.963C37.2471%2038.6789%2036.0862%2038.6789%2035.3703%2037.963L33.5379%2036.1306C32.82%2036.4742%2032.0157%2036.6667%2031.1667%2036.6667C28.129%2036.6667%2025.6667%2034.2043%2025.6667%2031.1667Z'%20fill='%23F66F4A'/%3e%3c/svg%3e" alt="" />
+              <h3 class="solution-card__title">Модуль подбора персонала</h3>
 
-                <div class="modal__captcha">
-                    <div
-                        id="captcha-container"
-                        class="smart-captcha"
-                        data-sitekey="<ключ_клиента>"
-                    ></div>
-                </div>
+              <div class="solution-card__description">
+                ИИ-фильтрация кандидатов, оценка релевантности до 90%.
+              </div>
+            </div>
 
-                <button class="consultation__btn custom-button_rounded custom-button_rounded_mini form__btn" type="submit">Отправить</button>
-                <p>
-                    Оставляя заявку, вы даете согласие на обработку ваших
-                    <a href="agreement.html">персональных&nbspданных</a> и ознакомлен(а) с
-                    <a href="policy.html">политикой конфиденциальности</a> сайта.
-                </p>
-            </form>
-            <img src="icons/close.svg" alt="close" class="close">
+            <div class="solution-card__tags">
+              <span class="tag">Qwen LLM</span>
+              <span class="tag">Inference server</span>
+              <span class="tag">Совпадение с HR до 90%</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/hr-D-BQpp1g.png" alt="">
+            </div>
+          </article>
+
+          <article
+            class="solution-card"
+            data-subtitle="Онбординг и пребординг"
+            data-points="
+              <ul>
+                <li>Цифровое оформление сотрудника до&nbsp;выхода на&nbsp;работу</li>
+                <li>Автоматический старт трудоустройства</li>
+                <li>Автоматизация заполнения договоров, медосмотра, сбора всех документов необходимых в&nbsp;момент трудоустройства.</li>
+                <li>Повышение вовлеченности новичков с&nbsp;первых дней через обучающие геймифицированные этапы </li>
+                <li>Быстрый выход на&nbsp;продуктивность сотрудника</li>
+                <li>Экономия времени HR и&nbsp;новичка</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="./assets/point-hr-DRW9RCcu.svg" alt="" />
+              <h3 class="solution-card__title">Микросервисные решения</h3>
+
+              <ul class="solution-card__description">
+                <li>Онбординг</li>
+                <li>Пребординг</li>
+              </ul>
+            </div>
+
+            <div class="solution-card__tags">
+              <span class="tag">React</span>
+              <span class="tag">1C-интеграция</span>
+              <span class="tag">HR-сервисы</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/microservices-BY4gXKZd.png" alt="">
+            </div>
+          </article>
+
+          <article
+            class="solution-card"
+            data-subtitle="Ручная / авто. Сохранение информации, улучшение доступности."
+            data-points="
+              <ul>
+                <li>Автоматическая расшифровка WAV, MP3, записей встреч</li>
+                <li>Диаризация (разделение спикеров) + временные метки</li>
+                <li>Суммаризация: выделение главных тезисов (LLM Gemma3)</li>
+                <li>Поддержка бизнес-встреч, интервью, юридических записей</li>
+                <li>Экспорт в JSON / txt, статистика участия</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.70703%2020.167C8.70721%2027.5077%2014.6583%2033.458%2021.999%2033.458C29.3397%2033.458%2035.2908%2027.5077%2035.291%2020.167H38.041C38.0408%2028.5631%2031.5897%2035.4479%2023.374%2036.1455V38.958H27.499V41.708H16.499V38.958H20.624V36.1455C12.4084%2035.4479%205.9572%2028.5631%205.95703%2020.167H8.70703ZM21.999%202.29199C27.8209%202.29199%2032.5408%207.01116%2032.541%2012.833V20.167C32.5408%2025.9888%2027.8209%2030.708%2021.999%2030.708C16.1771%2030.708%2011.4572%2025.9888%2011.457%2020.167V12.833C11.4572%207.01116%2016.1771%202.29199%2021.999%202.29199ZM21.999%205.04199C17.6959%205.04199%2014.2072%208.52995%2014.207%2012.833V20.167C14.2072%2024.47%2017.6959%2027.958%2021.999%2027.958C25.8328%2027.958%2029.0183%2025.1891%2029.668%2021.542H23.832V18.792H29.791V14.208H23.832V11.458H29.668C29.0183%207.81089%2025.8328%205.04199%2021.999%205.04199Z'%20fill='%23F66F4A'/%3e%3c/svg%3e" alt="" />
+              <h3 class="solution-card__title">Транскрибация речи</h3>
+
+              <div class="solution-card__description">
+                Ручная / авто. Сохранение информации, улучшение доступности.
+              </div>
+            </div>
+
+            <div class="solution-card__tags">
+              <span class="tag">gemma3</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Диаризация</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/speech-KUbAKZ65.png" alt="">
+            </div>
+          </article>
+
+          <article
+            class="solution-card"
+            data-subtitle="Автоматизация и интеграция бизнес-процессов"
+            data-points="
+              <ul>
+                <li>Автоматизация рабочих процессов без&nbsp;глубоких знаний программирования</li>
+                <li>Визуальный редактор для&nbsp;создания сценариев работы системы</li>
+                <li>Быстрая интеграция с&nbsp;различными сервисами за&nbsp;счет готовых решений платформы</li>
+                <li>Подключение ИИ для&nbsp;генерации контента, анализа входящих сообщений и&nbsp;создания чат-ботов</li>
+                <li>Централизованное управление различными сервисами</li>
+                <li>Развитое сообщество для&nbsp;поддержки платформы</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.33398%2031.625C10.1184%2031.625%2012.376%2033.8826%2012.376%2036.667C12.3758%2039.4513%2010.1183%2041.708%207.33398%2041.708C4.54981%2041.7078%202.29314%2039.4512%202.29297%2036.667C2.29297%2033.8827%204.5497%2031.6252%207.33398%2031.625ZM22.001%2031.625C24.7854%2031.625%2027.043%2033.8826%2027.043%2036.667C27.0428%2039.4513%2024.7853%2041.708%2022.001%2041.708C19.2167%2041.708%2016.9592%2039.4513%2016.959%2036.667C16.959%2033.8826%2019.2165%2031.625%2022.001%2031.625ZM36.668%2031.625C39.4523%2031.6252%2041.709%2033.8827%2041.709%2036.667C41.7088%2039.4512%2039.4521%2041.7078%2036.668%2041.708C33.8836%2041.708%2031.6262%2039.4513%2031.626%2036.667C31.626%2033.8826%2033.8835%2031.625%2036.668%2031.625ZM7.33398%2034.375C6.06848%2034.3752%205.04297%2035.4014%205.04297%2036.667C5.04314%2037.9324%206.06859%2038.9578%207.33398%2038.958C8.59953%2038.958%209.6258%2037.9325%209.62598%2036.667C9.62598%2035.4013%208.59964%2034.375%207.33398%2034.375ZM22.001%2034.375C20.7353%2034.375%2019.709%2035.4013%2019.709%2036.667C19.7092%2037.9325%2020.7354%2038.958%2022.001%2038.958C23.2665%2038.958%2024.2928%2037.9325%2024.293%2036.667C24.293%2035.4013%2023.2666%2034.375%2022.001%2034.375ZM36.668%2034.375C35.4023%2034.375%2034.376%2035.4013%2034.376%2036.667C34.3762%2037.9325%2035.4024%2038.958%2036.668%2038.958C37.9334%2038.9578%2038.9588%2037.9324%2038.959%2036.667C38.959%2035.4014%2037.9335%2034.3752%2036.668%2034.375ZM22.001%2018.792C22.7604%2018.792%2023.376%2019.4076%2023.376%2020.167V22.458H34.834C36.6059%2022.458%2038.043%2023.8951%2038.043%2025.667V27.5C38.043%2028.2593%2037.4272%2028.8748%2036.668%2028.875C35.9086%2028.875%2035.293%2028.2594%2035.293%2027.5V25.667C35.293%2025.4138%2035.0871%2025.208%2034.834%2025.208H23.376V27.5C23.376%2028.2594%2022.7604%2028.875%2022.001%2028.875C21.2416%2028.875%2020.626%2028.2594%2020.626%2027.5V25.208H9.16797C8.91483%2025.208%208.70898%2025.4139%208.70898%2025.667V27.5C8.70898%2028.2594%208.09338%2028.875%207.33398%2028.875C6.57474%2028.8748%205.95898%2028.2593%205.95898%2027.5V25.667C5.95898%2023.895%207.39608%2022.458%209.16797%2022.458H20.626V20.167C20.626%2019.4076%2021.2416%2018.792%2022.001%2018.792ZM22.001%202.29199C25.7979%202.29199%2028.876%205.37003%2028.876%209.16699C28.8758%2012.9638%2025.7978%2016.042%2022.001%2016.042C18.2041%2016.042%2015.1262%2012.9638%2015.126%209.16699C15.126%205.37003%2018.204%202.29199%2022.001%202.29199ZM22.001%205.04199C19.7228%205.04199%2017.876%206.88882%2017.876%209.16699C17.8762%2011.445%2019.7229%2013.292%2022.001%2013.292C24.279%2013.292%2026.1258%2011.445%2026.126%209.16699C26.126%206.88882%2024.2792%205.04199%2022.001%205.04199Z'%20fill='%23FC6238'/%3e%3c/svg%3e" alt="" />
+              <h3 class="solution-card__title">Автоматизация рабочих процессов с&nbsp;N8N</h3>
+
+              <div class="solution-card__description">
+                Автоматизация и&nbsp;интеграция бизнес-процессов
+              </div>
+            </div>
+
+            <div class="solution-card__tags">
+              <span class="tag">No-code</span>
+              <span class="tag">RAG</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/n8n-CG3deWaM.png" alt="">
+            </div>
+          </article>
+
+          <article
+            class="solution-card"
+            data-subtitle="Автоввод данных, сверка договоров, полнотекстовый поиск."
+            data-points="
+              <ul>
+                <li>Автоматизированное сканирование и обработка документов с&nbsp;использованием OCR и ИИ</li>
+                <li>Исключение человеческого фактора, сверка данных с&nbsp;корпоративными системами</li>
+                <li>Снижение затрат на&nbsp;ручной труд и улучшение эффективности сотрудников</li>
+                <li>Легкое подключение к&nbsp;существующей инфраструктуре компании</li>
+                <li>Обработка большого количества страниц печатного, рукописного и смешанного текста без&nbsp;задержек</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19.2979%2017.2666C19.8379%2016.826%2020.6352%2016.8579%2021.1387%2017.3613L39.4717%2035.6943C40.0087%2036.2313%2040.0087%2037.1017%2039.4717%2037.6387L35.8057%2041.3057C35.2688%2041.8426%2034.3983%2041.8424%2033.8613%2041.3057L15.5273%2022.9717C14.9908%2022.4347%2014.9905%2021.5642%2015.5273%2021.0273L19.1943%2017.3613L19.2979%2017.2666ZM23.9443%2027.5L34.833%2038.3887L36.5557%2036.667L25.667%2025.7773L23.9443%2027.5ZM18.4443%2022L22%2025.5557L23.7227%2023.833L20.167%2020.2773L18.4443%2022ZM11%205.95801C11.575%205.95801%2012.0892%206.31638%2012.2891%206.85547L12.8975%208.49902C13.3153%209.62797%2014.206%2010.5177%2015.335%2010.9355L16.9785%2011.5439C17.5173%2011.7439%2017.8749%2012.2582%2017.875%2012.833C17.875%2013.4079%2017.5173%2013.922%2016.9785%2014.1221L15.335%2014.7314C14.206%2015.1493%2013.3153%2016.039%2012.8975%2017.168L12.2891%2018.8115C12.0891%2019.3505%2011.575%2019.708%2011%2019.708C10.425%2019.708%209.91089%2019.3505%209.71094%2018.8115L9.10254%2017.168C8.68479%2016.0392%207.79473%2015.1493%206.66602%2014.7314L5.02246%2014.1221C4.48337%2013.9222%204.125%2013.408%204.125%2012.833C4.12514%2012.2581%204.48347%2011.7438%205.02246%2011.5439L6.66602%2010.9355C7.79477%2010.5177%208.68477%209.62783%209.10254%208.49902L9.71094%206.85547L9.80078%206.66211C10.041%206.23258%2010.4969%205.95801%2011%205.95801ZM31.167%202.29199C31.7419%202.29213%2032.2562%202.6495%2032.4561%203.18848L33.2666%205.37988C33.87%207.01052%2035.1565%208.2959%2036.7871%208.89941L38.9775%209.71094C39.5166%209.91085%2039.875%2010.425%2039.875%2011C39.875%2011.575%2039.5166%2012.0892%2038.9775%2012.2891L36.7871%2013.0996C35.1565%2013.7031%2033.87%2014.9895%2033.2666%2016.6201L32.4561%2018.8115C32.2562%2019.3505%2031.7419%2019.7079%2031.167%2019.708C30.592%2019.708%2030.0779%2019.3505%2029.8779%2018.8115L29.0664%2016.6201C28.463%2014.9895%2027.1775%2013.7031%2025.5469%2013.0996L23.3555%2012.2891C22.8164%2012.0892%2022.458%2011.575%2022.458%2011C22.458%2010.425%2022.8164%209.91085%2023.3555%209.71094L25.5469%208.89941C27.1773%208.29585%2028.463%207.01042%2029.0664%205.37988L29.8779%203.18848L29.9668%202.99512C30.207%202.56558%2030.6639%202.29199%2031.167%202.29199ZM11%2010.8086C10.4748%2011.618%209.785%2012.3077%208.97559%2012.833C9.78475%2013.3581%2010.4748%2014.0474%2011%2014.8564C11.525%2014.0477%2012.2147%2013.358%2013.0234%2012.833C12.2144%2012.3078%2011.5251%2011.6178%2011%2010.8086ZM31.167%207.39453C30.3519%208.92972%2029.0957%2010.1849%2027.5605%2011C29.0951%2011.8148%2030.3519%2013.069%2031.167%2014.6035C31.9818%2013.0696%2033.2367%2011.8148%2034.7705%2011C33.2362%2010.1849%2031.9818%208.92909%2031.167%207.39453Z'%20fill='%23F66F4A'/%3e%3c/svg%3e" alt="" />
+              <h3 class="solution-card__title">Распознавание OCR</h3>
+
+              <div class="solution-card__description">
+                Автоввод данных, сверка договоров, полнотекстовый поиск.
+              </div>
+            </div>
+
+            <div class="solution-card__tags">
+              <span class="tag">PDF/JPEG/TIFF</span>
+              <span class="tag">Inference server</span>
+              <span class="tag">Высокая уверенность модели</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/ocr-C-e1wbCU.png" alt="">
+            </div>
+          </article>
+
+          <article
+            class="solution-card"
+            data-subtitle="Семантический анализ, выделение ключевых данных, сокращение времени."
+            data-points="
+              <ul>
+                <li>Семантический анализ больших объёмов текста (отчёты, статьи, техдокументация)</li>
+                <li>Выделение ключевых данных, создание кратких резюме (T5)</li>
+                <li>Голосовой ввод запроса</li>
+                <li>Парсинг и предобработка DOCX, PDF, TXT</li>
+                <li>Карточка содержания: обзор компании, финпоказатели</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.916%2013.2916H18.3327C19.0917%2013.2916%2019.7077%2012.6756%2019.7077%2011.9166C19.7077%2011.1576%2019.0917%2010.5416%2018.3327%2010.5416H11.916C11.157%2010.5416%2010.541%2011.1576%2010.541%2011.9166C10.541%2012.6756%2011.157%2013.2916%2011.916%2013.2916Z'%20fill='%23F66F4A'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.916%2019.7083H23.8327C24.5917%2019.7083%2025.2077%2019.0923%2025.2077%2018.3333C25.2077%2017.5743%2024.5917%2016.9583%2023.8327%2016.9583H11.916C11.157%2016.9583%2010.541%2017.5743%2010.541%2018.3333C10.541%2019.0923%2011.157%2019.7083%2011.916%2019.7083Z'%20fill='%23F66F4A'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.916%2026.125H19.2493C20.0083%2026.125%2020.6243%2025.509%2020.6243%2024.75C20.6243%2023.991%2020.0083%2023.375%2019.2493%2023.375H11.916C11.157%2023.375%2010.541%2023.991%2010.541%2024.75C10.541%2025.509%2011.157%2026.125%2011.916%2026.125Z'%20fill='%23F66F4A'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22.916%2038.9583H10.0827C9.47402%2038.9583%208.89285%2038.7163%208.46202%2038.2873C8.03302%2037.8565%207.79102%2037.2753%207.79102%2036.6666V7.33329C7.79102%206.72463%208.03302%206.14346%208.46202%205.71263C8.89285%205.28363%209.47402%205.04163%2010.0827%205.04163H23.1232C23.2387%205.04163%2023.3487%205.08379%2023.433%205.16079L32.3907%2013.3045C32.486%2013.3925%2032.541%2013.5153%2032.541%2013.6436V22C32.541%2022.759%2033.157%2023.375%2033.916%2023.375C34.675%2023.375%2035.291%2022.759%2035.291%2022C35.291%2022%2035.291%2015.8858%2035.291%2013.6436C35.291%2012.7398%2034.9097%2011.8781%2034.2405%2011.2695C32.4237%209.61763%2026.9952%204.68413%2025.2829%203.12579C24.6907%202.58863%2023.9225%202.29163%2023.1232%202.29163C20.9562%202.29163%2014.3103%202.29163%2010.0827%202.29163C8.74618%202.29163%207.46285%202.82329%206.51685%203.76746C5.57268%204.71346%205.04102%205.99679%205.04102%207.33329V36.6666C5.04102%2038.0031%205.57268%2039.2865%206.51685%2040.2325C7.46285%2041.1766%208.74618%2041.7083%2010.0827%2041.7083H22.916C23.675%2041.7083%2024.291%2041.0923%2024.291%2040.3333C24.291%2039.5743%2023.675%2038.9583%2022.916%2038.9583Z'%20fill='%23F66F4A'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M25.207%2011.4583V4.58325C25.207%203.82425%2024.591%203.20825%2023.832%203.20825C23.073%203.20825%2022.457%203.82425%2022.457%204.58325V11.9166C22.457%2012.5253%2022.699%2013.1064%2023.128%2013.5373C23.5589%2013.9663%2024.1419%2014.2083%2024.7487%2014.2083H32.9987C33.7577%2014.2083%2034.3737%2013.5923%2034.3737%2012.8333C34.3737%2012.0743%2033.7577%2011.4583%2032.9987%2011.4583H25.207Z'%20fill='%23F66F4A'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M20.4414%2030.9833C20.4414%2035.2843%2023.9321%2038.775%2028.2331%2038.775C32.5341%2038.775%2036.0247%2035.2843%2036.0247%2030.9833C36.0247%2026.6823%2032.5341%2023.1917%2028.2331%2023.1917C23.9321%2023.1917%2020.4414%2026.6823%2020.4414%2030.9833ZM23.1914%2030.9833C23.1914%2028.2003%2025.4501%2025.9417%2028.2331%2025.9417C31.0161%2025.9417%2033.2747%2028.2003%2033.2747%2030.9833C33.2747%2033.7663%2031.0161%2036.025%2028.2331%2036.025C25.4501%2036.025%2023.1914%2033.7663%2023.1914%2030.9833Z'%20fill='%23F66F4A'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M32.0279%2036.7216L36.6112%2041.3049C37.1465%2041.8421%2038.0192%2041.8421%2038.5545%2041.3049C39.0917%2040.7696%2039.0917%2039.8969%2038.5545%2039.3616L33.9712%2034.7782C33.4359%2034.2411%2032.5632%2034.2411%2032.0279%2034.7782C31.4907%2035.3136%2031.4907%2036.1862%2032.0279%2036.7216Z'%20fill='%23F66F4A'/%3e%3c/svg%3e" alt="" />
+              <h3 class="solution-card__title">Умный поиск в&nbsp;документах</h3>
+
+              <div class="solution-card__description">
+                Семантический анализ, выделение ключевых данных, сокращение времени.
+              </div>
+            </div>
+
+            <div class="solution-card__tags">
+              <span class="tag">T5</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Семантический поиск</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/search-DpsxPK9h.png" alt="">
+            </div>
+          </article>
+
+          <article
+            class="solution-card"
+            data-subtitle="Единое окно: новости, отпуска, согласования, чат-бот."
+            data-points="
+              <ul>
+                <li>Централизованный доступ к&nbsp;новостям, регламентам и&nbsp;структуре компании</li>
+                <li>Согласование документов, заказ справок, оформление отпусков в&nbsp;один клик</li>
+                <li>Согласование документов, поддержка интеграции с&nbsp;системами документооборота</li>
+                <li>Чат-бот для&nbsp;поиска информации по&nbsp;внутренней базе знаний, создания заявок, обращения в&nbsp;поддержку</li>
+                <li>Личный кабинет сотрудника и&nbsp;руководителя</li>
+                <li>Управление задачами и&nbsp;проектами</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_155_3)'%3e%3cpath%20d='M32.3125%2044.2109C34.5647%2044.2109%2036.3906%2042.3851%2036.3906%2040.1328V3.86719C36.3906%201.61483%2034.5647%20-0.210938%2032.3125%20-0.210938H11.6875C9.43529%20-0.210938%207.60938%201.61483%207.60938%203.86719V40.1328C7.60941%2042.3851%209.43531%2044.2109%2011.6875%2044.2109H32.3125ZM11.6875%2041.2109C11.0921%2041.2109%2010.6094%2040.7282%2010.6094%2040.1328V3.86719C10.6094%203.27175%2011.0921%202.78906%2011.6875%202.78906H32.3125C32.9079%202.78906%2033.3906%203.27175%2033.3906%203.86719V40.1328C33.3906%2040.7282%2032.9079%2041.2109%2032.3125%2041.2109H11.6875ZM24.5781%207.94531C25.4066%207.94531%2026.0781%207.27374%2026.0781%206.44531C26.0781%205.61689%2025.4066%204.94531%2024.5781%204.94531H19.4219C18.5934%204.94531%2017.9219%205.61689%2017.9219%206.44531C17.9219%207.27374%2018.5934%207.94531%2019.4219%207.94531H24.5781ZM28.4453%2032.6094C29.2737%2032.6094%2029.9453%2031.9378%2029.9453%2031.1094V29.8203C29.9453%2025.9917%2027.237%2022.7967%2023.6318%2022.0439C25.7981%2021.3533%2027.3672%2019.3249%2027.3672%2016.9297C27.3672%2013.9655%2024.9642%2011.5625%2022%2011.5625C19.0358%2011.5625%2016.6328%2013.9655%2016.6328%2016.9297C16.6328%2019.3246%2018.2014%2021.3531%2020.3672%2022.0439C16.7625%2022.797%2014.0547%2025.992%2014.0547%2029.8203V31.1094C14.0547%2031.9378%2014.7263%2032.6094%2015.5547%2032.6094H28.4453ZM22%2019.2969C20.6926%2019.2969%2019.6328%2018.2371%2019.6328%2016.9297C19.6328%2015.6223%2020.6926%2014.5625%2022%2014.5625C23.3074%2014.5625%2024.3672%2015.6223%2024.3672%2016.9297C24.3672%2018.2371%2023.3074%2019.2969%2022%2019.2969ZM17.0605%2029.6094C17.1711%2026.9761%2019.3395%2024.875%2022%2024.875C24.6605%2024.875%2026.8289%2026.9761%2026.9395%2029.6094H17.0605ZM22%2038.8438C22.7119%2038.8438%2023.2891%2038.2666%2023.2891%2037.5547C23.2891%2036.8428%2022.7119%2036.2656%2022%2036.2656C21.2881%2036.2656%2020.7109%2036.8428%2020.7109%2037.5547C20.7109%2038.2666%2021.2881%2038.8438%2022%2038.8438Z'%20fill='%23F66F4A'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_155_3'%3e%3crect%20width='44'%20height='44'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="" />
+              <h3 class="solution-card__title">Корпоративный портал</h3>
+
+              <div class="solution-card__description">
+                Единое окно: новости, отпуска, согласования, чат-бот.
+              </div>
+            </div>
+
+            <div class="solution-card__tags">
+              <span class="tag">React</span>
+              <span class="tag">1C-интеграция</span>
+              <span class="tag">HR-сервисы</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/portal-Caf9fUAF.png" alt="">
+            </div>
+          </article>
+
+          <article
+            class="solution-card"
+            data-subtitle="Создание заявок, поиск документов, больничные, поддержка."
+            data-points="
+              <ul>
+                <li>Единое окно входа: новости, отпуска, справки</li>
+                <li>Цифровая визитка, профили сотрудников</li>
+                <li>Согласование заявок, оформление больничных</li>
+                <li>Чат-бот, информация о&nbsp;стаже и&nbsp;зарплате</li>
+                <li>No-code панель для&nbsp;администрирования</li>
+              </ul>
+            ">
+            <div class="solution-card__info">
+              <img class="solution-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M40.744%2034.7779C41.976%2032.5421%2042.625%2030.0382%2042.625%2027.5C42.625%2020.5343%2037.8441%2014.4966%2031.1575%2012.8356C29.513%206.2645%2023.5744%201.375%2016.5%201.375C8.16062%201.375%201.375%208.16062%201.375%2016.5C1.375%2019.0382%202.024%2021.5421%203.256%2023.7779L1.43275%2029.8554C1.28838%2030.3407%201.42037%2030.8646%201.77787%2031.2221C2.03912%2031.4834%202.39112%2031.625%202.75%2031.625C2.882%2031.625%203.01538%2031.6058%203.146%2031.5672L9.2235%2029.744C10.3675%2030.3751%2011.5844%2030.8481%2012.837%2031.1644C14.5008%2037.8496%2020.5343%2042.625%2027.5%2042.625C30.0382%2042.625%2032.5421%2041.976%2034.7765%2040.744L40.854%2042.5672C40.9846%2042.6058%2041.1166%2042.625%2041.25%2042.625C41.6089%2042.625%2041.9609%2042.4834%2042.2221%2042.2221C42.5796%2041.8646%2042.7116%2041.3394%2042.5672%2040.8554L40.744%2034.7779ZM9.39675%2026.8812C9.26475%2026.8812%209.13137%2026.9005%209.00075%2026.939L4.8015%2028.1999L6.06238%2023.9993C6.17375%2023.6266%206.12288%2023.2251%205.92075%2022.8924C4.7465%2020.9522%204.125%2018.7412%204.125%2016.5C4.125%209.67588%209.67725%204.125%2016.5%204.125C23.3228%204.125%2028.875%209.67588%2028.875%2016.5C28.875%2023.3241%2023.3228%2028.875%2016.5%2028.875C14.2574%2028.875%2012.0478%2028.2549%2010.109%2027.0793C9.89175%2026.9473%209.64563%2026.8812%209.39675%2026.8812ZM37.939%2034.9993L39.1999%2039.1999L35.0006%2037.939C34.6266%2037.8262%2034.2251%2037.8785%2033.8924%2038.0806C31.9536%2039.2549%2029.7426%2039.8764%2027.5014%2039.8764C22.1842%2039.8764%2017.5326%2036.4774%2015.8249%2031.5837C16.0504%2031.5947%2016.2745%2031.6264%2016.5014%2031.6264C24.8407%2031.6264%2031.6264%2024.8407%2031.6264%2016.5014C31.6264%2016.2745%2031.6016%2016.0531%2031.592%2015.829C36.4801%2017.5409%2039.8764%2022.1911%2039.8764%2027.5014C39.8764%2029.744%2039.2549%2031.9536%2038.0806%2033.8937C37.8799%2034.2251%2037.8276%2034.6266%2037.939%2034.9993Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M21.3125%2022C22.0715%2022%2022.6875%2021.3854%2022.6875%2020.625V12.375C22.6875%2011.6146%2022.0715%2011%2021.3125%2011C20.5535%2011%2019.9375%2011.6146%2019.9375%2012.375V20.625C19.9375%2021.3854%2020.5535%2022%2021.3125%2022Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M18.5625%2020.625V15.125C18.5625%2012.8507%2016.7118%2011%2014.4375%2011C12.1632%2011%2010.3125%2012.8507%2010.3125%2015.125V20.625C10.3125%2021.3854%2010.9285%2022%2011.6875%2022C12.4465%2022%2013.0625%2021.3854%2013.0625%2020.625V19.25H15.8125V20.625C15.8125%2021.3854%2016.4285%2022%2017.1875%2022C17.9465%2022%2018.5625%2021.3854%2018.5625%2020.625ZM13.0625%2016.5V15.125C13.0625%2014.366%2013.6799%2013.75%2014.4375%2013.75C15.1951%2013.75%2015.8125%2014.366%2015.8125%2015.125V16.5H13.0625Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M33%2031.625H26.125C25.366%2031.625%2024.75%2032.2396%2024.75%2033C24.75%2033.7604%2025.366%2034.375%2026.125%2034.375H33C33.759%2034.375%2034.375%2033.7604%2034.375%2033C34.375%2032.2396%2033.759%2031.625%2033%2031.625Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M33%2027.5H30.25C29.491%2027.5%2028.875%2028.1146%2028.875%2028.875C28.875%2029.6354%2029.491%2030.25%2030.25%2030.25H33C33.759%2030.25%2034.375%2029.6354%2034.375%2028.875C34.375%2028.1146%2033.759%2027.5%2033%2027.5Z'%20fill='%23F66F4A'/%3e%3c/svg%3e" alt="" />
+              <h3 class="solution-card__title">AI-чат-бот</h3>
+
+              <div class="solution-card__description">
+                Создание заявок, поиск документов, больничные, поддержка.
+              </div>
+            </div>
+
+            <div class="solution-card__tags">
+              <span class="tag">LLM</span>
+              <span class="tag">Закрытый контур</span>
+              <span class="tag">Интеграция с корпорталом</span>
+            </div>
+
+            <div class="solution-card__image">
+              <img src="./assets/ai-0_0nOIM3.png" alt="">
+            </div>
+          </article>
+
         </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMS -->
+    <section class="problems">
+      <div class="container">
+        <h2 class="problems__title">Какие задачи мы решаем</h2>
+
+        <div class="problems__grid">
+
+           <article class="problem-card">
+            <img class="problem-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.33398%2031.625C10.1184%2031.625%2012.376%2033.8826%2012.376%2036.667C12.3758%2039.4513%2010.1183%2041.708%207.33398%2041.708C4.54981%2041.7078%202.29314%2039.4512%202.29297%2036.667C2.29297%2033.8827%204.5497%2031.6252%207.33398%2031.625ZM22.001%2031.625C24.7854%2031.625%2027.043%2033.8826%2027.043%2036.667C27.0428%2039.4513%2024.7853%2041.708%2022.001%2041.708C19.2167%2041.708%2016.9592%2039.4513%2016.959%2036.667C16.959%2033.8826%2019.2165%2031.625%2022.001%2031.625ZM36.668%2031.625C39.4523%2031.6252%2041.709%2033.8827%2041.709%2036.667C41.7088%2039.4512%2039.4521%2041.7078%2036.668%2041.708C33.8836%2041.708%2031.6262%2039.4513%2031.626%2036.667C31.626%2033.8826%2033.8835%2031.625%2036.668%2031.625ZM7.33398%2034.375C6.06848%2034.3752%205.04297%2035.4014%205.04297%2036.667C5.04314%2037.9324%206.06859%2038.9578%207.33398%2038.958C8.59953%2038.958%209.6258%2037.9325%209.62598%2036.667C9.62598%2035.4013%208.59964%2034.375%207.33398%2034.375ZM22.001%2034.375C20.7353%2034.375%2019.709%2035.4013%2019.709%2036.667C19.7092%2037.9325%2020.7354%2038.958%2022.001%2038.958C23.2665%2038.958%2024.2928%2037.9325%2024.293%2036.667C24.293%2035.4013%2023.2666%2034.375%2022.001%2034.375ZM36.668%2034.375C35.4023%2034.375%2034.376%2035.4013%2034.376%2036.667C34.3762%2037.9325%2035.4024%2038.958%2036.668%2038.958C37.9334%2038.9578%2038.9588%2037.9324%2038.959%2036.667C38.959%2035.4014%2037.9335%2034.3752%2036.668%2034.375ZM22.001%2018.792C22.7604%2018.792%2023.376%2019.4076%2023.376%2020.167V22.458H34.834C36.6059%2022.458%2038.043%2023.8951%2038.043%2025.667V27.5C38.043%2028.2593%2037.4272%2028.8748%2036.668%2028.875C35.9086%2028.875%2035.293%2028.2594%2035.293%2027.5V25.667C35.293%2025.4138%2035.0871%2025.208%2034.834%2025.208H23.376V27.5C23.376%2028.2594%2022.7604%2028.875%2022.001%2028.875C21.2416%2028.875%2020.626%2028.2594%2020.626%2027.5V25.208H9.16797C8.91483%2025.208%208.70898%2025.4139%208.70898%2025.667V27.5C8.70898%2028.2594%208.09338%2028.875%207.33398%2028.875C6.57474%2028.8748%205.95898%2028.2593%205.95898%2027.5V25.667C5.95898%2023.895%207.39608%2022.458%209.16797%2022.458H20.626V20.167C20.626%2019.4076%2021.2416%2018.792%2022.001%2018.792ZM22.001%202.29199C25.7979%202.29199%2028.876%205.37003%2028.876%209.16699C28.8758%2012.9638%2025.7978%2016.042%2022.001%2016.042C18.2041%2016.042%2015.1262%2012.9638%2015.126%209.16699C15.126%205.37003%2018.204%202.29199%2022.001%202.29199ZM22.001%205.04199C19.7228%205.04199%2017.876%206.88882%2017.876%209.16699C17.8762%2011.445%2019.7229%2013.292%2022.001%2013.292C24.279%2013.292%2026.1258%2011.445%2026.126%209.16699C26.126%206.88882%2024.2792%205.04199%2022.001%205.04199Z'%20fill='%23FC6238'/%3e%3c/svg%3e" alt="" />
+            <h3>Устранить разрозненность информации</h3>
+            <p>Объединение данных в&nbsp;единую систему, синхронизация версий, исключение ошибок в&nbsp;отчетах</p>
+          </article>
+
+          <article class="problem-card">
+            <img class="problem-card__icon" src="./assets/money-Dd9S4fC9.svg" alt="" />
+            <h3>Снизить риски аварий и&nbsp;финансовых потерь</h3>
+            <p>Раннее выявление дефектов, прогнозирование поломок, сокращение простоев</p>
+          </article>
+
+          <article class="problem-card">
+            <img class="problem-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M22.917%207.79199C27.1038%207.79207%2030.936%209.31289%2033.8936%2011.8271L35.6943%2010.0273C36.2312%209.49065%2037.1017%209.49075%2037.6387%2010.0273C38.1756%2010.5643%2038.1755%2011.4347%2037.6387%2011.9717L35.8379%2013.7715C38.3531%2016.7293%2039.875%2020.5622%2039.875%2024.75C39.875%2034.1157%2032.2826%2041.7078%2022.917%2041.708H5.5C4.74061%2041.708%204.125%2041.0924%204.125%2040.333C4.12518%2039.5738%204.74072%2038.958%205.5%2038.958H22.917C30.7639%2038.9578%2037.125%2032.5969%2037.125%2024.75C37.125%2020.8261%2035.5366%2017.2749%2032.9639%2014.7021C30.3913%2012.1297%2026.8406%2010.5421%2022.917%2010.542C15.0699%2010.542%208.70801%2016.903%208.70801%2024.75C8.70801%2025.5094%208.0924%2026.125%207.33301%2026.125C6.57377%2026.1248%205.95801%2025.5093%205.95801%2024.75C5.95801%2015.3842%2013.5512%207.79199%2022.917%207.79199ZM14.667%2033.458C15.4261%2033.4582%2016.0418%2034.0739%2016.042%2034.833C16.042%2035.5923%2015.4262%2036.2078%2014.667%2036.208H5.5C4.74061%2036.208%204.125%2035.5924%204.125%2034.833C4.12518%2034.0738%204.74072%2033.458%205.5%2033.458H14.667ZM11%2027.958C11.7593%2027.958%2012.3748%2028.5738%2012.375%2029.333C12.375%2030.0924%2011.7594%2030.708%2011%2030.708H5.5C4.74061%2030.708%204.125%2030.0924%204.125%2029.333C4.12518%2028.5738%204.74072%2027.958%205.5%2027.958H11ZM28.3613%2017.3613C28.8983%2016.8244%2029.7687%2016.8244%2030.3057%2017.3613C30.8424%2017.8983%2030.8425%2018.7688%2030.3057%2019.3057L23.8887%2025.7217C23.3517%2026.2586%2022.4813%2026.2586%2021.9443%2025.7217C21.4076%2025.1847%2021.4074%2024.3142%2021.9443%2023.7773L28.3613%2017.3613ZM27.5%202.29199C28.2594%202.29199%2028.875%202.9076%2028.875%203.66699C28.8748%204.42623%2028.2593%205.04199%2027.5%205.04199H18.333C17.5739%205.04182%2016.9582%204.42613%2016.958%203.66699C16.958%202.90771%2017.5738%202.29217%2018.333%202.29199H27.5Z'%20fill='%23FC6238'/%3e%3c/svg%3e" alt="" />
+            <h3>Ускорить бизнес-процесы и&nbsp;принятие решений</h3>
+            <p>Автоматизация согласований, доступ к&nbsp;аналитике в&nbsp;реальном времени, предиктивное планирование</p>
+          </article>
+
+          <article class="problem-card">
+            <img class="problem-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.416%202.292C30.9695%202.292%2033.0233%202.28839%2034.6338%202.50489C36.2838%202.72675%2037.6729%203.20233%2038.7764%204.30567C39.8799%205.40918%2040.3563%206.79903%2040.5781%208.44922C40.7946%2010.0597%2040.791%2012.1136%2040.791%2014.667V22C40.791%2024.5536%2040.7946%2026.6072%2040.5781%2028.2178C40.3563%2029.868%2039.8799%2031.2578%2038.7764%2032.3613C37.6729%2033.4646%2036.2838%2033.9403%2034.6338%2034.1621C33.2766%2034.3446%2031.6045%2034.3693%2029.584%2034.3731L35.6914%2039.2588C36.2844%2039.7332%2036.3806%2040.5994%2035.9062%2041.1924C35.4319%2041.7854%2034.5656%2041.8816%2033.9727%2041.4072L25.1826%2034.375H23.374V40.333C23.374%2041.0924%2022.7584%2041.708%2021.999%2041.708C21.2396%2041.708%2020.624%2041.0924%2020.624%2040.333V34.375H18.8154L10.0254%2041.4072C9.43241%2041.8816%208.56619%2041.7854%208.0918%2041.1924C7.61754%2040.5994%207.7137%2039.7331%208.30664%2039.2588L14.4131%2034.3731C12.393%2034.3693%2010.7213%2034.3445%209.36426%2034.1621C7.71429%2033.9403%206.3251%2033.4646%205.22168%2032.3613C4.11818%2031.2578%203.64276%2029.868%203.4209%2028.2178C3.20441%2026.6072%203.20703%2024.5536%203.20703%2022V14.667C3.20703%2012.1135%203.20446%2010.0598%203.4209%208.44922C3.64276%206.79902%204.11817%205.40918%205.22168%204.30567C6.32513%203.20231%207.71423%202.72675%209.36426%202.50489C10.9748%202.2884%2013.0285%202.292%2015.582%202.292H28.416ZM15.582%205.042C12.9511%205.042%2011.1161%205.04538%209.73145%205.23145C8.38634%205.41229%207.67341%205.7427%207.16602%206.25C6.65866%206.75736%206.32834%207.47042%206.14746%208.81543C5.96138%2010.2002%205.95703%2012.0359%205.95703%2014.667V22C5.95703%2024.6309%205.96141%2026.4659%206.14746%2027.8506C6.32833%2029.1958%206.65861%2029.9096%207.16602%2030.417C7.6734%2030.9242%208.38649%2031.2547%209.73145%2031.4356C11.1161%2031.6216%2012.9511%2031.625%2015.582%2031.625H28.416C31.0469%2031.625%2032.8819%2031.6216%2034.2666%2031.4356C35.6116%2031.2547%2036.3246%2030.9242%2036.832%2030.417C37.3395%2029.9096%2037.6697%2029.1958%2037.8506%2027.8506C38.0366%2026.4659%2038.041%2024.6309%2038.041%2022V14.667C38.041%2012.0359%2038.0367%2010.2002%2037.8506%208.81543C37.6697%207.47043%2037.3394%206.75736%2036.832%206.25C36.3246%205.74269%2035.6117%205.41229%2034.2666%205.23145C32.8819%205.04537%2031.047%205.042%2028.416%205.042H15.582ZM14.666%2016.958C15.4252%2016.9582%2016.0408%2017.5739%2016.041%2018.333V23.833C16.041%2024.5923%2015.4253%2025.2078%2014.666%2025.208C13.9066%2025.208%2013.291%2024.5924%2013.291%2023.833V18.333C13.2912%2017.5738%2013.9067%2016.958%2014.666%2016.958ZM21.999%2011.458C22.7583%2011.458%2023.3738%2012.0738%2023.374%2012.833V23.833C23.374%2024.5924%2022.7584%2025.208%2021.999%2025.208C21.2396%2025.208%2020.624%2024.5924%2020.624%2023.833V12.833C20.6242%2012.0738%2021.2397%2011.458%2021.999%2011.458ZM29.332%2018.792C30.0914%2018.792%2030.707%2019.4076%2030.707%2020.167V23.833C30.707%2024.5924%2030.0914%2025.208%2029.332%2025.208C28.5728%2025.2078%2027.957%2024.5923%2027.957%2023.833V20.167C27.957%2019.4077%2028.5728%2018.7922%2029.332%2018.792Z'%20fill='%23FC6238'/%3e%3c/svg%3e" alt="" />
+            <h3>Повысить прозрачность контроля качества</h3>
+            <p>Мониторинг объектов в&nbsp;режиме онлайн, оценка эффективности сотрудников, автоматический аудит задач</p>
+          </article>
+
+          <article class="problem-card">
+            <img class="problem-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22%209.16667C17.9499%209.16667%2014.6667%2012.4499%2014.6667%2016.5C14.6667%2020.55%2017.9499%2023.8333%2022%2023.8333C26.05%2023.8333%2029.3333%2020.55%2029.3333%2016.5C29.3333%2012.4499%2026.05%209.16667%2022%209.16667ZM15.0406%2025.0191C13.3723%2025.6196%2011.8482%2026.4325%2010.5291%2027.4219C7.52769%2029.6729%205.5%2032.9226%205.5%2036.6667C5.5%2037.6792%206.32082%2038.5%207.33333%2038.5C8.34585%2038.5%209.16667%2037.6792%209.16667%2036.6667C9.16667%2034.3356%2010.4222%2032.0854%2012.7291%2030.3552C15.0365%2028.6246%2018.3082%2027.5%2022%2027.5C28.0751%2027.5%2033%2022.5751%2033%2016.5C33%2010.4249%2028.0751%205.5%2022%205.5C15.9249%205.5%2011%2010.4249%2011%2016.5C11%2019.9348%2012.5743%2023.0019%2015.0406%2025.0191ZM31.1667%2029.3333C30.1541%2029.3333%2029.3333%2030.1541%2029.3333%2031.1667C29.3333%2032.1792%2030.1541%2033%2031.1667%2033C32.1792%2033%2033%2032.1792%2033%2031.1667C33%2030.1541%2032.1792%2029.3333%2031.1667%2029.3333ZM25.6667%2031.1667C25.6667%2028.129%2028.129%2025.6667%2031.1667%2025.6667C34.2043%2025.6667%2036.6667%2028.129%2036.6667%2031.1667C36.6667%2032.0157%2036.4742%2032.82%2036.1306%2033.5379L37.963%2035.3703C38.6789%2036.0862%2038.6789%2037.2471%2037.963%2037.963C37.2471%2038.6789%2036.0862%2038.6789%2035.3703%2037.963L33.5379%2036.1306C32.82%2036.4742%2032.0157%2036.6667%2031.1667%2036.6667C28.129%2036.6667%2025.6667%2034.2043%2025.6667%2031.1667Z'%20fill='%23F66F4A'/%3e%3c/svg%3e" alt="" />
+            <h3>Оптимизировать подбор и&nbsp;управление персоналом</h3>
+            <p>Быстрый поиск кандидатов, актуализация кадровых данных, снижение текучести</p>
+          </article>
+
+          <article class="problem-card">
+            <img class="problem-card__icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M22.001%204.125C32.8854%204.125%2041.7088%2012.9485%2041.709%2023.833C41.709%2030.2809%2038.6108%2036.0062%2033.8281%2039.5996C33.2808%2040.0104%2032.5143%2039.9566%2032.0303%2039.4727L28.3623%2035.8037C27.8253%2035.2667%2027.8254%2034.3963%2028.3623%2033.8594C28.8993%2033.3225%2029.7697%2033.3224%2030.3066%2033.8594L33.0977%2036.6504C36.688%2033.5392%2038.959%2028.953%2038.959%2023.833C38.9589%2018.758%2036.7291%2014.2044%2033.1963%2011.0967L25.8145%2020.1201C25.7854%2020.1556%2025.7544%2020.1889%2025.7227%2020.2207C25.9807%2020.7595%2026.126%2021.3627%2026.126%2022C26.126%2024.2782%2024.2792%2026.125%2022.001%2026.125C19.7228%2026.125%2017.876%2024.2782%2017.876%2022C17.876%2019.7218%2019.7228%2017.875%2022.001%2017.875C22.6352%2017.875%2023.2357%2018.0187%2023.7725%2018.2744L30.9902%209.45215C28.3841%207.81965%2025.303%206.875%2022.001%206.875C12.6353%206.875%205.04314%2014.4673%205.04297%2023.833C5.04297%2028.9524%207.31258%2033.5392%2010.9023%2036.6504L13.6953%2033.8594C14.2323%2033.3224%2015.1027%2033.3225%2015.6396%2033.8594C16.1766%2034.3963%2016.1766%2035.2667%2015.6396%2035.8037L11.9717%2039.4727C11.4877%2039.9566%2010.7212%2040.0105%2010.1738%2039.5996C5.39112%2036.0062%202.29297%2030.2809%202.29297%2023.833C2.29314%2012.9485%2011.1165%204.125%2022.001%204.125ZM22.001%2020.625C21.2416%2020.625%2020.626%2021.2406%2020.626%2022C20.626%2022.7594%2021.2416%2023.375%2022.001%2023.375C22.7604%2023.375%2023.376%2022.7594%2023.376%2022C23.376%2021.2406%2022.7604%2020.625%2022.001%2020.625Z'%20fill='%23FC6238'/%3e%3c/svg%3e" alt="" />
+            <h3>Автоматизировать ручные процессы</h3>
+            <p>Замена бумажных документов, устранение двойного ввода данных, минимизация человеческого фактора</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+      <div class="container">
+        <div class="about__grid">
+
+          <div class="about-card about-card--main">
+            <h2 class="about-card__title">ТерраЛинк</h2>
+
+            <ul class="about-card__list">
+              <li>Мы специализируемся на&nbsp;разработке и&nbsp;внедрении IT-решений и&nbsp;продуктов.</li>
+              <li>Помогаем бизнесу эффективно использовать данные для&nbsp;достижения стратегических целей.</li>
+              <li>Делаем особый фокус на&nbsp;мобильности и&nbsp;искусственном интеллекте.</li>
+              <li>Предлагаем решения, соответствующие потребностям каждого клиента.</li>
+            </ul>
+          </div>
+
+          <div class="about__right">
+
+            <div class="about-card about-card--small">
+                <div class="about-card__count">30+</div>
+                <div class="about-card__text">
+                  сотрудников работающих с&nbsp;инструментами&nbsp;ИИ
+                </div>
+              <div class="about-card__icon">
+                <img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19.0391%2010.6668C19.0391%208.98784%2017.6781%207.62679%2015.9991%207.62679C14.3201%207.62679%2012.9591%208.98784%2012.9591%2010.6668C12.9591%2012.3457%2014.3201%2013.7068%2015.9991%2013.7068C17.6781%2013.7068%2019.0391%2012.3457%2019.0391%2010.6668ZM20.9591%2010.6668C20.9591%2013.4061%2018.7385%2015.6268%2015.9991%2015.6268C13.2597%2015.6268%2011.0391%2013.4061%2011.0391%2010.6668C11.0391%207.92747%2013.2597%205.70679%2015.9991%205.70679C18.7385%205.70679%2020.9591%207.92747%2020.9591%2010.6668Z'%20fill='%23FF592D'/%3e%3cpath%20d='M24.373%209.33329C24.373%207.65436%2023.0119%206.29329%2021.333%206.29329C20.8029%206.29329%2020.373%205.86348%2020.373%205.33329C20.373%204.8031%2020.8029%204.37329%2021.333%204.37329C24.0723%204.37329%2026.293%206.59395%2026.293%209.33329C26.293%2011.357%2025.0808%2013.0957%2023.3474%2013.867C22.8632%2014.0823%2022.2961%2013.8643%2022.0805%2013.3802C21.865%2012.8958%2022.083%2012.3282%2022.5674%2012.1127C23.6331%2011.6384%2024.373%2010.5711%2024.373%209.33329Z'%20fill='%23FF592D'/%3e%3cpath%20d='M23.0391%2024.3812C23.0391%2021.7555%2020.9104%2019.6268%2018.2847%2019.6268H13.7134C11.0877%2019.6268%208.95906%2021.7555%208.95906%2024.3812C8.95912%2025.1133%209.5526%2025.7067%2010.2847%2025.7068H21.7134C22.4456%2025.7067%2023.039%2025.1133%2023.0391%2024.3812ZM24.9591%2024.3812C24.959%2026.1737%2023.506%2027.6267%2021.7134%2027.6268H10.2847C8.4922%2027.6267%207.03912%2026.1737%207.03906%2024.3812C7.03906%2020.6951%2010.0273%2017.7068%2013.7134%2017.7068H18.2847C21.9707%2017.7068%2024.9591%2020.6951%2024.9591%2024.3812Z'%20fill='%23FF592D'/%3e%3cpath%20d='M28.3726%2023.0477C28.3726%2020.422%2026.2439%2018.2933%2023.6182%2018.2933C23.088%2018.2933%2022.6582%2017.8635%2022.6582%2017.3333C22.6582%2016.8031%2023.088%2016.3733%2023.6182%2016.3733C27.3043%2016.3733%2030.2926%2019.3616%2030.2926%2023.0477C30.2925%2024.8401%2028.8394%2026.2932%2027.047%2026.2933C26.5168%2026.2933%2026.087%2025.8635%2026.087%2025.3333C26.087%2024.8031%2026.5168%2024.3733%2027.047%2024.3733C27.779%2024.3732%2028.3725%2023.7797%2028.3726%2023.0477Z'%20fill='%23FF592D'/%3e%3cpath%20d='M5.70703%209.33329C5.70703%206.59396%207.9277%204.37329%2010.667%204.37329C11.1972%204.37329%2011.627%204.8031%2011.627%205.33329C11.627%205.86348%2011.1972%206.29329%2010.667%206.29329C8.98809%206.29329%207.62703%207.65435%207.62703%209.33329C7.62703%2010.5712%208.36693%2011.6384%209.43266%2012.1127C9.91706%2012.3282%2010.1351%2012.8958%209.91953%2013.3802C9.70397%2013.8643%209.13691%2014.0823%208.65266%2013.867C6.91913%2013.0957%205.70703%2011.3569%205.70703%209.33329Z'%20fill='%23FF592D'/%3e%3cpath%20d='M1.70703%2023.0477C1.70703%2019.3616%204.69531%2016.3733%208.38141%2016.3733C8.91156%2016.3733%209.34141%2016.8031%209.34141%2017.3333C9.34141%2017.8635%208.91156%2018.2932%208.38141%2018.2933C5.7557%2018.2933%203.62703%2020.422%203.62703%2023.0477C3.62709%2023.7798%204.22056%2024.3732%204.95266%2024.3733C5.48285%2024.3733%205.91266%2024.8031%205.91266%2025.3333C5.91266%2025.8635%205.48285%2026.2933%204.95266%2026.2933C3.16017%2026.2932%201.70709%2024.8402%201.70703%2023.0477Z'%20fill='%23FF592D'/%3e%3c/svg%3e" alt="Иконка">
+              </div>
+            </div>
+
+            <div class="about-card about-card--small">
+              <div class="about-card__text">
+                Опыт реализации и&nbsp;поддержки крупных проектов
+              </div>
+              <div class="about-card__icon">
+                <img src="./assets/suitcase-C6C8RCou.svg" alt="Иконка">
+              </div>
+            </div>
+
+            <div class="about-card about-card--small">
+              <div class="about-card__text">
+                Современный стек используемых технологий
+              </div>
+              <div class="about-card__icon">
+                <img src="./assets/calendar-CtWsIG2J.svg" alt="Иконка">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="about-card about-card--qr">
+            <div>
+              <img class="about-card__logo" src="data:image/svg+xml,%3csvg%20width='101'%20height='63'%20viewBox='0%200%20101%2063'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cmask%20id='mask0_227_2480'%20style='mask-type:luminance'%20maskUnits='userSpaceOnUse'%20x='0'%20y='0'%20width='101'%20height='63'%3e%3cpath%20d='M100.021%200H0V63H100.021V0Z'%20fill='white'/%3e%3c/mask%3e%3cg%20mask='url(%23mask0_227_2480)'%3e%3cpath%20d='M78.5344%2050.1292V60.6747H20.7143V50.1292H18.248V63.14H81.0006V50.1292H78.5344Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M20.5522%202.60217H65.9041C72.7548%202.60217%2078.2353%208.08044%2078.2353%2014.9283V30.1305H80.8386V14.9283C80.8386%206.71087%2074.2619%200%2066.0411%200H18.0859V30.1305H20.5522V2.60217Z'%20fill='%23F66F4A'/%3e%3cpath%20d='M1.50781%2035.3351H5.0702V46.1546H7.53646V35.3351H10.9619V33.2808H1.50781V35.3351Z'%20fill='black'/%3e%3cpath%20d='M12.8809%2046.1549H20.5537V44.1006H15.3471V40.5397H20.4167V38.4854H15.3471V35.3353H20.5537V33.281H12.8809V46.1549Z'%20fill='black'/%3e%3cpath%20d='M30.4167%2034.3764C30.0057%2033.9655%2029.4576%2033.8285%2028.7725%2033.5546C28.0874%2033.4177%2027.4024%2033.2808%2026.5803%2033.2808H22.8809V46.1546H25.3472V42.0459H26.5803C27.4024%2042.0459%2028.2245%2041.909%2028.9095%2041.6351C29.5946%2041.3611%2030.1427%2041.0872%2030.5537%2040.6764C30.9648%2040.2655%2031.3758%2039.7177%2031.5128%2039.1698C31.7869%2038.622%2031.7869%2037.9373%2031.7869%2037.3894C31.7869%2036.7046%2031.6498%2036.1568%2031.5128%2035.609C31.2387%2035.0612%2030.8277%2034.6503%2030.4167%2034.3764ZM29.0465%2038.485C28.9095%2038.759%2028.7725%2039.0329%2028.4985%2039.3068C28.2245%2039.5807%2027.9504%2039.7177%2027.6764%2039.8546C27.4024%2039.9916%2026.9914%2039.9916%2026.5803%2039.9916H25.2102V35.3351H26.4433C26.8543%2035.3351%2027.2653%2035.3351%2027.6764%2035.4721C27.9504%2035.609%2028.2245%2035.746%2028.4985%2035.8829C28.7725%2036.0198%2028.9095%2036.2937%2029.0465%2036.5677C29.1836%2036.8416%2029.1836%2037.1155%2029.1836%2037.5264C29.1836%2037.9373%2029.1836%2038.2112%2029.0465%2038.485Z'%20fill='black'/%3e%3cpath%20d='M40.9674%2034.3767C40.5564%2033.9658%2040.0083%2033.8289%2039.3232%2033.5549C38.6381%2033.418%2037.9531%2033.281%2037.131%2033.281H33.4316V46.1549H35.8979V42.0462H37.131C37.9531%2042.0462%2038.7752%2041.9092%2039.4602%2041.6354C40.1453%2041.3615%2040.6934%2041.0875%2041.1044%2040.6767C41.5155%2040.2658%2041.9265%2039.7179%2042.0635%2039.1702C42.3376%2038.6223%2042.3376%2037.9375%2042.3376%2037.3897C42.3376%2036.705%2042.2005%2036.1571%2042.0635%2035.6093C41.7895%2035.0614%2041.3784%2034.6505%2040.9674%2034.3767ZM39.5972%2038.4854C39.4602%2038.7593%2039.3232%2039.0332%2039.0492%2039.3071C38.7752%2039.581%2038.5011%2039.7179%2038.2271%2039.8549C37.9531%2039.9919%2037.5421%2039.9919%2037.131%2039.9919H35.7609V35.3353H36.994C37.405%2035.3353%2037.816%2035.3353%2038.2271%2035.4723C38.5011%2035.6093%2038.7752%2035.7462%2039.0492%2035.8832C39.3232%2036.0201%2039.4602%2036.2941%2039.5972%2036.568C39.7343%2036.8419%2039.7343%2037.1158%2039.7343%2037.5266C39.8713%2037.9375%2039.7343%2038.2114%2039.5972%2038.4854Z'%20fill='black'/%3e%3cpath%20d='M46.4497%2033.2808L42.6133%2046.1546H44.9425L45.6277%2043.6894H50.1491L50.8341%2046.1546H53.4374L49.6011%2033.2808H46.4497ZM46.3127%2041.6351L47.9569%2035.609L49.6011%2041.6351H46.3127Z'%20fill='black'/%3e%3cpath%20d='M56.9984%2036.7041C56.9984%2037.6629%2056.8614%2038.4845%2056.7244%2039.3063C56.5874%2039.9911%2056.5873%2040.6759%2056.4504%2041.2237C56.3134%2041.7715%2056.3134%2042.1824%2056.1763%2042.5933C56.0393%2043.0042%2055.9023%2043.278%2055.7653%2043.415C55.6283%2043.5519%2055.4913%2043.8259%2055.3543%2043.8259C55.2172%2043.9628%2055.0802%2043.9628%2054.8062%2043.9628C54.6692%2043.9628%2054.3951%2043.9628%2054.2581%2043.9628L54.1211%2046.0172C54.6692%2046.1541%2055.0802%2046.1541%2055.4913%2046.1541C55.9023%2046.1541%2056.3134%2046.0172%2056.7244%2045.7432C57.1355%2045.4694%2057.4094%2045.1955%2057.6835%2044.6476C57.9575%2044.0998%2058.2315%2043.5519%2058.3685%2042.7303C58.6426%2041.9085%2058.7796%2040.8128%2058.9167%2039.7172C59.0536%2038.4845%2059.1906%2037.115%2059.1906%2035.3346H61.6569V46.0172H64.1232V33.1433H57.1355C56.9984%2034.5128%2056.9984%2035.7455%2056.9984%2036.7041Z'%20fill='black'/%3e%3cpath%20d='M69.1928%2041.4984V33.281H66.7266V46.1549H69.0558L73.4403%2037.9375H73.5773V46.1549H75.9065V33.281H73.5773L69.1928%2041.4984Z'%20fill='black'/%3e%3cpath%20d='M85.2242%2038.4854H80.8393V33.281H78.373V46.1549H80.8393V40.5397H85.2242V46.1549H87.553V33.281H85.2242V38.4854Z'%20fill='black'/%3e%3cpath%20d='M94.4045%2039.444L98.7896%2033.281H95.9115L92.0757%2039.1702V33.281H89.6094V46.1549H92.0757V39.8549L95.9115%2046.1549H99.063L94.4045%2039.444Z'%20fill='black'/%3e%3c/g%3e%3c/svg%3e" />
+              <div class="about-card__qr-text">
+                Узнайте подробнее <br />
+                на нашем сайте
+              </div>
+            </div>
+            <img class="about-card__qr" src="./assets/about-qr-C04Z-wZV.svg" />
+          </div>
+
+        </div>
+
+        <div class="about-banner">
+          <p>
+            Наши инструменты превращают хаотичные процессы в структурированные,
+            управляемые данными, обеспечивая скорость, безопасность и предсказуемость бизнеса.
+          </p>
+          <img class="about-banner__image" src="./assets/banner-decor-BBCpdfN-.png" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="solution-modal" id="solutionModal">
+      <div class="solution-modal__overlay"></div>
+
+      <div class="solution-modal__content container">
+        <button class="solution-modal__close" id="modalClose">
+          <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M5.29289%205.29289C5.68342%204.90237%206.31658%204.90237%206.70711%205.29289L12%2010.5858L17.2929%205.29289C17.6834%204.90237%2018.3166%204.90237%2018.7071%205.29289C19.0976%205.68342%2019.0976%206.31658%2018.7071%206.70711L13.4142%2012L18.7071%2017.2929C19.0976%2017.6834%2019.0976%2018.3166%2018.7071%2018.7071C18.3166%2019.0976%2017.6834%2019.0976%2017.2929%2018.7071L12%2013.4142L6.70711%2018.7071C6.31658%2019.0976%205.68342%2019.0976%205.29289%2018.7071C4.90237%2018.3166%204.90237%2017.6834%205.29289%2017.2929L10.5858%2012L5.29289%206.70711C4.90237%206.31658%204.90237%205.68342%205.29289%205.29289Z'%20fill='%231D222D'/%3e%3c/svg%3e" class="solution-modal__close-icon" alt="Закрыть">
+        </button>
+
+        <h3 class="solution-modal__title"></h3>
+        <h4 class="solution-modal__subtitle"></h4>
+        <dev class="solution-modal__image"></dev>
+        <div class="solution-modal__tags"></div>
+        <div class="solution-modal__qr">
+          <img src="./assets/tl-qr-CsuA9zce.png" alt="">
+          <span class="solution-modal__qr-text">Узнайте подробнее на&nbsp;нашем сайте</span>
+        </div>
+        <div class="solution-modal__body"></div>
+      </div>
     </div>
-<script type="module" src="js/script.js"></script>
-</body>
+
+    <button id="homeButton" class="home-button">
+      <img src="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.9964%203.39915C13.168%202.46215%2014.8327%202.46218%2016.0042%203.39915L26.2132%2011.5671C26.5906%2011.869%2026.6518%2012.4193%2026.3499%2012.7966C26.048%2013.1738%2025.4978%2013.2351%2025.1205%2012.9333L24.2083%2012.2029V22.7497C24.2083%2024.5217%2022.7723%2025.9587%2021.0003%2025.9587H7.00034C5.22843%2025.9587%203.79233%2024.5217%203.79233%2022.7497V12.2029L2.88022%2012.9333C2.50291%2013.2351%201.95261%2013.1738%201.65073%2012.7966C1.34885%2012.4193%201.4101%2011.869%201.78745%2011.5671L11.9964%203.39915ZM14.9115%204.76634C14.3789%204.34027%2013.6218%204.34027%2013.0892%204.76634L5.54233%2010.8034V22.7497C5.54233%2023.5552%206.19492%2024.2087%207.00034%2024.2087H21.0003C21.8058%2024.2087%2022.4583%2023.5552%2022.4583%2022.7497V10.8034L14.9115%204.76634ZM14.0003%2019.5417C14.4836%2019.5417%2014.8753%2019.9335%2014.8753%2020.4167V21.5837C14.8751%2022.0668%2014.4835%2022.4587%2014.0003%2022.4587C13.5172%2022.4587%2013.1256%2022.0668%2013.1253%2021.5837V20.4167C13.1253%2019.9335%2013.5171%2019.5417%2014.0003%2019.5417Z'%20fill='%23F66F4A'/%3e%3c/svg%3e" alt="" />
+    </button>
+
+  </body>
 </html>
